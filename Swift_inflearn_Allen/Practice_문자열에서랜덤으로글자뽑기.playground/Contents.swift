@@ -1,30 +1,30 @@
 import UIKit
 
 //내가짠코드
-func chooseRandomString(_ inputString: String) -> String{
-
-    let randomIndex:Int = Int.random(in: 0..<inputString.count)
-    var index: Int = 0
-    var returnValue: String = ""
-
-    for i in inputString {
-//        guard index != randomIndex else {
+//func chooseRandomString(_ inputString: String) -> String{
+//
+//    let randomIndex:Int = Int.random(in: 0..<inputString.count)
+//    var index: Int = 0
+//    var returnValue: String = ""
+//
+//    for i in inputString {
+////        guard index != randomIndex else {
+////            returnValue = String(i)
+////            break
+////        }
+////        index += 1
+//        if index == randomIndex {
 //            returnValue = String(i)
 //            break
+//        } else {
+//            index += 1
 //        }
-//        index += 1
-        if index == randomIndex {
-            returnValue = String(i)
-            break
-        } else {
-            index += 1
-        }
-    }
-    
-    return returnValue
-}
-
-print(chooseRandomString("안녕하세요"))
+//    }
+//
+//    return returnValue
+//}
+//
+//print(chooseRandomString("안녕하세요"))
 
 //func chooseRandomString(_ inputString: String) -> String{
 //
@@ -45,3 +45,9 @@ print(chooseRandomString("안녕하세요"))
 //
 //print(chooseRandomString("안녕하세요"))
 
+//앨런의 코드
+func chooseRandomString(_ char: String) -> String {
+    return String(char.randomElement()!)
+}
+
+chooseRandomString("안녕하세요")
