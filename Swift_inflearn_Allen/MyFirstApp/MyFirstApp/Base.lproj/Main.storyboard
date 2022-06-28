@@ -30,6 +30,7 @@
                                 <rect key="frame" x="147" y="727" width="120" height="35"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="8fE-Zu-654" secondAttribute="height" multiplier="24:7" id="PwK-lp-vkN"/>
                                     <constraint firstAttribute="width" constant="120" id="jZ0-SD-MB0"/>
                                     <constraint firstAttribute="height" constant="35" id="qIL-DV-COl"/>
                                 </constraints>
@@ -38,6 +39,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TvC-KR-pOQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -49,6 +53,9 @@
                             <constraint firstItem="30g-kV-Tm5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="glh-Mw-foZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainLabel" destination="30g-kV-Tm5" id="UU6-AB-Chw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
