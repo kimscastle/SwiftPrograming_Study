@@ -13,7 +13,10 @@ class ViewController: UIViewController {
     // Attribute: 속성
     // Interface Builder Outlet
     // 배출구(코드에서 화면으로 나감)
+    // 삭제할때는 연결을 끊고 코드 삭제
     @IBOutlet weak var mainLabel: UILabel!
+    
+    @IBOutlet weak var myButton: UIButton!
     
     
     // 앱의 화면에 들어오면 처음 실행시키는 함수
@@ -32,6 +35,8 @@ class ViewController: UIViewController {
 //        mainLabel.backgroundColor = UIColor.green
 //        mainLabel.textColor = UIColor.white
 //        mainLabel.textAlignment = NSTextAlignment.left
+        myButton.backgroundColor = UIColor.red
+        myButton.setTitleColor(UIColor.yellow, for: UIControl.State.normal)
         
         
     }

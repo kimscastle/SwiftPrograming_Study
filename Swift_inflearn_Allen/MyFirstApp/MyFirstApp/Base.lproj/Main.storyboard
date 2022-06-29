@@ -55,6 +55,7 @@
                     </view>
                     <connections>
                         <outlet property="mainLabel" destination="30g-kV-Tm5" id="UU6-AB-Chw"/>
+                        <outlet property="myButton" destination="8fE-Zu-654" id="XTj-OJ-aHg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
