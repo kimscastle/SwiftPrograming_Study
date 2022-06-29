@@ -27,7 +27,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="pG8-u0-VCV">
-                                <rect key="frame" x="20" y="269" width="374" height="269.5"/>
+                                <rect key="frame" x="20" y="209" width="374" height="269.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="UvX-a8-8Zi">
                                         <rect key="frame" x="0.0" y="0.0" width="179.5" height="269.5"/>
@@ -90,7 +90,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GyE-i7-9w3">
-                                <rect key="frame" x="20" y="578.5" width="374" height="118"/>
+                                <rect key="frame" x="20" y="518.5" width="374" height="118"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6xr-F6-LkO">
                                         <rect key="frame" x="0.0" y="0.0" width="118" height="118"/>
@@ -103,6 +103,9 @@
                                         <state key="normal" title="가위">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="rpsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VS5-HT-bJw"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOZ-YJ-yLN">
                                         <rect key="frame" x="128" y="0.0" width="118" height="118"/>
@@ -112,6 +115,9 @@
                                         <state key="normal" title="바위">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="rpsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bd8-Ls-a2j"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hw1-pm-iNj">
                                         <rect key="frame" x="256" y="0.0" width="118" height="118"/>
@@ -121,11 +127,14 @@
                                         <state key="normal" title="보">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="rpsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7pj-hy-HnL"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ieq-2Y-Bfp">
-                                <rect key="frame" x="20" y="716.5" width="374" height="45"/>
+                                <rect key="frame" x="20" y="656.5" width="374" height="45"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DjC-SE-N3C">
                                         <rect key="frame" x="0.0" y="0.0" width="182" height="45"/>
@@ -135,6 +144,9 @@
                                         <state key="normal" title="RESET">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="resetButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m52-3h-bAK"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zaf-ZI-Hka">
                                         <rect key="frame" x="192" y="0.0" width="182" height="45"/>
@@ -144,6 +156,9 @@
                                         <state key="normal" title="SELECT">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="selectButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yws-RR-Vny"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -160,13 +175,20 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ieq-2Y-Bfp" secondAttribute="trailing" constant="20" id="DlU-qI-HnJ"/>
                             <constraint firstItem="GyE-i7-9w3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="LPN-cs-iAF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pG8-u0-VCV" secondAttribute="trailing" constant="20" id="VRm-oR-JzZ"/>
-                            <constraint firstItem="pG8-u0-VCV" firstAttribute="top" secondItem="ZUW-oZ-tQ4" secondAttribute="bottom" constant="110" id="eNd-Hy-mXu"/>
+                            <constraint firstItem="pG8-u0-VCV" firstAttribute="top" secondItem="ZUW-oZ-tQ4" secondAttribute="bottom" constant="50" id="eNd-Hy-mXu"/>
                             <constraint firstItem="pG8-u0-VCV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hm9-Bt-Im7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GyE-i7-9w3" secondAttribute="trailing" constant="20" id="pxN-8D-6dK"/>
                             <constraint firstItem="ieq-2Y-Bfp" firstAttribute="top" secondItem="GyE-i7-9w3" secondAttribute="bottom" constant="20" id="rYa-BI-S9s"/>
                             <constraint firstItem="ZUW-oZ-tQ4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="yv5-YM-MN2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="comChoiceLabel" destination="ynB-0J-d7Q" id="Wly-E2-puU"/>
+                        <outlet property="comImageView" destination="0Py-CC-5nj" id="eSE-gC-rMv"/>
+                        <outlet property="mainLabel" destination="ZUW-oZ-tQ4" id="1rv-jr-wWR"/>
+                        <outlet property="myChoiceLabel" destination="EHq-xk-GAT" id="1nl-g4-D1e"/>
+                        <outlet property="myImageView" destination="ma1-RT-AuA" id="06z-fX-YHH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
