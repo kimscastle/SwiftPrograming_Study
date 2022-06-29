@@ -28,6 +28,9 @@
                                 <state key="normal" title="ROLL">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="rollButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Ku-yG-N7s"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DICE GAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frN-oD-HxB">
                                 <rect key="frame" x="132" y="124" width="150" height="30"/>
@@ -42,13 +45,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="rym-KX-diX">
                                 <rect key="frame" x="20" y="358.5" width="374" height="179.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NnZ-hO-h3w">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black1" translatesAutoresizingMaskIntoConstraints="NO" id="NnZ-hO-h3w">
                                         <rect key="frame" x="0.0" y="0.0" width="179.5" height="179.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="NnZ-hO-h3w" secondAttribute="height" multiplier="1:1" id="nIb-wG-Z9o"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t9i-QT-Ucn">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black1" translatesAutoresizingMaskIntoConstraints="NO" id="t9i-QT-Ucn">
                                         <rect key="frame" x="194.5" y="0.0" width="179.5" height="179.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="t9i-QT-Ucn" secondAttribute="height" multiplier="1:1" id="UgN-dR-rOd"/>
@@ -70,6 +73,10 @@
                             <constraint firstItem="rym-KX-diX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yit-Bc-Fug"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstImageView" destination="NnZ-hO-h3w" id="J09-Vb-nfH"/>
+                        <outlet property="secondImageView" destination="t9i-QT-Ucn" id="UUl-74-W4M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -77,6 +84,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="black1" width="399" height="399"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
