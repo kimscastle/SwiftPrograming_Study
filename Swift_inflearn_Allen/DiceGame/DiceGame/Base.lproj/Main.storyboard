@@ -55,6 +55,9 @@
                                 <state key="normal" title="ROLL">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="rollButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xmm-SZ-sRt"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -70,6 +73,10 @@
                             <constraint firstItem="Hdu-h6-Doo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="wEf-3g-xgI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstImageView" destination="SD2-wj-pSy" id="Rsn-Ee-7d1"/>
+                        <outlet property="secondImageView" destination="x6L-T4-xGv" id="Boa-4P-cg5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
