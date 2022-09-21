@@ -78,7 +78,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="El9-BR-qFa">
-                                <rect key="frame" x="10" y="730" width="370" height="50"/>
+                                <rect key="frame" x="10" y="725" width="370" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHU-KN-6yC">
                                         <rect key="frame" x="0.0" y="0.0" width="177.66666666666666" height="50"/>
@@ -111,7 +111,7 @@
                             <constraint firstItem="Ppv-um-Ph4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="130" id="Cj3-BH-zpQ"/>
                             <constraint firstItem="El9-BR-qFa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="GiO-0S-BX2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="El9-BR-qFa" secondAttribute="trailing" constant="10" id="V8b-Hg-AE2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="El9-BR-qFa" secondAttribute="bottom" constant="30" id="ehu-u1-WoW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="El9-BR-qFa" secondAttribute="bottom" constant="35" id="ehu-u1-WoW"/>
                             <constraint firstItem="Ppv-um-Ph4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="tQf-am-PzZ"/>
                         </constraints>
                     </view>
