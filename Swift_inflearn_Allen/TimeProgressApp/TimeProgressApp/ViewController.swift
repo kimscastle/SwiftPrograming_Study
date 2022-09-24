@@ -51,22 +51,23 @@ class ViewController: UIViewController {
         // 1초씩 지나갈때마다 무언가를 실행
         // startbutton을 두번누르면 초기화가 안되면 타이머가 두개 세팅됨
          timer?.invalidate()
-        
+        // timer를 weak var로 선언해주지 않는다면 weak self로 캡쳐를 해줘야함
         // 객체 내에서 클로저를 사용할때는 변수에 self를 붙여줘야함
-//        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [self] _ in
+//        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
 //            // 반복을 하고 싶은 코드
-//            if number > 0 {
-//                number -= 1
+//            guard let self = self else { return }
+//            if self.number > 0 {
+//                self.number -= 1
 //                // 숫자를 계산해서 넣어줘야함
 //                // 슬라이더의 위치도 바뀌어야함
-//                slider.value = Float(number) / Float(60)
+//                self.slider.value = Float(self.number) / Float(60)
 //                // 레이블표시도 다시 해줘야 함
-//                mainLabel.text = "\(number) 초"
+//                self.mainLabel.text = "\(self.number) 초"
 //
 //            } else {
-//                number = 0
-//                mainLabel.text = "초를 선택하세요"
-//                timer?.invalidate()
+//                self.number = 0
+//                self.mainLabel.text = "초를 선택하세요"
+//                self.timer?.invalidate()
 //
 //                // 소리를 나게 해야함
 //                AudioServicesPlayAlertSound(SystemSoundID(1322))
