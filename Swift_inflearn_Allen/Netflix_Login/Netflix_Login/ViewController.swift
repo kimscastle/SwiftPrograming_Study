@@ -7,7 +7,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+//MARK : - 대부분실무에서 viewContorller에는 final 각각의 요소에는 private을 쓰는게 좋다
+final class ViewController: UIViewController {
     
     //MARK : - 이메일 입력하는 텍스트 뷰
     private lazy var emailTextFieldView: UIView = {
@@ -129,6 +130,7 @@ class ViewController: UIViewController {
         return v
     }()
     
+    //MARK : - StackView설정
     lazy var stackView: UIStackView = {
         let st = UIStackView(arrangedSubviews: [emailTextFieldView, passwordTextFieldView, loginButton])
         st.translatesAutoresizingMaskIntoConstraints = false
@@ -152,7 +154,7 @@ class ViewController: UIViewController {
         return v
     }()
     
-    //MARK : - 변화가있는 autoLayout은 lazy로 선언해줘야한다
+    //MARK : - 동적으로 만들고 싶은 autoLayout은 lazy var로 선언해줘야한다
     lazy var emailInfoLabelCenterYConstraint = emailInfoLabel.centerYAnchor.constraint(equalTo: emailTextFieldView.centerYAnchor)
     lazy var passwordInfoLabelCenrerYConstraint = passwordInfoLabel.centerYAnchor.constraint(equalTo: passwordTextFieldView.centerYAnchor)
 
