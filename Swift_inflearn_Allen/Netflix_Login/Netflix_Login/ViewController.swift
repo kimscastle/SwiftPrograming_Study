@@ -106,6 +106,7 @@ class ViewController: UIViewController {
         v.setTitle("표시", for: .normal)
         v.setTitleColor(.white, for: .normal)
         v.titleLabel?.font = .systemFont(ofSize: 14, weight: .light)
+        v.addTarget(self, action: #selector(passwordSecureModeSetting), for: .touchUpInside)
         return v
     }()
     
@@ -204,6 +205,11 @@ class ViewController: UIViewController {
         alert.addAction(success)
         alert.addAction(cancel)
         present(alert, animated: true)
+    }
+    
+    //MARK : - 비밀번호 보기
+    @objc func passwordSecureModeSetting() {
+        passwordTextField.isSecureTextEntry.toggle()
     }
 
 }
