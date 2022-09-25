@@ -47,6 +47,7 @@ class ViewController: UIViewController {
         tf.autocorrectionType = .no
         tf.spellCheckingType = .no
         tf.keyboardType = .emailAddress
+        tf.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
         return tf
     }()
     
@@ -96,6 +97,7 @@ class ViewController: UIViewController {
         tf.isSecureTextEntry = true
         // 텍스트필드를 누르는순간 내용이 삭제됨
         tf.clearsOnBeginEditing = false
+        tf.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
         return tf
     }()
     
@@ -123,6 +125,7 @@ class ViewController: UIViewController {
         v.setTitle("로그인", for: .normal)
         // 우선은 비활성화 되어있는상태
         v.isEnabled = false
+        v.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return v
     }()
     
@@ -218,7 +221,34 @@ class ViewController: UIViewController {
     
     //MARK : - 비밀번호 보기
     @objc func passwordSecureModeSetting() {
+        // firstRsponder가 다 사라짐
         passwordTextField.isSecureTextEntry.toggle()
+    }
+    
+    //MARK : - 텍스트필드 addTarget함수
+    @objc func textFieldEditingChanged() {
+        //MARK : - guard문 중첩해서 사용하는 법
+        guard
+            // and연산이라고 생각하면됨 email에 대입이가능하고 비어있지 않다면
+            // "," is almost the same as "&&"
+            let email = emailTextField.text, !email.isEmpty,
+            let password = passwordTextField.text, !password.isEmpty else {
+            loginButton.backgroundColor = .clear
+            loginButton.isEnabled = false
+            return
+        }
+        loginButton.backgroundColor = .red
+        loginButton.isEnabled = true
+    }
+    
+    //MARK : - 로그인버튼이 눌리면
+    @objc func loginButtonTapped() {
+        print("로그인버튼이 눌렸습니다.")
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
 }
@@ -265,4 +295,11 @@ extension ViewController: UITextFieldDelegate {
             self.stackView.layoutIfNeeded()
         }
     }
+    
+    //MARK : - 이걸로 각 텍스트필드에 글자가 입력되면 버튼색이 바뀌도록 할수도있음
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        <#code#>
+//    }
+    
+    
 }
