@@ -148,10 +148,16 @@ class ViewController: UIViewController {
         v.addTarget(self, action: #selector(resetButtonTapped), for: .touchUpInside)
         return v
     }()
+    
+    //MARK : - 변화가있는 autoLayout은 lazy로 선언해줘야한다
+    lazy var emailInfoLabelCenterYConstraint = emailInfoLabel.centerYAnchor.constraint(equalTo: emailTextFieldView.centerYAnchor)
+    lazy var passwordInfoLabelCenrerYConstraint = passwordInfoLabel.centerYAnchor.constraint(equalTo: passwordTextFieldView.centerYAnchor)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         makeUI()
     }
  
@@ -159,9 +165,11 @@ class ViewController: UIViewController {
         view.addSubview(stackView)
         view.addSubview(passwordResetButton)
         
+        //MARK : - 동적으로 만들어야하기때문에 변수로 뺴줘야함
         emailInfoLabel.leadingAnchor.constraint(equalTo: emailTextFieldView.leadingAnchor, constant: 8).isActive = true
         emailInfoLabel.trailingAnchor.constraint(equalTo: emailTextFieldView.trailingAnchor, constant: -8).isActive = true
-        emailInfoLabel.centerYAnchor.constraint(equalTo: emailTextFieldView.centerYAnchor).isActive = true
+        //emailInfoLabel.centerYAnchor.constraint(equalTo: emailTextFieldView.centerYAnchor).isActive = true
+        emailInfoLabelCenterYConstraint.isActive = true
         
         emailTextField.leadingAnchor.constraint(equalTo: emailTextFieldView.leadingAnchor, constant: 8).isActive = true
         emailTextField.trailingAnchor.constraint(equalTo: emailTextFieldView.trailingAnchor, constant: -8).isActive = true
@@ -170,7 +178,8 @@ class ViewController: UIViewController {
         
         passwordInfoLabel.leadingAnchor.constraint(equalTo: passwordTextFieldView.leadingAnchor, constant: 8).isActive = true
         passwordInfoLabel.trailingAnchor.constraint(equalTo: passwordTextFieldView.trailingAnchor, constant: -8).isActive = true
-        passwordInfoLabel.centerYAnchor.constraint(equalTo: passwordTextFieldView.centerYAnchor).isActive = true
+        //passwordInfoLabel.centerYAnchor.constraint(equalTo: passwordTextFieldView.centerYAnchor).isActive = true
+        passwordInfoLabelCenrerYConstraint.isActive = true
         
         passwordTextField.leadingAnchor.constraint(equalTo: passwordTextFieldView.leadingAnchor, constant: 8).isActive = true
         passwordTextField.trailingAnchor.constraint(equalTo: passwordTextFieldView.trailingAnchor, constant: -8).isActive = true
@@ -214,3 +223,46 @@ class ViewController: UIViewController {
 
 }
 
+extension ViewController: UITextFieldDelegate {
+    //MARK : - 텍스트필드 focus될때
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == emailTextField {
+            emailTextFieldView.backgroundColor = .lightGray
+            emailInfoLabel.font = .systemFont(ofSize: 11)
+            emailInfoLabelCenterYConstraint.constant = -13
+            
+        } else {
+            passwordTextFieldView.backgroundColor = .lightGray
+            passwordInfoLabel.font = .systemFont(ofSize: 11)
+            passwordInfoLabelCenrerYConstraint.constant = -13
+        }
+        
+        UIView.animate(withDuration: 0.2) {
+            self.stackView.layoutIfNeeded()
+        }
+        
+    }
+    
+    //MARK : - 텍스트필드 focus out 될때
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == emailTextField {
+            emailTextFieldView.backgroundColor = .darkGray
+            
+            if emailTextField.text == "" {
+                emailInfoLabel.font = .systemFont(ofSize: 18)
+                emailInfoLabelCenterYConstraint.constant = 0
+            }
+        } else {
+            passwordTextFieldView.backgroundColor = .darkGray
+            
+            if passwordTextField.text == "" {
+                passwordInfoLabel.font = .systemFont(ofSize: 18)
+                passwordInfoLabelCenrerYConstraint.constant = 0
+            }
+        }
+        
+        UIView.animate(withDuration: 0.2) {
+            self.stackView.layoutIfNeeded()
+        }
+    }
+}
