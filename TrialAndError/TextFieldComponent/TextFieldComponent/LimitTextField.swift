@@ -37,14 +37,6 @@ class LimitTextField: UIView {
         return v
     }()
     
-    private let line: UIView = {
-        let v = UIView()
-        v.translatesAutoresizingMaskIntoConstraints = false
-        v.backgroundColor = .black
-        v.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        return v
-    }()
-    
     private let limitLabel: UILabel = {
         let v = UILabel()
         v.translatesAutoresizingMaskIntoConstraints = false
@@ -54,6 +46,7 @@ class LimitTextField: UIView {
         return v
     }()
     
+    //MARK : - superView인 UIView는 frame이라는 저장속성을 가지고 있기 때문에 이를 초기화 시켜주어야 한다 "1) 새로운저장속성 초기화 2) super.init"으로 모든 속성 초기화
     init(frame: CGRect, type: textFieldType) {
         self.type = type
         super.init(frame: frame)
@@ -67,6 +60,7 @@ class LimitTextField: UIView {
     }
     
     func configureUI() {
+        //MARK : - 이미 들어오는 타입이 .nickName .holder .roomName이기때문에 여기서 분기처리를 해줄 필요는 없음
         textField.placeholder = type.placeHolder
         limit = type.rawValue
         limitLabel.text = "0/\(limit)"
@@ -87,12 +81,14 @@ class LimitTextField: UIView {
 }
 
 extension LimitTextField: UITextFieldDelegate {
+    //MARK : - 글자수 제한
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
         let newLength = text.count + string.count - range.length
         return newLength <= limit
     }
     
+    //MARK : - 텍스트필드에 입력되어있는 글자수를 가져오는 메서드
     func textFieldDidChangeSelection(_ textField: UITextField) {
         guard let text = textField.text else { return }
         limitLabel.text = "\(text.count)/\(limit)"
