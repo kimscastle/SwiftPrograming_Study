@@ -144,6 +144,7 @@ class ViewController: UIViewController {
         v.backgroundColor = .clear
         v.setTitle("비밀번호 재설정", for: .normal)
         v.titleLabel?.font = .boldSystemFont(ofSize: 14)
+        v.addTarget(self, action: #selector(resetButtonTapped), for: .touchUpInside)
         return v
     }()
 
@@ -188,6 +189,21 @@ class ViewController: UIViewController {
         passwordResetButton.leadingAnchor.constraint(equalTo: stackView.leadingAnchor).isActive = true
         passwordResetButton.trailingAnchor.constraint(equalTo: stackView.trailingAnchor).isActive = true
         passwordResetButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 10).isActive = true
+    }
+    
+    //MARK : - 알람창 구현
+    @objc func resetButtonTapped() {
+        //print("리셋버튼이 눌렸습니다")
+        let alert = UIAlertController(title: "비밀번호 바꾸기", message: "비밀버호를 바꾸시겠습니까?", preferredStyle: .alert)
+        let success = UIAlertAction(title: "확인", style: .default) { _ in
+            print("확인버튼이 눌렸습니다.")
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel) { _ in
+            print("취소버튼이 눌렸습니다")
+        }
+        alert.addAction(success)
+        alert.addAction(cancel)
+        present(alert, animated: true)
     }
 
 }
