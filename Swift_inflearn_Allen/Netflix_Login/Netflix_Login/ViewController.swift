@@ -9,18 +9,112 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let emailTextFieldView: UIView = {
+    //MARK : - 이메일 입력하는 텍스트 뷰
+    private lazy var emailTextFieldView: UIView = {
         let v = UIView()
-        //MARK : - 반드시 설정해줘야함(실수많이함)
-        // 코드로 UI를 구성하면 기본적으로 frame기준으로 앱 화면에 올라가게 되어있음 그 기능을 꺼줌
         v.translatesAutoresizingMaskIntoConstraints = false
-        v.backgroundColor = .darkGray
-        //MARK : - UIView의 corner를 둥굴게 만드는 메서드(두개 모두 설정해야함)
         v.layer.masksToBounds = true
-        v.layer.cornerRadius = 8
+        v.layer.cornerRadius = 5
+        v.backgroundColor = .darkGray
+        
         return v
     }()
     
+    //MARK : - "이메일 또는 전화문구" 안내문구
+    private var emailInfoLabel: UILabel = {
+        let v = UILabel()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        v.text = "이메일주소 또는 전화번호"
+        v.font = .systemFont(ofSize: 18)
+        v.textColor = .white
+        return v
+    }()
+    
+    //MARK : - 이메일 입력 텍스트필드
+    private lazy var emailTextField: UITextField = {
+        let tf = UITextField()
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.heightAnchor.constraint(equalToConstant: 48).isActive = true
+        tf.backgroundColor = .clear
+        tf.textColor = .white
+        tf.tintColor = .white
+        // 맨앞에글자 대문자로 바꾸줄지 말지
+        tf.autocapitalizationType = .none
+        // 자동으로 틀린글자 수정해줄지 말지
+        tf.autocorrectionType = .no
+        tf.spellCheckingType = .no
+        tf.keyboardType = .emailAddress
+        return tf
+    }()
+    
+    
+    //MARK : - 비밀번호 입력하는 텍스트뷰
+    private lazy var passwordTextFieldView: UIView = {
+        let v = UIView()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        //v.heightAnchor.constraint(equalToConstant: 48).isActive = true
+        v.frame.size.height = 48
+        v.backgroundColor = .darkGray
+        v.layer.masksToBounds = true
+        v.layer.cornerRadius = 5
+        return v
+    }()
+
+    //MARK : - 패스워드 텍스트필드의 안내문구
+    private var passwordInfoLabel: UILabel = {
+        let v = UILabel()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        v.text = "비밀번호"
+        v.font = .systemFont(ofSize: 18)
+        v.textColor = .white
+        return v
+    }()
+    
+    //MARK : - 비밀번호 입력 텍스트 필드
+    private lazy var passwordTextField: UITextField = {
+        let tf = UITextField()
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.heightAnchor.constraint(equalToConstant: 48).isActive = true
+        tf.backgroundColor = .clear
+        tf.textColor = .white
+        tf.tintColor = .white
+        // 맨앞에글자 대문자로 바꾸줄지 말지
+        tf.autocapitalizationType = .none
+        // 자동으로 틀린글자 수정해줄지 말지
+        tf.autocorrectionType = .no
+        tf.spellCheckingType = .no
+        tf.keyboardType = .emailAddress
+        // 비밀번호 안보이게
+        tf.isSecureTextEntry = true
+        // 텍스트필드를 누르는순간 내용이 삭제됨
+        tf.clearsOnBeginEditing = false
+        return tf
+    }()
+    
+    //MARK : - 패스워드의 "표시"버튼
+    private let passwordSecureButton: UIButton = {
+        let v = UIButton(type: .custom)
+        v.setTitle("표시", for: .normal)
+        v.setTitleColor(.white, for: .normal)
+        v.titleLabel?.font = .systemFont(ofSize: 14, weight: .light)
+        return v
+    }()
+    
+    //MARK : - 로그인버튼
+    private let loginButton: UIButton = {
+        let v = UIButton(type: .custom)
+        v.backgroundColor = .clear
+        v.layer.masksToBounds = true
+        v.layer.cornerRadius = 5
+        v.layer.borderWidth = 1
+        // borderColor는 cgColor로 설정해줘야함
+        v.layer.borderColor = UIColor.darkGray.cgColor
+        v.titleLabel?.font = .boldSystemFont(ofSize: 16)
+        v.setTitle("로그인", for: .normal)
+        // 우선은 비활성화 되어있는상태
+        v.isEnabled = false
+        return v
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +122,6 @@ class ViewController: UIViewController {
     }
  
     func makeUI() {
-        //MARK : - addSubView 클로저안에다가 넣고싶으면 lazy var로 선언하면 가능하다
-        // 처음에 view가 생성된 후에야 addSubView가 사용이가능한데 lazy var의 경우엔 view가 먼저생성되고나서 생성되기때문에 가능
-        view.addSubview(emailTextFieldView)
-        
-        emailTextFieldView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
-        emailTextFieldView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
-        emailTextFieldView.topAnchor.constraint(equalTo: view.topAnchor, constant: 200).isActive = true
-        emailTextFieldView.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
 
 }
