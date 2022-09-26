@@ -299,9 +299,14 @@ extension ViewController: UITextFieldDelegate {
     }
     
     //MARK : - 이걸로 각 텍스트필드에 글자가 입력되면 버튼색이 바뀌도록 할수도있음
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        <#code#>
-//    }
-    
-    
+    // 각 텍스트필드에
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        func limitString(_ textField: UITextField, limit: Int) -> Bool {
+            guard let text = textField.text else { return true }
+            let newLength = text.count + string.count - range.length
+            return newLength <= limit
+        }
+        return limitString(textField, limit: textField == emailTextField ? 10 : 15)
+    }
 }
