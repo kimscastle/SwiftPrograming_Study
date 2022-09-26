@@ -34,6 +34,7 @@ class LimitTextField: UIView {
         v.translatesAutoresizingMaskIntoConstraints = false
         v.borderStyle = .roundedRect
         v.clearButtonMode = .always
+        v.keyboardType = .emailAddress
         return v
     }()
     
@@ -81,6 +82,8 @@ class LimitTextField: UIView {
 }
 
 extension LimitTextField: UITextFieldDelegate {
+    
+    
     //MARK : - 글자수 제한
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }

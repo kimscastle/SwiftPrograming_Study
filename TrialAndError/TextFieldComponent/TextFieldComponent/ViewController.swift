@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     
     func render() {
         view.addSubview(textFieldComponent1)
-        textFieldComponent1.topAnchor.constraint(equalTo: view.topAnchor, constant: 200).isActive = true
+        textFieldComponent1.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
         textFieldComponent1.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         textFieldComponent1.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         textFieldComponent1.heightAnchor.constraint(equalToConstant: 150).isActive = true
