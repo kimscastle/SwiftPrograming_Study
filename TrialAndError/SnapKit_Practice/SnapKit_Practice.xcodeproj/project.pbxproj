@@ -14,6 +14,7 @@
 		C076E2A528E59F1B00FDE1BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C076E2A328E59F1B00FDE1BB /* Main.storyboard */; };
 		C076E2A728E59F1C00FDE1BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C076E2A628E59F1C00FDE1BB /* Assets.xcassets */; };
 		C076E2AA28E59F1C00FDE1BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C076E2A828E59F1C00FDE1BB /* LaunchScreen.storyboard */; };
+		C081675328E5C9AF001617BB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C081675228E5C9AF001617BB /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C076E2A628E59F1C00FDE1BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C076E2A928E59F1C00FDE1BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C076E2AB28E59F1C00FDE1BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C081675228E5C9AF001617BB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +50,6 @@
 				54BF289B1A8BCA479697B898 /* Pods-SnapKit_Practice.debug.xcconfig */,
 				0E3A9A2EC3FF3DFC1FDD4AFF /* Pods-SnapKit_Practice.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -88,6 +89,7 @@
 				C076E2A628E59F1C00FDE1BB /* Assets.xcassets */,
 				C076E2A828E59F1C00FDE1BB /* LaunchScreen.storyboard */,
 				C076E2AB28E59F1C00FDE1BB /* Info.plist */,
+				C081675228E5C9AF001617BB /* LoginViewController.swift */,
 			);
 			path = SnapKit_Practice;
 			sourceTree = "<group>";
@@ -207,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C081675328E5C9AF001617BB /* LoginViewController.swift in Sources */,
 				C076E2A228E59F1B00FDE1BB /* ViewController.swift in Sources */,
 				C076E29E28E59F1B00FDE1BB /* AppDelegate.swift in Sources */,
 				C076E2A028E59F1B00FDE1BB /* SceneDelegate.swift in Sources */,
