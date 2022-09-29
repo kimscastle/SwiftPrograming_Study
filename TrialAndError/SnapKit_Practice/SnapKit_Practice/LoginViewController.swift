@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 //MARK : - 대부분실무에서 viewContorller에는 final 각각의 요소에는 private을 쓰는게 좋다
 final class LoginViewController: UIViewController {
@@ -155,8 +156,8 @@ final class LoginViewController: UIViewController {
     }()
     
     //MARK : - 동적으로 만들고 싶은 autoLayout은 lazy var로 선언해줘야한다
-    lazy var emailInfoLabelCenterYConstraint = emailInfoLabel.centerYAnchor.constraint(equalTo: emailTextFieldView.centerYAnchor)
-    lazy var passwordInfoLabelCenrerYConstraint = passwordInfoLabel.centerYAnchor.constraint(equalTo: passwordTextFieldView.centerYAnchor)
+//    lazy var emailInfoLabelCenterYConstraint = emailInfoLabel.centerYAnchor.constraint(equalTo: emailTextFieldView.centerYAnchor)
+//    lazy var passwordInfoLabelCenrerYConstraint = passwordInfoLabel.centerYAnchor.constraint(equalTo: passwordTextFieldView.centerYAnchor)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -171,39 +172,77 @@ final class LoginViewController: UIViewController {
         view.addSubview(passwordResetButton)
         
         //MARK : - 동적으로 만들어야하기때문에 변수로 뺴줘야함
-        emailInfoLabel.leadingAnchor.constraint(equalTo: emailTextFieldView.leadingAnchor, constant: 8).isActive = true
-        emailInfoLabel.trailingAnchor.constraint(equalTo: emailTextFieldView.trailingAnchor, constant: -8).isActive = true
-        //emailInfoLabel.centerYAnchor.constraint(equalTo: emailTextFieldView.centerYAnchor).isActive = true
-        emailInfoLabelCenterYConstraint.isActive = true
+//        emailInfoLabel.leadingAnchor.constraint(equalTo: emailTextFieldView.leadingAnchor, constant: 8).isActive = true
+//        emailInfoLabel.trailingAnchor.constraint(equalTo: emailTextFieldView.trailingAnchor, constant: -8).isActive = true
+//        //emailInfoLabel.centerYAnchor.constraint(equalTo: emailTextFieldView.centerYAnchor).isActive = true
+//        emailInfoLabelCenterYConstraint.isActive = true
+
+//        emailTextField.leadingAnchor.constraint(equalTo: emailTextFieldView.leadingAnchor, constant: 8).isActive = true
+//        emailTextField.trailingAnchor.constraint(equalTo: emailTextFieldView.trailingAnchor, constant: -8).isActive = true
+//        emailTextField.topAnchor.constraint(equalTo: emailTextFieldView.topAnchor, constant: 15).isActive = true
+//        emailTextField.bottomAnchor.constraint(equalTo: emailTextFieldView.bottomAnchor, constant: -2).isActive = true
         
-        emailTextField.leadingAnchor.constraint(equalTo: emailTextFieldView.leadingAnchor, constant: 8).isActive = true
-        emailTextField.trailingAnchor.constraint(equalTo: emailTextFieldView.trailingAnchor, constant: -8).isActive = true
-        emailTextField.topAnchor.constraint(equalTo: emailTextFieldView.topAnchor, constant: 15).isActive = true
-        emailTextField.bottomAnchor.constraint(equalTo: emailTextFieldView.bottomAnchor, constant: -2).isActive = true
+//        passwordInfoLabel.leadingAnchor.constraint(equalTo: passwordTextFieldView.leadingAnchor, constant: 8).isActive = true
+//        passwordInfoLabel.trailingAnchor.constraint(equalTo: passwordTextFieldView.trailingAnchor, constant: -8).isActive = true
+//        passwordInfoLabel.centerYAnchor.constraint(equalTo: passwordTextFieldView.centerYAnchor).isActive = true
+        //passwordInfoLabelCenrerYConstraint.isActive = true
+                
+//        passwordTextField.leadingAnchor.constraint(equalTo: passwordTextFieldView.leadingAnchor, constant: 8).isActive = true
+//        passwordTextField.trailingAnchor.constraint(equalTo: passwordTextFieldView.trailingAnchor, constant: -8).isActive = true
+//        passwordTextField.topAnchor.constraint(equalTo: passwordTextFieldView.topAnchor, constant: 15).isActive = true
+//        passwordTextField.bottomAnchor.constraint(equalTo: passwordTextFieldView.bottomAnchor, constant: -2).isActive = true
         
-        passwordInfoLabel.leadingAnchor.constraint(equalTo: passwordTextFieldView.leadingAnchor, constant: 8).isActive = true
-        passwordInfoLabel.trailingAnchor.constraint(equalTo: passwordTextFieldView.trailingAnchor, constant: -8).isActive = true
-        //passwordInfoLabel.centerYAnchor.constraint(equalTo: passwordTextFieldView.centerYAnchor).isActive = true
-        passwordInfoLabelCenrerYConstraint.isActive = true
+//        passwordSecureButton.topAnchor.constraint(equalTo: passwordTextFieldView.topAnchor, constant: 15).isActive = true
+//        passwordSecureButton.bottomAnchor.constraint(equalTo: passwordTextFieldView.bottomAnchor, constant: -15).isActive = true
+//        passwordSecureButton.trailingAnchor.constraint(equalTo: passwordTextFieldView.trailingAnchor, constant: -8).isActive = true
         
-        passwordTextField.leadingAnchor.constraint(equalTo: passwordTextFieldView.leadingAnchor, constant: 8).isActive = true
-        passwordTextField.trailingAnchor.constraint(equalTo: passwordTextFieldView.trailingAnchor, constant: -8).isActive = true
-        passwordTextField.topAnchor.constraint(equalTo: passwordTextFieldView.topAnchor, constant: 15).isActive = true
-        passwordTextField.bottomAnchor.constraint(equalTo: passwordTextFieldView.bottomAnchor, constant: -2).isActive = true
+//        stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+//        stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//        stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
+//        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
+//        stackView.heightAnchor.constraint(equalToConstant: 48*3+36).isActive = true
         
-        passwordSecureButton.topAnchor.constraint(equalTo: passwordTextFieldView.topAnchor, constant: 15).isActive = true
-        passwordSecureButton.bottomAnchor.constraint(equalTo: passwordTextFieldView.bottomAnchor, constant: -15).isActive = true
-        passwordSecureButton.trailingAnchor.constraint(equalTo: passwordTextFieldView.trailingAnchor, constant: -8).isActive = true
+//        passwordResetButton.leadingAnchor.constraint(equalTo: stackView.leadingAnchor).isActive = true
+//        passwordResetButton.trailingAnchor.constraint(equalTo: stackView.trailingAnchor).isActive = true
+//        passwordResetButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 10).isActive = true
+
         
-        stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
-        stackView.heightAnchor.constraint(equalToConstant: 48*3+36).isActive = true
+        //MARK : - snapkit이용
+        emailInfoLabel.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(8)
+            make.centerY.equalToSuperview()
+        }
         
-        passwordResetButton.leadingAnchor.constraint(equalTo: stackView.leadingAnchor).isActive = true
-        passwordResetButton.trailingAnchor.constraint(equalTo: stackView.trailingAnchor).isActive = true
-        passwordResetButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 10).isActive = true
+        emailTextField.snp.makeConstraints { make in
+            make.edges.equalTo(UIEdgeInsets(top: 15, left: 8, bottom: 2, right: 8))
+        }
+        
+        passwordInfoLabel.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(8)
+            make.centerY.equalToSuperview()
+        }
+        
+        passwordTextField.snp.makeConstraints { make in
+            make.edges.equalTo(UIEdgeInsets(top: 15, left: 8, bottom: 2, right: 8))
+        }
+        
+        passwordSecureButton.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview().inset(15)
+            make.trailing.equalToSuperview().inset(8)
+        }
+        
+        stackView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(30)
+            make.height.equalTo(48*3+36)
+        }
+        
+        passwordResetButton.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(stackView)
+            make.top.equalTo(stackView.snp.bottom).offset(10)
+        }
+        
+        
     }
     
     //MARK : - 알람창 구현
@@ -261,12 +300,18 @@ extension LoginViewController: UITextFieldDelegate {
         if textField == emailTextField {
             emailTextFieldView.backgroundColor = .lightGray
             emailInfoLabel.font = .systemFont(ofSize: 11)
-            emailInfoLabelCenterYConstraint.constant = -13
+//            emailInfoLabelCenterYConstraint.constant = -13
+            emailInfoLabel.snp.updateConstraints { make in
+                make.centerY.equalToSuperview().offset(-13)
+            }
             
         } else {
             passwordTextFieldView.backgroundColor = .lightGray
             passwordInfoLabel.font = .systemFont(ofSize: 11)
-            passwordInfoLabelCenrerYConstraint.constant = -13
+//            passwordInfoLabelCenrerYConstraint.constant = -13
+            passwordInfoLabel.snp.updateConstraints { make in
+                make.centerY.equalToSuperview().offset(-13)
+            }
         }
         
         UIView.animate(withDuration: 0.2) {
@@ -282,14 +327,20 @@ extension LoginViewController: UITextFieldDelegate {
             
             if emailTextField.text == "" {
                 emailInfoLabel.font = .systemFont(ofSize: 18)
-                emailInfoLabelCenterYConstraint.constant = 0
+//                emailInfoLabelCenterYConstraint.constant = 0
+                emailInfoLabel.snp.updateConstraints { make in
+                    make.centerY.equalToSuperview()
+                }
             }
         } else {
             passwordTextFieldView.backgroundColor = .darkGray
             
             if passwordTextField.text == "" {
                 passwordInfoLabel.font = .systemFont(ofSize: 18)
-                passwordInfoLabelCenrerYConstraint.constant = 0
+//                passwordInfoLabelCenrerYConstraint.constant = 0
+                passwordInfoLabel.snp.updateConstraints { make in
+                    make.centerY.equalToSuperview()
+                }
             }
         }
         
@@ -310,5 +361,4 @@ extension LoginViewController: UITextFieldDelegate {
         return limitString(textField, limit: textField == emailTextField ? 10 : 15)
     }
 }
-
 
