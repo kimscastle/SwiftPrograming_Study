@@ -82,6 +82,10 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="calculateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E5e-wG-8vu"/>
+                                    <segue destination="d7X-ai-jPV" kind="presentation" identifier="toSecondVC" id="DKh-fv-CLS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -95,17 +99,23 @@
                             <constraint firstItem="xhR-bO-xwa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ikg-zY-9bC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="calculateButton" destination="xhR-bO-xwa" id="JmM-VO-LNr"/>
+                        <outlet property="heightTextField" destination="5Mz-ob-Zrb" id="CXQ-os-F7F"/>
+                        <outlet property="mainLabel" destination="GH6-lg-Agp" id="K7K-pS-Lgm"/>
+                        <outlet property="weightTextField" destination="Z9d-2x-cdo" id="5gA-fV-u7t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="130.76923076923077" y="-28.436018957345969"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="lGX-Zb-UY0">
             <objects>
-                <viewController id="d7X-ai-jPV" sceneMemberID="viewController">
+                <viewController id="d7X-ai-jPV" customClass="SecondViewController" customModule="BMI_calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FSi-3V-b4n">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ifs-75-DZ0">
@@ -138,7 +148,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IiV-MZ-WZe">
-                                <rect key="frame" x="20" y="735" width="350" height="45"/>
+                                <rect key="frame" x="20" y="712" width="350" height="45"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="r4p-U1-eUg"/>
@@ -148,6 +158,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="d7X-ai-jPV" eventType="touchUpInside" id="dWB-hK-2kY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YdL-vw-abr"/>
@@ -160,6 +173,11 @@
                             <constraint firstItem="YdL-vw-abr" firstAttribute="trailing" secondItem="IiV-MZ-WZe" secondAttribute="trailing" constant="20" id="udE-ey-dMP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="adviceLabel" destination="tsk-Vc-04i" id="uzO-NA-j0f"/>
+                        <outlet property="backButton" destination="IiV-MZ-WZe" id="jQZ-TJ-fRp"/>
+                        <outlet property="bmiNumberLabel" destination="JDd-u8-Bkz" id="uPD-zK-oPV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yYD-Ei-Zxw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
