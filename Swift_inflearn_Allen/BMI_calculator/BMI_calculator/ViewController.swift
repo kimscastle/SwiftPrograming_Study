@@ -36,6 +36,21 @@ class ViewController: UIViewController {
     
     //MARK : - 코드로 스토리보드 객체를 생성해서 화면이동
     @IBAction func storyboardWithCodeButtonTapped(_ sender: UIButton) {
+        // 넘어갈 viewController가 스토리보드객체인경우 -> 단순인스턴스생성으로는 안됨
+        // 스토리보드를 viewcontroller로 바꿔줘야함 그리고 어떤 식별자를 넣어줘야하는데 식별자는 stotyboard에서 직접 설정해줌
+        // return은 범용적인 타입인 uiviewcontroller임 -> 그렇기때문에 구체적인 viewcontroller로 타입캐스팅 해줘야함
+        // as!로 할거면 상관이 없는데 만약에 as?로 할거면 if let 바인딩이나 guard let바인딩을 사용해줘야함
+        // guard let secondVC = storyboard?.instantiateViewController(withIdentifier: "secondVC") as? MyViewController else { return }
+        if let secondVC = storyboard?.instantiateViewController(withIdentifier: "secondVC") as? MyViewController {
+            // MyViewController객체를 생성한 순간에는 스토리보드객체가 생성되기 전이다(outlet변수를 연결시키기 전임)
+            // 코드로 ui를 구성하면 객체를 생성하는 순간에 모든 요소들이 내부에 존재하게되는데
+            // 스토리보드로 ui를 구성하게 되면 viewcontroller객체와 storyboard객체가 따로 생기고 이거를 연결해주는 과정이 필요한데 그 과정이 viewdidload에서 실행된다
+            // 아래코드가 viewdidload에서 실행되는게 아니기때문에 에러가 발생한다
+            //secondVC.mainLabel.text = "아기상어"
+            // someString은 viewcontroller 인스턴스가 생성되는 순간에 생기기때문에 이런 접근은 normal하게 가능하다
+            secondVC.someString = "아빠상어"
+            present(secondVC, animated: true)
+        }
     }
     
     //MARK : - 스토리보드에서의 화면이동(간접 세그웨이)
