@@ -16,6 +16,7 @@
 		C033217628E7292B00859CBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C033217428E7292B00859CBB /* LaunchScreen.storyboard */; };
 		C033217E28E7312600859CBB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033217D28E7312600859CBB /* FirstViewController.swift */; };
 		C033218028E8007400859CBB /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033217F28E8007400859CBB /* MyViewController.swift */; };
+		C033218228E8087600859CBB /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033218128E8087600859CBB /* ThirdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C033217728E7292B00859CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C033217D28E7312600859CBB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		C033217F28E8007400859CBB /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		C033218128E8087600859CBB /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		C9BD261FB90EE856EFEBB69E /* Pods-BMI_calculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMI_calculator.release.xcconfig"; path = "Target Support Files/Pods-BMI_calculator/Pods-BMI_calculator.release.xcconfig"; sourceTree = "<group>"; };
 		F246957958477FC9F5B006A7 /* Pods-BMI_calculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMI_calculator.debug.xcconfig"; path = "Target Support Files/Pods-BMI_calculator/Pods-BMI_calculator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,8 +89,9 @@
 				C033216928E7292A00859CBB /* AppDelegate.swift */,
 				C033216B28E7292A00859CBB /* SceneDelegate.swift */,
 				C033216D28E7292A00859CBB /* ViewController.swift */,
-				C033217F28E8007400859CBB /* MyViewController.swift */,
 				C033217D28E7312600859CBB /* FirstViewController.swift */,
+				C033217F28E8007400859CBB /* MyViewController.swift */,
+				C033218128E8087600859CBB /* ThirdViewController.swift */,
 				C033216F28E7292A00859CBB /* Main.storyboard */,
 				C033217228E7292B00859CBB /* Assets.xcassets */,
 				C033217428E7292B00859CBB /* LaunchScreen.storyboard */,
@@ -216,6 +219,7 @@
 				C033216A28E7292A00859CBB /* AppDelegate.swift in Sources */,
 				C033216C28E7292A00859CBB /* SceneDelegate.swift in Sources */,
 				C033218028E8007400859CBB /* MyViewController.swift in Sources */,
+				C033218228E8087600859CBB /* ThirdViewController.swift in Sources */,
 				C033217E28E7312600859CBB /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
