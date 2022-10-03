@@ -14,7 +14,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var weightTextField: UITextField!
     @IBOutlet weak var calculateButton: UIButton!
     
-    var bmi: Double?
+    //MARK : - BMI의 비지니스 로직을 담당하는 객체
+    var bmiManager = BIMClculatorManager()
+    
+    //MARK : - bmi숫자를 관리하는것도 비지니스로직이기때문에 아래 변수도 매니저에게 줘야한다
+    //var bmi: Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,50 +49,9 @@ class ViewController: UIViewController {
         guard let height = heightTextField.text,
               let weight = weightTextField.text else { return }
         
-        bmi =  calculateBMI(height: height, weight: weight)
-    }
-    
-    func calculateBMI(height: String, weight: String) -> Double {
-        guard let h = Double(height), let w = Double(weight) else {return 0.0}
-        var bmi = w / (h * h) * 10000
-        bmi = round(bmi * 10) / 10
-        return bmi
-    }
-    
-    func getBackgroundColor() -> UIColor {
-        guard let bmi = bmi else { return .black }
-        switch bmi {
-        case ..<18.6:
-            return .cyan
-        case 18.6..<23.0:
-            return .green
-        case 23.0..<25.0:
-            return .yellow
-        case 25.0..<30.0:
-            return .orange
-        case 30.0...:
-            return .red
-        default:
-            return .black
-        }
-    }
-    
-    func getAdviceString() -> String {
-        guard let bmi = bmi else { return "" }
-        switch bmi {
-        case ..<18.6:
-            return "저체중"
-        case 18.6..<23.0:
-            return "표준"
-        case 23.0..<25.0:
-            return "과체중"
-        case 25.0..<30.0:
-            return "중도비만"
-        case 30.0...:
-            return "고도비만"
-        default:
-            return ""
-        }
+        bmiManager.calculateBMI(height: height, weight: weight)
+        //bmiManager.getBMIResult()
+        //bmi = calculateBMI(height: height, weight: weight)
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -106,9 +69,9 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toSecondVC" {
             let secondVC = segue.destination as! SecondViewController
-            secondVC.bmiNumber = bmi
-            secondVC.bmiColor = getBackgroundColor()
-            secondVC.adviceString = getAdviceString()
+            secondVC.bmiNumber = bmiManager.getBMIResult()
+            secondVC.bmiColor = bmiManager.getBackgroundColor()
+            secondVC.adviceString = bmiManager.getAdviceString()
         }
         
         // 다음화면으로 가기전에 텍스트 필드 비우기
@@ -145,5 +108,3 @@ extension ViewController: UITextFieldDelegate {
         weightTextField.resignFirstResponder()
     }
 }
-
-//dd
