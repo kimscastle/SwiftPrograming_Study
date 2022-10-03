@@ -46,10 +46,10 @@ class ViewController: UIViewController {
         // 어차피 빈문자열이면 segue가 없기때문에 강제언래핑 해도 괜찮음
         //calculateBMI(height: heightTextField.text!, weight: weightTextField.text!)
         
-        guard let height = heightTextField.text,
-              let weight = weightTextField.text else { return }
+//        guard let height = heightTextField.text,
+//              let weight = weightTextField.text else { return }
         
-        bmiManager.calculateBMI(height: height, weight: weight)
+        //bmiManager.calculateBMI(height: height, weight: weight)
         //bmiManager.getBMIResult()
         //bmi = calculateBMI(height: height, weight: weight)
     }
@@ -69,9 +69,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toSecondVC" {
             let secondVC = segue.destination as! SecondViewController
-            secondVC.bmiNumber = bmiManager.getBMIResult()
-            secondVC.bmiColor = bmiManager.getBackgroundColor()
-            secondVC.adviceString = bmiManager.getAdviceString()
+            secondVC.bmi = bmiManager.getBMIResult(height: heightTextField.text!, weight: weightTextField.text!)
         }
         
         // 다음화면으로 가기전에 텍스트 필드 비우기

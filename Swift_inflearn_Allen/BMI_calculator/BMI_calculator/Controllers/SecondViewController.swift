@@ -7,15 +7,18 @@
 
 import UIKit
 
+//MARK : - SecondViewController로 데이터를 보낼때 세가지 데이터를 보내기때문에 이 데이터들을 묶고싶다
 class SecondViewController: UIViewController {
 
     @IBOutlet weak var bmiNumberLabel: UILabel!
     @IBOutlet weak var adviceLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
     
-    var bmiNumber: Double?
-    var adviceString: String?
-    var bmiColor: UIColor?
+    // var bmiNumber: Double?
+    // var adviceString: String?
+    // var bmiColor: UIColor?
+    
+    var bmi: BMI?
     
     
     override func viewDidLoad() {
@@ -33,13 +36,16 @@ class SecondViewController: UIViewController {
         backButton.clipsToBounds = true
         backButton.layer.cornerRadius = 5
         
-        
-        guard let bmi = bmiNumber else { return }
-        bmiNumberLabel.text = String(bmi)
-        bmiNumberLabel.backgroundColor = bmiColor
-        adviceLabel.text = adviceString
+        guard let bmi = bmi else { return }
+        updateUI(bmi)
         
         
+    }
+    
+    private func updateUI(_ model: BMI) {
+        bmiNumberLabel.text = String(model.value)
+        bmiNumberLabel.backgroundColor = model.matchColor
+        adviceLabel.text = model.advice
     }
 
     
