@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         
     // Timer는 class기 때문에 힙영역에 저장된다
     // 참조로인한 누수를 방지하기 위해 weak으로 선언
-    weak var timer: Timer?
+    var timer: Timer?
     var number: Int = 0
     
     override func viewDidLoad() {
@@ -53,28 +53,28 @@ class ViewController: UIViewController {
          timer?.invalidate()
         // timer를 weak var로 선언해주지 않는다면 weak self로 캡쳐를 해줘야함
         // 객체 내에서 클로저를 사용할때는 변수에 self를 붙여줘야함
-//        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
-//            // 반복을 하고 싶은 코드
-//            guard let self = self else { return }
-//            if self.number > 0 {
-//                self.number -= 1
-//                // 숫자를 계산해서 넣어줘야함
-//                // 슬라이더의 위치도 바뀌어야함
-//                self.slider.value = Float(self.number) / Float(60)
-//                // 레이블표시도 다시 해줘야 함
-//                self.mainLabel.text = "\(self.number) 초"
-//
-//            } else {
-//                self.number = 0
-//                self.mainLabel.text = "초를 선택하세요"
-//                self.timer?.invalidate()
-//
-//                // 소리를 나게 해야함
-//                AudioServicesPlayAlertSound(SystemSoundID(1322))
-//            }
-//        }
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+            // 반복을 하고 싶은 코드
+            guard let self = self else { return }
+            if self.number > 0 {
+                self.number -= 1
+                // 숫자를 계산해서 넣어줘야함
+                // 슬라이더의 위치도 바뀌어야함
+                self.slider.value = Float(self.number) / Float(60)
+                // 레이블표시도 다시 해줘야 함
+                self.mainLabel.text = "\(self.number) 초"
+
+            } else {
+                self.number = 0
+                self.mainLabel.text = "초를 선택하세요"
+                self.timer?.invalidate()
+
+                // 소리를 나게 해야함
+                AudioServicesPlayAlertSound(SystemSoundID(1322))
+            }
+        }
         
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(doSomethingAfter1Second), userInfo: nil, repeats: true)
+//        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(doSomethingAfter1Second), userInfo: nil, repeats: true)
     }
     
     @objc func doSomethingAfter1Second() {
