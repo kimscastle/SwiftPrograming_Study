@@ -16,7 +16,6 @@ final class ViewController: UIViewController {
         view = loginView
     }
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAddTarget()
@@ -49,10 +48,7 @@ final class ViewController: UIViewController {
         print("로그인버튼이 눌렸습니다.")
         
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
+
 
 }
 

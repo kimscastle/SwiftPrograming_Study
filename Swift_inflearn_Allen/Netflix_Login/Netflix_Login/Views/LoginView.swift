@@ -195,6 +195,9 @@ class LoginView: UIView {
     }
     
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        endEditing(true)
+    }
     
     func makeUI() {
         self.addSubview(stackView)
