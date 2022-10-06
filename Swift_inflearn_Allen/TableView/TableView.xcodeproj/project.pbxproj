@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BE6F141A0F331E231414F9E2 /* Pods_TableView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 434E757D0D32069297B5395A /* Pods_TableView.framework */; };
+		C02CBA8028EF00EA00CC483B /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02CBA7F28EF00EA00CC483B /* MovieCell.swift */; };
+		C05F3EE428EF020B0088CDF0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05F3EE328EF020B0088CDF0 /* Movie.swift */; };
 		C06BBCB228EEF93A0008DC03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BBCB128EEF93A0008DC03 /* AppDelegate.swift */; };
 		C06BBCB428EEF93A0008DC03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BBCB328EEF93A0008DC03 /* SceneDelegate.swift */; };
 		C06BBCB628EEF93A0008DC03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BBCB528EEF93A0008DC03 /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 /* Begin PBXFileReference section */
 		434E757D0D32069297B5395A /* Pods_TableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44BDB74538C99D7A9720117E /* Pods-TableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableView.release.xcconfig"; path = "Target Support Files/Pods-TableView/Pods-TableView.release.xcconfig"; sourceTree = "<group>"; };
+		C02CBA7F28EF00EA00CC483B /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		C05F3EE328EF020B0088CDF0 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		C06BBCAE28EEF93A0008DC03 /* TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06BBCB128EEF93A0008DC03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C06BBCB328EEF93A0008DC03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,8 +60,32 @@
 				CBEE04F7BD96AF15DBBB9A7E /* Pods-TableView.debug.xcconfig */,
 				44BDB74538C99D7A9720117E /* Pods-TableView.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C05F3EE028EF01B10088CDF0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C05F3EE328EF020B0088CDF0 /* Movie.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C05F3EE128EF01B60088CDF0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C02CBA7F28EF00EA00CC483B /* MovieCell.swift */,
+				C06BBCB728EEF93A0008DC03 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C05F3EE228EF01BB0088CDF0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C06BBCB528EEF93A0008DC03 /* ViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		C06BBCA528EEF93A0008DC03 = {
@@ -83,11 +111,12 @@
 			children = (
 				C06BBCB128EEF93A0008DC03 /* AppDelegate.swift */,
 				C06BBCB328EEF93A0008DC03 /* SceneDelegate.swift */,
-				C06BBCB528EEF93A0008DC03 /* ViewController.swift */,
-				C06BBCB728EEF93A0008DC03 /* Main.storyboard */,
-				C06BBCBA28EEF93A0008DC03 /* Assets.xcassets */,
 				C06BBCBC28EEF93B0008DC03 /* LaunchScreen.storyboard */,
+				C06BBCBA28EEF93A0008DC03 /* Assets.xcassets */,
 				C06BBCBF28EEF93B0008DC03 /* Info.plist */,
+				C05F3EE028EF01B10088CDF0 /* Models */,
+				C05F3EE128EF01B60088CDF0 /* Views */,
+				C05F3EE228EF01BB0088CDF0 /* ViewController */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -207,8 +236,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C05F3EE428EF020B0088CDF0 /* Movie.swift in Sources */,
 				C06BBCB628EEF93A0008DC03 /* ViewController.swift in Sources */,
 				C06BBCB228EEF93A0008DC03 /* AppDelegate.swift in Sources */,
+				C02CBA8028EF00EA00CC483B /* MovieCell.swift in Sources */,
 				C06BBCB428EEF93A0008DC03 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
