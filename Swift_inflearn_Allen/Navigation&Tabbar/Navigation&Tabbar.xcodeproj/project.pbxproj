@@ -85,11 +85,11 @@
 				C098642028ED4DB5005E7BE5 /* AppDelegate.swift */,
 				C098642228ED4DB5005E7BE5 /* SceneDelegate.swift */,
 				C098642428ED4DB5005E7BE5 /* ViewController.swift */,
+				C098643428ED51C0005E7BE5 /* TestViewController.swift */,
 				C098642628ED4DB5005E7BE5 /* Main.storyboard */,
 				C098642928ED4DB6005E7BE5 /* Assets.xcassets */,
 				C098642B28ED4DB6005E7BE5 /* LaunchScreen.storyboard */,
 				C098642E28ED4DB6005E7BE5 /* Info.plist */,
-				C098643428ED51C0005E7BE5 /* TestViewController.swift */,
 			);
 			path = "Navigation&Tabbar";
 			sourceTree = "<group>";
