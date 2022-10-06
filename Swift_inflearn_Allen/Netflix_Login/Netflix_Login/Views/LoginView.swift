@@ -1,15 +1,14 @@
 //
-//  ViewController.swift
+//  LoginView.swift
 //  Netflix_Login
 //
-//  Created by uiskim on 2022/09/25.
+//  Created by uiskim on 2022/10/06.
 //
 
 import UIKit
 
-//MARK : - 대부분실무에서 viewContorller에는 final 각각의 요소에는 private을 쓰는게 좋다
-final class ViewController: UIViewController {
-    
+class LoginView: UIView {
+
     //MARK : - 이메일 입력하는 텍스트 뷰
     private lazy var emailTextFieldView: UIView = {
         let v = UIView()
@@ -114,7 +113,7 @@ final class ViewController: UIViewController {
     }()
     
     //MARK : - 로그인버튼
-    private let loginButton: UIButton = {
+    let loginButton: UIButton = {
         let v = UIButton(type: .custom)
         v.backgroundColor = .clear
         v.layer.masksToBounds = true
@@ -126,7 +125,8 @@ final class ViewController: UIViewController {
         v.setTitle("로그인", for: .normal)
         // 우선은 비활성화 되어있는상태
         v.isEnabled = false
-        v.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        //MARK : - present하는 함수는 viewcontroller에 있어야한다
+        //v.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return v
     }()
     
@@ -143,32 +143,62 @@ final class ViewController: UIViewController {
     }()
     
     //MARK : - 비밀번호 재설정 버튼
-    private let passwordResetButton: UIButton = {
+    let passwordResetButton: UIButton = {
         let v = UIButton(type: .custom)
         v.translatesAutoresizingMaskIntoConstraints = false
         v.frame.size.height = 48
         v.backgroundColor = .clear
         v.setTitle("비밀번호 재설정", for: .normal)
         v.titleLabel?.font = .boldSystemFont(ofSize: 14)
-        v.addTarget(self, action: #selector(resetButtonTapped), for: .touchUpInside)
+        //MARK : - 알람을 띄우는 함수는 viewcontroller에 있어야한다
+        //v.addTarget(self, action: #selector(resetButtonTapped), for: .touchUpInside)
         return v
     }()
     
     //MARK : - 동적으로 만들고 싶은 autoLayout은 lazy var로 선언해줘야한다
     lazy var emailInfoLabelCenterYConstraint = emailInfoLabel.centerYAnchor.constraint(equalTo: emailTextFieldView.centerYAnchor)
     lazy var passwordInfoLabelCenrerYConstraint = passwordInfoLabel.centerYAnchor.constraint(equalTo: passwordTextFieldView.centerYAnchor)
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .black
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = .black
         emailTextField.delegate = self
         passwordTextField.delegate = self
         makeUI()
+        
     }
- 
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    //MARK : - 비밀번호 보기
+    @objc func passwordSecureModeSetting() {
+        // firstRsponder가 다 사라짐
+        passwordTextField.isSecureTextEntry.toggle()
+    }
+    
+    //MARK : - 텍스트필드 addTarget함수
+    @objc func textFieldEditingChanged() {
+        //MARK : - guard문 중첩해서 사용하는 법
+        guard
+            // and연산이라고 생각하면됨 email에 대입이가능하고 비어있지 않다면
+            // "," is almost the same as "&&"
+            let email = emailTextField.text, !email.isEmpty,
+            let password = passwordTextField.text, !password.isEmpty else {
+            loginButton.backgroundColor = .clear
+            loginButton.isEnabled = false
+            return
+        }
+        loginButton.backgroundColor = .red
+        loginButton.isEnabled = true
+    }
+    
+    
+    
     func makeUI() {
-        view.addSubview(stackView)
-        view.addSubview(passwordResetButton)
+        self.addSubview(stackView)
+        self.addSubview(passwordResetButton)
         
         //MARK : - 동적으로 만들어야하기때문에 변수로 뺴줘야함
         emailInfoLabel.leadingAnchor.constraint(equalTo: emailTextFieldView.leadingAnchor, constant: 8).isActive = true
@@ -195,67 +225,20 @@ final class ViewController: UIViewController {
         passwordSecureButton.bottomAnchor.constraint(equalTo: passwordTextFieldView.bottomAnchor, constant: -15).isActive = true
         passwordSecureButton.trailingAnchor.constraint(equalTo: passwordTextFieldView.trailingAnchor, constant: -8).isActive = true
         
-        stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
+        stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30).isActive = true
+        stackView.trailingAnchor.constraint(equalTo:self.trailingAnchor, constant: -30).isActive = true
         stackView.heightAnchor.constraint(equalToConstant: 48*3+36).isActive = true
         
         passwordResetButton.leadingAnchor.constraint(equalTo: stackView.leadingAnchor).isActive = true
         passwordResetButton.trailingAnchor.constraint(equalTo: stackView.trailingAnchor).isActive = true
         passwordResetButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 10).isActive = true
     }
-    
-    //MARK : - 알람창 구현
-    @objc func resetButtonTapped() {
-        //print("리셋버튼이 눌렸습니다")
-        let alert = UIAlertController(title: "비밀번호 바꾸기", message: "비밀버호를 바꾸시겠습니까?", preferredStyle: .alert)
-        let success = UIAlertAction(title: "확인", style: .default) { _ in
-            print("확인버튼이 눌렸습니다.")
-        }
-        let cancel = UIAlertAction(title: "취소", style: .cancel) { _ in
-            print("취소버튼이 눌렸습니다")
-        }
-        alert.addAction(success)
-        alert.addAction(cancel)
-        present(alert, animated: true)
-    }
-    
-    //MARK : - 비밀번호 보기
-    @objc func passwordSecureModeSetting() {
-        // firstRsponder가 다 사라짐
-        passwordTextField.isSecureTextEntry.toggle()
-    }
-    
-    //MARK : - 텍스트필드 addTarget함수
-    @objc func textFieldEditingChanged() {
-        //MARK : - guard문 중첩해서 사용하는 법
-        guard
-            // and연산이라고 생각하면됨 email에 대입이가능하고 비어있지 않다면
-            // "," is almost the same as "&&"
-            let email = emailTextField.text, !email.isEmpty,
-            let password = passwordTextField.text, !password.isEmpty else {
-            loginButton.backgroundColor = .clear
-            loginButton.isEnabled = false
-            return
-        }
-        loginButton.backgroundColor = .red
-        loginButton.isEnabled = true
-    }
-    
-    //MARK : - 로그인버튼이 눌리면
-    @objc func loginButtonTapped() {
-        print("로그인버튼이 눌렸습니다.")
-        
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
 
 }
 
-extension ViewController: UITextFieldDelegate {
+extension LoginView: UITextFieldDelegate {
     //MARK : - 텍스트필드 focus될때
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == emailTextField {

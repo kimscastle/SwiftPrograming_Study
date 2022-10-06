@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C06BBC9828EEC8EB0008DC03 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BBC9728EEC8EB0008DC03 /* LoginView.swift */; };
 		C0CAE5C928E082AB0057D5D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CAE5C828E082AB0057D5D7 /* AppDelegate.swift */; };
 		C0CAE5CB28E082AB0057D5D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CAE5CA28E082AB0057D5D7 /* SceneDelegate.swift */; };
 		C0CAE5CD28E082AB0057D5D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CAE5CC28E082AB0057D5D7 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C06BBC9728EEC8EB0008DC03 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C0CAE5C528E082AB0057D5D7 /* Netflix_Login.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Netflix_Login.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0CAE5C828E082AB0057D5D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0CAE5CA28E082AB0057D5D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C06BBC9528EEC83E0008DC03 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C06BBC9728EEC8EB0008DC03 /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C06BBC9628EEC8440008DC03 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C0CAE5CC28E082AB0057D5D7 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		C0CAE5BC28E082AB0057D5D7 = {
 			isa = PBXGroup;
 			children = (
@@ -60,7 +78,8 @@
 			children = (
 				C0CAE5C828E082AB0057D5D7 /* AppDelegate.swift */,
 				C0CAE5CA28E082AB0057D5D7 /* SceneDelegate.swift */,
-				C0CAE5CC28E082AB0057D5D7 /* ViewController.swift */,
+				C06BBC9528EEC83E0008DC03 /* Views */,
+				C06BBC9628EEC8440008DC03 /* Controllers */,
 				C0CAE5CE28E082AB0057D5D7 /* Main.storyboard */,
 				C0CAE5D128E082AC0057D5D7 /* Assets.xcassets */,
 				C0CAE5D328E082AC0057D5D7 /* LaunchScreen.storyboard */,
@@ -144,6 +163,7 @@
 				C0CAE5CD28E082AB0057D5D7 /* ViewController.swift in Sources */,
 				C0CAE5C928E082AB0057D5D7 /* AppDelegate.swift in Sources */,
 				C0CAE5DD28E092170057D5D7 /* SampleViewController.swift in Sources */,
+				C06BBC9828EEC8EB0008DC03 /* LoginView.swift in Sources */,
 				C0CAE5CB28E082AB0057D5D7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
