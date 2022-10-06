@@ -28,7 +28,17 @@ class ViewController: UIViewController {
         
         //MARK : - storyboard면 register과정이 필요없지만 codebase라면 register과정이 ✅필수적✅이다
         //tableView.register(<#T##nib: UINib?##UINib?#>, forCellReuseIdentifier: <#T##String#>)
+        title = "영화목록"
     }
+    
+    
+    @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
+        movieDataManager.updateMovieData()
+        //MARK : - 테이블뷰 데이터가 바뀌었으니까 새로 불러와줘라고 명령하는 메서드
+        tableView.reloadData()
+    }
+    
+    
 }
 
 //MARK : - tableView를 사용할때는 무조건 tableViewDataSource 프로토콜을 채택해야한다
