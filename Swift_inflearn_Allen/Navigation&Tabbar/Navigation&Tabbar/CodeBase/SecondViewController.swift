@@ -1,29 +1,16 @@
 //
-//  TestViewController.swift
+//  SecondViewController.swift
 //  Navigation&Tabbar
 //
-//  Created by uiskim on 2022/10/05.
+//  Created by uiskim on 2022/10/06.
 //
 
 import UIKit
-import SnapKit
 
-class TestViewController: UIViewController {
-    
-    private let label: UILabel = {
-        let v = UILabel()
-        v.text = "TestViewController"
-        v.font = .systemFont(ofSize: 50)
-        return v
-    }()
+class SecondViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        view.addSubview(label)
-        label.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-        }
 
         // Do any additional setup after loading the view.
     }
