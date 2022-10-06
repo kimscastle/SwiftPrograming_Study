@@ -12,6 +12,7 @@
 		C06BBC9C28EED33C0008DC03 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BBC9B28EED33C0008DC03 /* SecondViewController.swift */; };
 		C06BBC9E28EED3470008DC03 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BBC9D28EED3470008DC03 /* ThirdViewController.swift */; };
 		C06BBCA228EED5580008DC03 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BBCA128EED5580008DC03 /* ErrorViewController.swift */; };
+		C06BBCA428EEEE820008DC03 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BBCA328EEEE820008DC03 /* TestViewController.swift */; };
 		C098642128ED4DB5005E7BE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098642028ED4DB5005E7BE5 /* AppDelegate.swift */; };
 		C098642328ED4DB5005E7BE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098642228ED4DB5005E7BE5 /* SceneDelegate.swift */; };
 		C098642528ED4DB5005E7BE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098642428ED4DB5005E7BE5 /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 		C06BBC9B28EED33C0008DC03 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		C06BBC9D28EED3470008DC03 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		C06BBCA128EED5580008DC03 /* ErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
+		C06BBCA328EEEE820008DC03 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		C098641D28ED4DB5005E7BE5 /* Navigation&Tabbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Navigation&Tabbar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C098642028ED4DB5005E7BE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C098642228ED4DB5005E7BE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				C06BBC9B28EED33C0008DC03 /* SecondViewController.swift */,
 				C06BBC9D28EED3470008DC03 /* ThirdViewController.swift */,
 				C06BBCA128EED5580008DC03 /* ErrorViewController.swift */,
+				C06BBCA328EEEE820008DC03 /* TestViewController.swift */,
 			);
 			path = CodeBase;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				C098642128ED4DB5005E7BE5 /* AppDelegate.swift in Sources */,
 				C06BBCA228EED5580008DC03 /* ErrorViewController.swift in Sources */,
 				C098643528ED51C0005E7BE5 /* LoginViewController.swift in Sources */,
+				C06BBCA428EEEE820008DC03 /* TestViewController.swift in Sources */,
 				C098642328ED4DB5005E7BE5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,8 @@ import SnapKit
 
 class FirstViewController: UIViewController {
     
+    var isLoggedIn: Bool = false
+    
     lazy private var nextButton: UIButton = {
         let v = UIButton()
         v.setTitle("next", for: .normal)
@@ -24,9 +26,13 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         makeUI()
         setNavigationUI("첫번째화면")
+        
+        if !isLoggedIn {
+            let vc = LoginViewController()
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true)
+        }
     }
-
-
         
     private func makeUI() {
         view.backgroundColor = .lightGray
@@ -42,12 +48,13 @@ class FirstViewController: UIViewController {
         appearnce.backgroundColor = .white
         navigationController?.navigationBar.scrollEdgeAppearance = appearnce
         navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.topItem?.title = title
+        self.title = title
         
     }
-    
+     
     @objc func nextButtonTapped() {
         let nextVC = ErrorViewController()
+        // push(present) <-> pop(dismiss)
         navigationController?.pushViewController(nextVC, animated: true)
     }
 
