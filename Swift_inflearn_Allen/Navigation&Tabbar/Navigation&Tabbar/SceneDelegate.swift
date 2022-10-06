@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // 첫번째 화면은 네비게이션컨트롤러로 만들기 (기본루트뷰 설정)
         let vc1 = UINavigationController(rootViewController: FirstViewController())
         let vc2 = SecondViewController()
-//        let vc2 = UINavigationController(rootViewController: SecondViewController())
+        //let vc2 = UINavigationController(rootViewController: SecondViewController())
         let vc3 = ThirdViewController()
         
         // 탭바 이름들 설정
@@ -44,20 +44,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         items[2].image = UIImage(systemName: "paperplane")
             
         // 기본루트뷰를 탭바컨트롤러로 설정⭐️⭐️⭐️
+        // 첫번째로 나오는 view는 tabBarVC의 첫번째 탭 화면 => let vc1 = UINavigationController(rootViewController: FirstViewController())
         window?.rootViewController = tabBarVC
         window?.makeKeyAndVisible()
     }
     
     //MARK : - 첫번째 화면 바꾸기
 //    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-//
 //        if let windowScene = scene as? UIWindowScene {
 //            let window = UIWindow(windowScene: windowScene)
 //            window.rootViewController = LoginViewController()
 //            self.window = window
 //            window.makeKeyAndVisible()
 //        }
-//    }
+        
+//        guard let windowScene = (scene as? UIWindowScene) else { return }
+//        window = UIWindow(windowScene: windowScene)
+//        window?.rootViewController = ErrorViewController()
+//        window?.makeKeyAndVisible()
+    }
 
     //MARK : - 기본
 //    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
