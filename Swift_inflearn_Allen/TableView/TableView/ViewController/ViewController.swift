@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.rowHeight = 120
         // Do any additional setup after loading the view.
         
@@ -49,10 +50,31 @@ extension ViewController: UITableViewDataSource {
         //cell.descriptionLabel.text = movies[indexPath.row].movieDescription
         let movies = movieDataManager.getMovieData()
         cell.congifure(movies[indexPath.row])
-        // cell을 눌러도 아무 반응이 없게 만들어주는 메서드
+        // cell을 눌러도 아무 반응이 없게 만들어주는 메서드 -> 눌리긴하지만 색깔이 바뀐다거나 그런 반응이 없을뿐
         cell.selectionStyle = .none
         
         return cell
+    }
+}
+
+
+extension ViewController: UITableViewDelegate {
+    //MARK : - 2.여기에 있는 indexPath를 사용해야함 -> 그걸 하기위한게 sender(데이터 뭘 보낼지)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // performSegue는 반드시 prepare함수를 호출한다
+        performSegue(withIdentifier: "toDetail", sender: indexPath)
+    }
+    
+    //MARK : - 1.prepare함수에서 indexPath.row로 데이터를 전달받아야하는데 파라미터에 indexPath가 없음
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetail" {
+            let detailVC = segue.destination as! DetailViewController
+            let movies = movieDataManager.getMovieData()
+            // 우리가 전달하기 원하는 영화 데이터
+            //MARK : - sender는 Any타입이기때문에 다운캐스팅을 반드시 해줘야함
+            let indexPath = sender as! IndexPath
+            detailVC.movieData = movies[indexPath.row]
+        }
     }
 }
 
