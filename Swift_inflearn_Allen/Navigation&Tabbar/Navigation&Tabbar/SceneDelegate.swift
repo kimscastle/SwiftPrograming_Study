@@ -62,7 +62,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        window = UIWindow(windowScene: windowScene)
 //        window?.rootViewController = ErrorViewController()
 //        window?.makeKeyAndVisible()
-    }
+//    }
 
     //MARK : - 기본
 //    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
