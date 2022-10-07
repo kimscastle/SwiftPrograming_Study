@@ -14,6 +14,9 @@
 		C05F3EFD28EF21720088CDF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C05F3EFB28EF21720088CDF0 /* Main.storyboard */; };
 		C05F3EFF28EF21730088CDF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C05F3EFE28EF21730088CDF0 /* Assets.xcassets */; };
 		C05F3F0228EF21730088CDF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C05F3F0028EF21730088CDF0 /* LaunchScreen.storyboard */; };
+		C05F3F1928F05B910088CDF0 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05F3F1828F05B910088CDF0 /* Member.swift */; };
+		C05F3F1C28F05E170088CDF0 /* MemberListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05F3F1B28F05E170088CDF0 /* MemberListManager.swift */; };
+		C05F3F1F28F0609A0088CDF0 /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05F3F1E28F0609A0088CDF0 /* MemberTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,9 @@
 		C05F3EFE28EF21730088CDF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C05F3F0128EF21730088CDF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C05F3F0328EF21730088CDF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C05F3F1828F05B910088CDF0 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		C05F3F1B28F05E170088CDF0 /* MemberListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListManager.swift; sourceTree = "<group>"; };
+		C05F3F1E28F0609A0088CDF0 /* MemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTableViewCell.swift; sourceTree = "<group>"; };
 		EE0C56FC0677C49FA9F0C7FE /* Pods-CustomDelegate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomDelegate.debug.xcconfig"; path = "Target Support Files/Pods-CustomDelegate/Pods-CustomDelegate.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,7 +79,9 @@
 			children = (
 				C05F3EF528EF21720088CDF0 /* AppDelegate.swift */,
 				C05F3EF728EF21720088CDF0 /* SceneDelegate.swift */,
-				C05F3EF928EF21720088CDF0 /* ViewController.swift */,
+				C05F3F1728F05B800088CDF0 /* Models */,
+				C05F3F1D28F060860088CDF0 /* Views */,
+				C05F3F1A28F05C080088CDF0 /* Controllers */,
 				C05F3EFB28EF21720088CDF0 /* Main.storyboard */,
 				C05F3EFE28EF21730088CDF0 /* Assets.xcassets */,
 				C05F3F0028EF21730088CDF0 /* LaunchScreen.storyboard */,
@@ -82,13 +90,37 @@
 			path = CustomDelegate;
 			sourceTree = "<group>";
 		};
+		C05F3F1728F05B800088CDF0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C05F3F1828F05B910088CDF0 /* Member.swift */,
+				C05F3F1B28F05E170088CDF0 /* MemberListManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C05F3F1A28F05C080088CDF0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C05F3EF928EF21720088CDF0 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C05F3F1D28F060860088CDF0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C05F3F1E28F0609A0088CDF0 /* MemberTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CCA18B49405C06921913214E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				EE0C56FC0677C49FA9F0C7FE /* Pods-CustomDelegate.debug.xcconfig */,
 				4E4CD07E351B6A21EA5E2783 /* Pods-CustomDelegate.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -207,7 +239,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C05F3F1C28F05E170088CDF0 /* MemberListManager.swift in Sources */,
+				C05F3F1F28F0609A0088CDF0 /* MemberTableViewCell.swift in Sources */,
 				C05F3EFA28EF21720088CDF0 /* ViewController.swift in Sources */,
+				C05F3F1928F05B910088CDF0 /* Member.swift in Sources */,
 				C05F3EF628EF21720088CDF0 /* AppDelegate.swift in Sources */,
 				C05F3EF828EF21720088CDF0 /* SceneDelegate.swift in Sources */,
 			);
