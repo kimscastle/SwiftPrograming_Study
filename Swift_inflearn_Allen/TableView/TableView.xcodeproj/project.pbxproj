@@ -12,6 +12,10 @@
 		C05F3EE428EF020B0088CDF0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05F3EE328EF020B0088CDF0 /* Movie.swift */; };
 		C05F3EE628EF07CC0088CDF0 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05F3EE528EF07CC0088CDF0 /* DataManager.swift */; };
 		C05F3EE828EF1AC20088CDF0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05F3EE728EF1AC20088CDF0 /* DetailViewController.swift */; };
+		C05F3F1028F0353C0088CDF0 /* CodeMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05F3F0F28F0353C0088CDF0 /* CodeMainViewController.swift */; };
+		C05F3F1228F03A600088CDF0 /* CodeMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05F3F1128F03A600088CDF0 /* CodeMainTableViewCell.swift */; };
+		C05F3F1428F045D60088CDF0 /* CodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05F3F1328F045D60088CDF0 /* CodeDetailViewController.swift */; };
+		C05F3F1628F048AD0088CDF0 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05F3F1528F048AD0088CDF0 /* DetailView.swift */; };
 		C06BBCB228EEF93A0008DC03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BBCB128EEF93A0008DC03 /* AppDelegate.swift */; };
 		C06BBCB428EEF93A0008DC03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BBCB328EEF93A0008DC03 /* SceneDelegate.swift */; };
 		C06BBCB628EEF93A0008DC03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BBCB528EEF93A0008DC03 /* ViewController.swift */; };
@@ -27,6 +31,10 @@
 		C05F3EE328EF020B0088CDF0 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		C05F3EE528EF07CC0088CDF0 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		C05F3EE728EF1AC20088CDF0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C05F3F0F28F0353C0088CDF0 /* CodeMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeMainViewController.swift; sourceTree = "<group>"; };
+		C05F3F1128F03A600088CDF0 /* CodeMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeMainTableViewCell.swift; sourceTree = "<group>"; };
+		C05F3F1328F045D60088CDF0 /* CodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDetailViewController.swift; sourceTree = "<group>"; };
+		C05F3F1528F048AD0088CDF0 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		C06BBCAE28EEF93A0008DC03 /* TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06BBCB128EEF93A0008DC03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C06BBCB328EEF93A0008DC03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +102,24 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		C05F3F0D28F035200088CDF0 /* CodeViews */ = {
+			isa = PBXGroup;
+			children = (
+				C05F3F1128F03A600088CDF0 /* CodeMainTableViewCell.swift */,
+				C05F3F1528F048AD0088CDF0 /* DetailView.swift */,
+			);
+			path = CodeViews;
+			sourceTree = "<group>";
+		};
+		C05F3F0E28F035270088CDF0 /* CodeControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C05F3F0F28F0353C0088CDF0 /* CodeMainViewController.swift */,
+				C05F3F1328F045D60088CDF0 /* CodeDetailViewController.swift */,
+			);
+			path = CodeControllers;
+			sourceTree = "<group>";
+		};
 		C06BBCA528EEF93A0008DC03 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +141,8 @@
 		C06BBCB028EEF93A0008DC03 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				C05F3F0E28F035270088CDF0 /* CodeControllers */,
+				C05F3F0D28F035200088CDF0 /* CodeViews */,
 				C06BBCB128EEF93A0008DC03 /* AppDelegate.swift */,
 				C06BBCB328EEF93A0008DC03 /* SceneDelegate.swift */,
 				C06BBCBC28EEF93B0008DC03 /* LaunchScreen.storyboard */,
@@ -246,8 +274,12 @@
 				C05F3EE628EF07CC0088CDF0 /* DataManager.swift in Sources */,
 				C06BBCB628EEF93A0008DC03 /* ViewController.swift in Sources */,
 				C06BBCB228EEF93A0008DC03 /* AppDelegate.swift in Sources */,
+				C05F3F1428F045D60088CDF0 /* CodeDetailViewController.swift in Sources */,
+				C05F3F1628F048AD0088CDF0 /* DetailView.swift in Sources */,
 				C02CBA8028EF00EA00CC483B /* MovieCell.swift in Sources */,
+				C05F3F1228F03A600088CDF0 /* CodeMainTableViewCell.swift in Sources */,
 				C06BBCB428EEF93A0008DC03 /* SceneDelegate.swift in Sources */,
+				C05F3F1028F0353C0088CDF0 /* CodeMainViewController.swift in Sources */,
 				C05F3EE828EF1AC20088CDF0 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
