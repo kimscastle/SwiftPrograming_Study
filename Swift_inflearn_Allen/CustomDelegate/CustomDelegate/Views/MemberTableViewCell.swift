@@ -53,8 +53,6 @@ class MemberTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(profileImage)
         addSubview(stackView)
-        setUI()
-
     }
     
     required init?(coder: NSCoder) {
@@ -62,9 +60,10 @@ class MemberTableViewCell: UITableViewCell {
     }
     
     //MARK : - cell은 updateConstraints에서 레이아웃을 잡아줘야함
-//    override func updateConstraints() {
-//        super.updateConstraints()
-//    }
+    override func updateConstraints() {
+        setUI()
+        super.updateConstraints()
+    }
     
     override func layoutSubviews() {
         super.layoutSubviews()
