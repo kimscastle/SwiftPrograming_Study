@@ -75,6 +75,7 @@ final class DetailViewController: UIViewController {
         print("버튼이 눌림")
         
         guard var member = member else {return}
+        print("emfdjdha")
         
         //MARK : - 1.유저데이터가 업데이트 되어야함 2.이전뷰로 넘어가야함
         member.memberImage = detailView.mainImageView.image
@@ -86,11 +87,36 @@ final class DetailViewController: UIViewController {
         //MARK : - 현재 viewcontroller의 갯수는 2개
         let index = navigationController!.viewControllers.count - 2
         let beforeVC = navigationController?.viewControllers[index] as! ViewController
+
         beforeVC.memberListManager.updateMemberInfo(index: memberId, member)
         
         navigationController?.popViewController(animated: true)
     }
 }
+
+//MARK : - DetailViewController를 거치지 않고 바로 DetailView의 member로 접근하는방법
+//    @objc func saveButtonTapped() {
+//        //navigationController?.popViewController(animated: true)
+//        print("버튼이 눌림")
+//
+//        guard var member = detailView.member else {return}
+//
+//        //MARK : - 1.유저데이터가 업데이트 되어야함 2.이전뷰로 넘어가야함
+//        member.memberImage = detailView.mainImageView.image
+//        let memberId = Int(detailView.memberIdTextField.text!) ?? 0
+//        member.name = detailView.nameTextField.text
+//        member.phone = detailView.phoneNumberTextField.text
+//        member.address = detailView.addressTextField.text
+//
+//        //MARK : - 현재 viewcontroller의 갯수는 2개
+//        let index = navigationController!.viewControllers.count - 2
+//        let beforeVC = navigationController?.viewControllers[index] as! ViewController
+//
+//        beforeVC.memberListManager.updateMemberInfo(index: memberId, member)
+//
+//        navigationController?.popViewController(animated: true)
+//    }
+
 
 //MARK : - 사진첩에 접근해서 사진을 고를수있는 delegate protocol채택
 extension DetailViewController: PHPickerViewControllerDelegate {

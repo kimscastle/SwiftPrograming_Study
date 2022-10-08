@@ -86,9 +86,9 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let nextVC = DetailViewController()
-        let member = memberListManager.getMembersList()[indexPath.row]
-        //MARK : - DetailViewController에 member를 전달하는방식(DetailVC의 member를 detailView의 member에 전달을 또해줘야한다
-        nextVC.member = member
+        let currentMember = memberListManager.getMembersList()[indexPath.row]
+        //MARK : - DetailViewController에 member를 전달하는방식(DetailVC의 member를 detailView의 member에 전달을 또해줘야한다)
+        nextVC.member = currentMember
         
         //MARK : - DetailViewController를 거쳐 바로 DetailView의 member로 접근하는 방법
         //nextVC.detailView.member = member
