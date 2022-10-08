@@ -66,12 +66,22 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemberTableViewCell", for: indexPath) as! MemberTableViewCell
-        cell.member = memberListManager[indexPath.row]
+        cell.member = memberListManager.getMembersList()[indexPath.row]
         return cell
     }
 }
 
 extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let nextVC = DetailViewController()
+        let member = memberListManager.getMembersList()[indexPath.row]
+        //MARK : - DetailViewController에 member를 전달하는방식(DetailVC의 member를 detailView의 member에 전달을 또해줘야한다
+        //nextVC.member = member
+        
+        //MARK : - DetailViewController를 거쳐 바로 DetailView의 member로 접근하는 방법
+        nextVC.detailView.member = member
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
     
 }
 

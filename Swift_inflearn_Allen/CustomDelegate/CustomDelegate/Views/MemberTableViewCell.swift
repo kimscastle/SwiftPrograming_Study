@@ -68,6 +68,7 @@ class MemberTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         profileImage.clipsToBounds = true
+        //MARK : - 이경우는 cornerRadius가 profileImage의 오토레이아웃이 잡히고 난후에 값을 결정할 수 있기때문에 updataConstraints이후에 넣어줘야한다
         profileImage.layer.cornerRadius = profileImage.frame.width / 2
     }
     
