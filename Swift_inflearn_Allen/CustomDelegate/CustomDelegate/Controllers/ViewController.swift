@@ -33,6 +33,8 @@ final class ViewController: UIViewController {
     func setNavigation() {
         title = "프로필"
         let appearnce = UINavigationBarAppearance()
+        
+        //MARK : - 외부에서 선언하는 경우 lazy로 선언안해주면 self가 선언되기 전이기때문에 target이 호출되지 않는다
         let plusButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(plusButtonTapped))
         appearnce.backgroundColor = .lightGray
         navigationController?.navigationBar.scrollEdgeAppearance = appearnce

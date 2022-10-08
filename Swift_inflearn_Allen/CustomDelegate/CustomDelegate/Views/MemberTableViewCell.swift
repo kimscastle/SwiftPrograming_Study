@@ -90,4 +90,15 @@ class MemberTableViewCell: UITableViewCell {
             make.right.equalToSuperview()
         }
     }
+    
+    //MARK : - 여기서 오류가 발생하는 이유는 함수의 파라미터는 let으로 받기 때문이다
+    // lazy는 반드시 var로 받아야한다
+    // 왜냐하면 이 프로퍼트의 초기값을 인스턴스 초기화가 완료된 시점까지 알 수 없기 때문에 초기값을 결정짓는 let은 사용이 불가능하다
+    // 생성자에서 초기화시키지 않기때문에 반드시 초기값이 필요하다
+    func makeUI(_ data: Member?) {
+        guard var data = data else {return}
+        profileImage.image = data.memberImage
+        nameLable.text = data.name
+        addressLabel.text = data.address
+    }
 }
