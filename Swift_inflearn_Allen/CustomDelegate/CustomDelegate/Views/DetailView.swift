@@ -227,6 +227,7 @@ class DetailView: UIView {
         super.init(frame: frame)
         self.backgroundColor = .white
         setUI()
+        memberIdTextField.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -274,5 +275,14 @@ class DetailView: UIView {
             make.centerX.equalToSuperview()
         }
         
+    }
+}
+
+extension DetailView: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == memberIdTextField {
+            return false
+        }
+        return true
     }
 }

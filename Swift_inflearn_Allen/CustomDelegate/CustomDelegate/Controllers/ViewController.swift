@@ -13,6 +13,12 @@ final class ViewController: UIViewController {
     private let tableView = UITableView()
     
     var memberListManager = MemberListManager()
+    
+    //MARK : - 외부에서 선언하는 경우 lazy로 선언안해주면 self가 선언되기 전이기때문에 target이 호출되지 않는다
+//    lazy var plusButton: UIBarButtonItem = {
+//        let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(plusButtonTapped))
+//        return button
+//    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +27,12 @@ final class ViewController: UIViewController {
         setNavigation()
         setUpTableview()
         setData()
+    }
+    
+    //MARK : - 화면이 나타날때마다(사실은 나타나기직전) 함수를 실행시키는 함수
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     func setUI() {
@@ -33,8 +45,6 @@ final class ViewController: UIViewController {
     func setNavigation() {
         title = "프로필"
         let appearnce = UINavigationBarAppearance()
-        
-        //MARK : - 외부에서 선언하는 경우 lazy로 선언안해주면 self가 선언되기 전이기때문에 target이 호출되지 않는다
         let plusButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(plusButtonTapped))
         appearnce.backgroundColor = .lightGray
         navigationController?.navigationBar.scrollEdgeAppearance = appearnce
@@ -42,7 +52,7 @@ final class ViewController: UIViewController {
     }
     
     func setUpTableview() {
-        tableView.rowHeight = 100
+        tableView.rowHeight = 70
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(MemberTableViewCell.self, forCellReuseIdentifier: "MemberTableViewCell")
@@ -54,6 +64,8 @@ final class ViewController: UIViewController {
     
     @objc func plusButtonTapped() {
         print("추가하기 버튼이 눌렸습니다")
+        let detailVC = DetailViewController()
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 
 
@@ -76,10 +88,10 @@ extension ViewController: UITableViewDelegate {
         let nextVC = DetailViewController()
         let member = memberListManager.getMembersList()[indexPath.row]
         //MARK : - DetailViewController에 member를 전달하는방식(DetailVC의 member를 detailView의 member에 전달을 또해줘야한다
-        //nextVC.member = member
+        nextVC.member = member
         
         //MARK : - DetailViewController를 거쳐 바로 DetailView의 member로 접근하는 방법
-        nextVC.detailView.member = member
+        //nextVC.detailView.member = member
         navigationController?.pushViewController(nextVC, animated: true)
     }
     

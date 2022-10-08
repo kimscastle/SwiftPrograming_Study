@@ -6,12 +6,14 @@
 //
 
 import UIKit
+//MARK : - PhotoImagePicker 구현
+import PhotosUI
 
 final class DetailViewController: UIViewController {
     
     var detailView = DetailView()
     
-//    var member: Member?
+    var member: Member?
     
     override func loadView() {
         view = detailView
@@ -19,13 +21,14 @@ final class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpButtonAction()
         setUpData()
+        setUpButtonAction()
+        setUpGestures()
     }
     
     //MARK : - 한번더 전달해줘야함
     private func setUpData() {
-//        detailView.member = self.member
+        detailView.member = self.member
     }
     
     //MARK : - UIView에있는 버튼은 ViewController에서 지정해줘야한다
@@ -33,8 +36,85 @@ final class DetailViewController: UIViewController {
         detailView.saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
     }
     
+    func setUpGestures() {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(touchImageView))
+        detailView.mainImageView.addGestureRecognizer(gesture)
+        
+        // defalt가 false이므로 true로 바꿔줘야함
+        detailView.mainImageView.isUserInteractionEnabled = true
+    }
+    
+    @objc func touchImageView() {
+        print("이미지뷰 터치")
+        setupImagePicker()
+    }
+    
+    /// 이미지 Picker 기본설정 함수
+    func setupImagePicker() {
+        var configuration = PHPickerConfiguration()
+        //무한대로 이미지를 가지올 수 있다는 뜻
+        configuration.selectionLimit = 0
+        configuration.filter = .any(of: [.images, .videos])
+        // 기본설정을 가지고, 피커뷰컨트롤러 생성
+        let picker = PHPickerViewController(configuration: configuration)
+        // 피커뷰 컨트롤러의 대리자 설정
+        picker.delegate = self
+        // 피커뷰 띄우기
+        self.present(picker, animated: true, completion: nil)
+    }
+    
+
+    
+    
+    
+    
+    
+    
     @objc func saveButtonTapped() {
         //navigationController?.popViewController(animated: true)
         print("버튼이 눌림")
+        
+        guard var member = member else {return}
+        
+        //MARK : - 1.유저데이터가 업데이트 되어야함 2.이전뷰로 넘어가야함
+        member.memberImage = detailView.mainImageView.image
+        let memberId = Int(detailView.memberIdTextField.text!) ?? 0
+        member.name = detailView.nameTextField.text
+        member.phone = detailView.phoneNumberTextField.text
+        member.address = detailView.addressTextField.text
+            
+        //MARK : - 현재 viewcontroller의 갯수는 2개
+        let index = navigationController!.viewControllers.count - 2
+        let beforeVC = navigationController?.viewControllers[index] as! ViewController
+        beforeVC.memberListManager.updateMemberInfo(index: memberId, member)
+        
+        navigationController?.popViewController(animated: true)
+    }
+}
+
+//MARK : - 사진첩에 접근해서 사진을 고를수있는 delegate protocol채택
+extension DetailViewController: PHPickerViewControllerDelegate {
+    
+    /// 사진이 선택된 후 호출되는 메서드
+    /// - Parameters:
+    ///   - picker: 내 폰의 사진을 볼수있는 ViewController
+    ///   - results: 선택된 사진들
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        // 피커뷰 dismiss
+        picker.dismiss(animated: true)
+        
+        let itemProvider = results.first?.itemProvider
+        
+        if let itemProvider = itemProvider, itemProvider.canLoadObject(ofClass: UIImage.self) {
+            itemProvider.loadObject(ofClass: UIImage.self) { [weak self] (image, error) in
+                DispatchQueue.main.async {
+                    // 이미지뷰에 표시
+                    //MARK : - 사용할때마다 변경✅
+                    self?.detailView.mainImageView.image = image as? UIImage
+                }
+            }
+        } else {
+            print("이미지 못 불러왔음!!!!")
+        }
     }
 }
