@@ -31,6 +31,20 @@ class ViewController: UIViewController {
             self?.view.layoutIfNeeded()
         })
     }
+    
+    //MARK : - @escaping은 함수 타입앞에 넣어준다
+    // completion이 optional인경우 escaping이 default라서 @escaping키워드 불필요
+    func downloadJson(_ url: String, _ completion: @escaping (String?) -> Void){
+        DispatchQueue.global().async {
+            guard let url = URL(string: url) else { return }
+            let data = try! Data(contentsOf: url)
+            let json = String(data: data, encoding: .utf8)
+            DispatchQueue.main.async {
+                // optional이면 completion?(json)
+                completion(json)
+            }
+        }
+    }
 
     // MARK: SYNC
 
@@ -56,16 +70,9 @@ class ViewController: UIViewController {
         //MARK : - 두번째 방법(DispatchQueue)
         editView.text = ""
         setVisibleWithAnimation(activityIndicator, true)
-        DispatchQueue.global().async {
-            let url = URL(string: MEMBER_LIST_URL)
-            guard let url = url else {return}
-            let data = try! Data(contentsOf: url)
-            let json = String(data: data, encoding: .utf8)
-            
-            DispatchQueue.main.async { [weak self] in
-                self?.editView.text = json
-                self?.setVisibleWithAnimation(self?.activityIndicator, false)
-            }
+        downloadJson(MEMBER_LIST_URL) { json in
+            self.editView.text = json
+            self.setVisibleWithAnimation(self.activityIndicator, false)
         }
     }
 }
