@@ -13,6 +13,9 @@ final class DetailViewController: UIViewController {
     
     var detailView = DetailView()
     
+    //MARK : - MemberDelegate를 채택한 녀석(ViewController)가 대리자가 될수있다 라고 선언
+    weak var delegate: MemberDelegate?
+    
     var member: Member?
     
     override func loadView() {
@@ -71,12 +74,9 @@ final class DetailViewController: UIViewController {
     
     
     @objc func saveButtonTapped() {
-        //navigationController?.popViewController(animated: true)
         print("버튼이 눌림")
         
         guard var member = member else {return}
-        print("emfdjdha")
-        
         //MARK : - 1.유저데이터가 업데이트 되어야함 2.이전뷰로 넘어가야함
         member.memberImage = detailView.mainImageView.image
         let memberId = Int(detailView.memberIdTextField.text!) ?? 0
@@ -85,11 +85,13 @@ final class DetailViewController: UIViewController {
         member.address = detailView.addressTextField.text
             
         //MARK : - 현재 viewcontroller의 갯수는 2개
-        let index = navigationController!.viewControllers.count - 2
-        let beforeVC = navigationController?.viewControllers[index] as! ViewController
-
-        beforeVC.memberListManager.updateMemberInfo(index: memberId, member)
+//        let index = navigationController!.viewControllers.count - 2
+//        let beforeVC = navigationController?.viewControllers[index] as! ViewController
+//        beforeVC.memberListManager.updateMemberInfo(index: memberId, member)
+//        navigationController?.popViewController(animated: true)
         
+        //MARK : - 어떤 함수인지는 모르겟는데 대리자가 설정한 내용으로 실행해줘 라는 뜻
+        delegate?.update(index: memberId, member)
         navigationController?.popViewController(animated: true)
     }
 }

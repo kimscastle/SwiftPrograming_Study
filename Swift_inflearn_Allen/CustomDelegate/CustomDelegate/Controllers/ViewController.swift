@@ -23,6 +23,7 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        
         setUI()
         setNavigation()
         setUpTableview()
@@ -30,10 +31,11 @@ final class ViewController: UIViewController {
     }
     
     //MARK : - 화면이 나타날때마다(사실은 나타나기직전) 함수를 실행시키는 함수
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tableView.reloadData()
-    }
+    // 이 방식의(약간의) 문제점 DetailViewController에서 그냥 뒤로왔을때도 이 함수가 실행된다(의미없는 실행)
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        tableView.reloadData()
+//    }
     
     func setUI() {
         view.addSubview(tableView)
@@ -86,6 +88,8 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let nextVC = DetailViewController()
+        //MARK : - 대리자 설정
+        nextVC.delegate = self
         let currentMember = memberListManager.getMembersList()[indexPath.row]
         //MARK : - DetailViewController에 member를 전달하는방식(DetailVC의 member를 detailView의 member에 전달을 또해줘야한다)
         nextVC.member = currentMember
@@ -97,3 +101,14 @@ extension ViewController: UITableViewDelegate {
     
 }
 
+extension ViewController: MemberDelegate {
+    func addNewMember(_ member: Member) {
+        memberListManager.makeNewMember(member)
+        tableView.reloadData()
+    }
+    
+    func update(index: Int, _ member: Member) {
+        memberListManager.updateMemberInfo(index: index, member)
+        tableView.reloadData()
+    }
+}

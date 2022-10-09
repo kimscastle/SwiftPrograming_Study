@@ -228,6 +228,7 @@ class DetailView: UIView {
         self.backgroundColor = .white
         setUI()
         memberIdTextField.delegate = self
+        setUpNotification()
     }
     
     required init?(coder: NSCoder) {
@@ -247,26 +248,12 @@ class DetailView: UIView {
             make.height.equalTo(180)
         }
         
-        memberIdLabel.snp.makeConstraints { make in
-            make.width.equalTo(70)
+        [memberIdLabel, nameLabel, ageLabel, phoneNumberLabel, addressLabel].forEach { element in
+            element.snp.makeConstraints { make in
+                make.width.equalTo(70)
+            }
         }
-        
-        nameLabel.snp.makeConstraints { make in
-            make.width.equalTo(70)
-        }
-        
-        ageLabel.snp.makeConstraints { make in
-            make.width.equalTo(70)
-        }
-        
-        phoneNumberLabel.snp.makeConstraints { make in
-            make.width.equalTo(70)
-        }
-        
-        addressLabel.snp.makeConstraints { make in
-            make.width.equalTo(70)
-        }
-        
+         
         stackView.snp.makeConstraints { make in
             //MARK : - safeArea고려하는방법 safeAreaLayoutGuide를 사용한ㄷ
             make.top.equalTo(safeAreaLayoutGuide).offset(10)
@@ -274,7 +261,41 @@ class DetailView: UIView {
             make.left.right.equalToSuperview().inset(20)
             make.centerX.equalToSuperview()
         }
-        
+    }
+    
+    func setUpNotification() {
+        //MARK : - observer의 경우 소멸자를 구현해줘야한다
+        NotificationCenter.default.addObserver(self, selector: #selector(moveUpAction), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(moveDownAction), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.endEditing(true)
+        }
+    
+    @objc func moveUpAction() {
+        //MARK : - 기존의 autoLayout을 지우고 새로하는거기때문에 기존걸 없애고 이걸 넣었을때 레이아웃이 꺠지면 안된다
+        stackView.snp.updateConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide).offset(-10)
+        }
+        UIView.animate(withDuration: 0.2) {
+            self.layoutIfNeeded()
+        }
+    }
+    
+    @objc func moveDownAction() {
+        stackView.snp.updateConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide).offset(10)
+        }
+        UIView.animate(withDuration: 0.2) {
+            self.layoutIfNeeded()
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        print("deinit")
     }
 }
 

@@ -7,6 +7,18 @@
 
 import UIKit
 
+// 실제로는 DetailViewController에서 동작이 일어남
+// 대리자인 ViewController에 알려줘야함
+// 클래스에서만 상속받을수있게 -> 클래스만 weak var로 선언할 수있음
+protocol MemberDelegate: AnyObject {
+    func addNewMember(_ member: Member)
+    /// 멤버를 업데이트 하는 메서드
+    /// - Parameters:
+    ///   - index: 몇번째 요소가 업데이트 되었는지를 받아야함
+    ///   - member: 어떻게 업데이트가되었는지를 받아야함
+    func update(index: Int, _ member: Member)
+}
+
 // 멤버 모델
 struct Member {
     
