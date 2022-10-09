@@ -67,6 +67,8 @@ final class ViewController: UIViewController {
     @objc func plusButtonTapped() {
         print("추가하기 버튼이 눌렸습니다")
         let detailVC = DetailViewController()
+        detailVC.detailView.member = nil
+        detailVC.delegate = self
         navigationController?.pushViewController(detailVC, animated: true)
     }
 
@@ -91,11 +93,12 @@ extension ViewController: UITableViewDelegate {
         //MARK : - 대리자 설정
         nextVC.delegate = self
         let currentMember = memberListManager.getMembersList()[indexPath.row]
+        
         //MARK : - DetailViewController에 member를 전달하는방식(DetailVC의 member를 detailView의 member에 전달을 또해줘야한다)
-        nextVC.member = currentMember
+        //nextVC.member = currentMember
         
         //MARK : - DetailViewController를 거쳐 바로 DetailView의 member로 접근하는 방법
-        //nextVC.detailView.member = member
+        nextVC.detailView.member = currentMember
         navigationController?.pushViewController(nextVC, animated: true)
     }
     

@@ -16,7 +16,7 @@ final class DetailViewController: UIViewController {
     //MARK : - MemberDelegate를 채택한 녀석(ViewController)가 대리자가 될수있다 라고 선언
     weak var delegate: MemberDelegate?
     
-    var member: Member?
+//    var member: Member?
     
     override func loadView() {
         view = detailView
@@ -24,15 +24,15 @@ final class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpData()
+//        setUpData()
         setUpButtonAction()
         setUpGestures()
     }
     
     //MARK : - 한번더 전달해줘야함
-    private func setUpData() {
-        detailView.member = self.member
-    }
+//    private func setUpData() {
+//        detailView.member = self.member
+//    }
     
     //MARK : - UIView에있는 버튼은 ViewController에서 지정해줘야한다
     func setUpButtonAction() {
@@ -66,32 +66,50 @@ final class DetailViewController: UIViewController {
         self.present(picker, animated: true, completion: nil)
     }
     
-
-    
-    
-    
-    
-    
-    
     @objc func saveButtonTapped() {
         print("버튼이 눌림")
         
-        guard var member = member else {return}
-        //MARK : - 1.유저데이터가 업데이트 되어야함 2.이전뷰로 넘어가야함
-        member.memberImage = detailView.mainImageView.image
-        let memberId = Int(detailView.memberIdTextField.text!) ?? 0
-        member.name = detailView.nameTextField.text
-        member.phone = detailView.phoneNumberTextField.text
-        member.address = detailView.addressTextField.text
+        if detailView.member == nil {
             
-        //MARK : - 현재 viewcontroller의 갯수는 2개
-//        let index = navigationController!.viewControllers.count - 2
-//        let beforeVC = navigationController?.viewControllers[index] as! ViewController
-//        beforeVC.memberListManager.updateMemberInfo(index: memberId, member)
-//        navigationController?.popViewController(animated: true)
-        
-        //MARK : - 어떤 함수인지는 모르겟는데 대리자가 설정한 내용으로 실행해줘 라는 뜻
-        delegate?.update(index: memberId, member)
+            // 입력이 안되어 있다면.. (일반적으로) 빈문자열로 저장
+            let name = detailView.nameTextField.text ?? ""
+            let age = Int(detailView.ageTextField.text ?? "")
+            let phoneNumber = detailView.phoneNumberTextField.text ?? ""
+            let address = detailView.addressTextField.text ?? ""
+            
+            // 새로운 멤버 (구조체) 생성
+            var newMember =
+            Member(name: name, age: age, phone: phoneNumber, address: address)
+            newMember.memberImage = detailView.mainImageView.image
+            
+            // 1) 델리게이트 방식이 아닌 구현⭐️
+//            let index = navigationController!.viewControllers.count - 2
+            // 전 화면에 접근하기 위함
+//            let vc = navigationController?.viewControllers[index] as! ViewController
+            // 전 화면의 모델에 접근해서 멤버를 추가
+//            vc.memberListManager.makeNewMember(newMember)
+            
+            // 2) 델리게이트 방식으로 구현⭐️
+            delegate?.addNewMember(newMember)
+            
+        } else {
+            guard var member = detailView.member else { return }
+            //MARK : - 1.유저데이터가 업데이트 되어야함 2.이전뷰로 넘어가야함
+            member.memberImage = detailView.mainImageView.image
+            let memberId = Int(detailView.memberIdTextField.text!) ?? 0
+            member.name = detailView.nameTextField.text
+            member.phone = detailView.phoneNumberTextField.text
+            member.address = detailView.addressTextField.text
+                
+            //MARK : - 현재 viewcontroller의 갯수는 2개
+    //        let index = navigationController!.viewControllers.count - 2
+    //        let beforeVC = navigationController?.viewControllers[index] as! ViewController
+    //        beforeVC.memberListManager.updateMemberInfo(index: memberId, member)
+    //        navigationController?.popViewController(animated: true)
+            
+            //MARK : - 어떤 함수인지는 모르겟는데 대리자가 설정한 내용으로 실행해줘 라는 뜻
+            delegate?.update(index: memberId, member)
+        }
         navigationController?.popViewController(animated: true)
     }
 }
