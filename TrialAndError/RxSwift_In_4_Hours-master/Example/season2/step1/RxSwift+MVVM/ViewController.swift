@@ -34,17 +34,59 @@ class ViewController: UIViewController {
     
     //MARK : - @escaping은 함수 타입앞에 넣어준다
     // completion이 optional인경우 escaping이 default라서 @escaping키워드 불필요
-    func downloadJson(_ url: String, _ completion: @escaping (String?) -> Void){
-        DispatchQueue.global().async {
-            guard let url = URL(string: url) else { return }
-            let data = try! Data(contentsOf: url)
-            let json = String(data: data, encoding: .utf8)
-            DispatchQueue.main.async {
-                // optional이면 completion?(json)
-                completion(json)
-            }
+//    func downloadJson(_ url: String, _ completion: @escaping (String?) -> Void){
+//        DispatchQueue.global().async {
+//            guard let url = URL(string: url) else { return }
+//            let data = try! Data(contentsOf: url)
+//            let json = String(data: data, encoding: .utf8)
+//            DispatchQueue.main.async {
+//                // optional이면 completion?(json)
+//                completion(json)
+//            }
+//        }
+//    }
+    
+    
+    //MARK : - Observable뜻은 "나중에생기는데이터"
+//    func downloadJson(_ url: String) -> Observable<String?> {
+//        // 1.비동기로 생기는 데이터를 observable로 감싸서 리턴하는방법
+//        return Observable.create { emitter in
+//            DispatchQueue.global().async {
+//                guard let url = URL(string: url) else { return }
+//                let data = try! Data(contentsOf: url)
+//                let json = String(data: data, encoding: .utf8)
+//                DispatchQueue.main.async {
+//                    // "나중에생기는데이터"는 json이다
+//                    // 나중에 생기는 데이터를 여기서 처리하겠다
+//                    emitter.onNext(json)
+//                    //MARK : - 클로저가 지워져서 강한순환참조를 막을 수 있다 .subscribe에서 weak self를 사용하지 않아도 되는 이유
+//                    emitter.onCompleted()
+//                }
+//            }
+//            //MARK : - Observable.create()는 return이 Disposables이다
+//            return Disposables.create()
+//        }
+//    }
+    
+    func downloadJson(_ url: String) -> Observable<String?> {
+        return Observable.create { emitter in
+            let url = URL(string: MEMBER_LIST_URL)!
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                guard error == nil else {
+                    emitter.onError(error!)
+                    return
+                }
+                
+                guard let data = data, let json = String(data: data, encoding: .utf8) else { return }
+                emitter.onNext(json)
+                emitter.onCompleted()
+
+            }.resume()
+            
+            return Disposables.create()
         }
     }
+    
 
     // MARK: SYNC
 
@@ -70,9 +112,21 @@ class ViewController: UIViewController {
         //MARK : - 두번째 방법(DispatchQueue)
         editView.text = ""
         setVisibleWithAnimation(activityIndicator, true)
-        downloadJson(MEMBER_LIST_URL) { json in
-            self.editView.text = json
-            self.setVisibleWithAnimation(self.activityIndicator, false)
+        // 2.observable로 오는 데이터를 받아서 처리하는 방법
+        downloadJson(MEMBER_LIST_URL)
+            //MARK : - .subscribe의 뜻은 "나중에오면" -> "나중에생기는데이터"는 json
+            .subscribe { event in
+            switch event {
+            case .next(let json):
+                DispatchQueue.main.async {
+                    self.editView.text = json
+                    self.setVisibleWithAnimation(self.activityIndicator, false)
+                }
+            case .error(_):
+                break
+            case .completed:
+                break
+            }
         }
     }
 }
