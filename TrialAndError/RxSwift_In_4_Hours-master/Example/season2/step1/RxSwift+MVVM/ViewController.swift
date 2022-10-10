@@ -67,7 +67,8 @@ class ViewController: UIViewController {
 //            return Disposables.create()
 //        }
 //    }
-    
+        
+    //MARK : - RxSwift의 기본적인 사용법
     func downloadJson(_ url: String) -> Observable<String?> {
         return Observable.create { emitter in
             let url = URL(string: MEMBER_LIST_URL)!
@@ -76,16 +77,31 @@ class ViewController: UIViewController {
                     emitter.onError(error!)
                     return
                 }
-                
+
                 guard let data = data, let json = String(data: data, encoding: .utf8) else { return }
                 emitter.onNext(json)
                 emitter.onCompleted()
 
             }.resume()
-            
+
             return Disposables.create()
         }
     }
+    
+    //MARK : - RxSwift
+//    func downloadJson(_ url: String) -> Observable<String?> {
+        // 데이터를 하나 보내는데도 귀찮은 코드들을 작성해줘야한다
+        //return Observable.create { emitter in
+            //emitter.onNext("Hello World")
+            //emitter.onCompleted()
+            //return Disposables.create()
+        //}
+        
+        // 데이터를 하나보낼때는 간편하게 just를 사용할 수 있다
+        // just는 "단하나의 데이터" -> 배열이어도됨 -> ✅함수 리턴 타입 변경 필요✅
+        // 배열안에 있는 요소를 하나하나 보내고 싶으면 from
+//        return Observable.just("Hello World")
+//    }
     
 
     // MARK: SYNC
@@ -114,19 +130,33 @@ class ViewController: UIViewController {
         setVisibleWithAnimation(activityIndicator, true)
         // 2.observable로 오는 데이터를 받아서 처리하는 방법
         let observable = downloadJson(MEMBER_LIST_URL)
-            //MARK : - .subscribe의 뜻은 "나중에오면" -> "나중에생기는데이터"는 json
-        observable.subscribe { event in
-            switch event {
-            case .next(let json):
-                DispatchQueue.main.async { [weak self] in
-                    self?.editView.text = json
-                    self?.setVisibleWithAnimation(self?.activityIndicator, false)
-                }
-            case .completed:
-                break
-            case .error(let error):
-                print("\(error)")
-            }
-        }
+        //MARK : - .subscribe의 뜻은 "나중에오면" -> "나중에생기는데이터"는 json
+        
+        // subscribe도 onNext만 받아서 처리할 수 있다
+        //            .subscribe { event in
+        //            switch event {
+        //            case .next(let json):
+        //                DispatchQueue.main.async { [weak self] in
+        //                    self?.editView.text = json
+        //                    self?.setVisibleWithAnimation(self?.activityIndicator, false)
+        //                }
+        //            case .completed:
+        //                break
+        //            case .error(let error):
+        //                print("\(error)")
+        //            }
+        //        }
+        observable
+            // operator라고 함
+            .observeOn(MainScheduler.instance) // main스레드에서 작업하게하는 operator
+            .map { element in element?.count ?? 0 } // operator
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .default)) // operator
+            .filter { element in element > 0 } // operator
+            .map { "\($0)" } // operator
+            // onNext만 받아서 작업
+            .subscribe (onNext: { json in
+                    self.editView.text = json
+                    self.setVisibleWithAnimation(self.activityIndicator, false)
+            })
     }
 }
