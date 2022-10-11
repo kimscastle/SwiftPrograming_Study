@@ -158,5 +158,9 @@ class ViewController: UIViewController {
                     self.editView.text = json
                     self.setVisibleWithAnimation(self.activityIndicator, false)
             })
+//            .subscribe { <#String#> in
+//                <#code#>
+//            }
+        
     }
 }
