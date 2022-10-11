@@ -31,14 +31,6 @@ class ViewController: UIViewController {
             self?.timerLabel.text = "\(Date().timeIntervalSince1970)"
         }
     }
-    
-    
-    //MARK : - 화면이 없어지면 쓰레기통을 비워 없애버림
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        // 여러개중에 첫번째 요소만 dispose해버림
-        dispose?.forEach({ $0.dispose() })
-    }
 
     private func setVisibleWithAnimation(_ v: UIView?, _ s: Bool) {
         guard let v = v else { return }
@@ -191,6 +183,7 @@ class ViewController: UIViewController {
             }
             // 버릴걸 명단을 작성해놓음
             // 버릴때 명단에 있는놈들을 없애버림
+            // 화면이 메모리해제되면 자동으로 없어짐
             .disposed(by: disposable)
     }
 }
