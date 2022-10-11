@@ -69,7 +69,7 @@ class ViewController: UIViewController {
 //    }
         
     //MARK : - RxSwift의 기본적인 사용법
-    func downloadJson(_ url: String) -> Observable<String?> {
+    func downloadJson(_ url: String) -> Observable<String> {
         return Observable.create { emitter in
             let url = URL(string: MEMBER_LIST_URL)!
             URLSession.shared.dataTask(with: url) { data, response, error in
@@ -130,6 +130,7 @@ class ViewController: UIViewController {
         setVisibleWithAnimation(activityIndicator, true)
         // 2.observable로 오는 데이터를 받아서 처리하는 방법
         let observable = downloadJson(MEMBER_LIST_URL)
+        let helloObservable = Observable.just("Hello World")
         //MARK : - .subscribe의 뜻은 "나중에오면" -> "나중에생기는데이터"는 json
         
         // subscribe도 onNext만 받아서 처리할 수 있다
@@ -146,21 +147,31 @@ class ViewController: UIViewController {
         //                print("\(error)")
         //            }
         //        }
-        observable
-            // operator라고 함
-            .observeOn(MainScheduler.instance) // main스레드에서 작업하게하는 operator
-            .map { element in element?.count ?? 0 } // operator
-            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .default)) // operator
-            .filter { element in element > 0 } // operator
-            .map { "\($0)" } // operator
-            // onNext만 받아서 작업
-            .subscribe (onNext: { json in
-                    self.editView.text = json
-                    self.setVisibleWithAnimation(self.activityIndicator, false)
-            })
+//        observable
+//            // operator라고 함
+//            .observeOn(MainScheduler.instance) // main스레드에서 작업하게하는 operator
+//            .map { element in element?.count ?? 0 } // operator
+//            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .default)) // operator
+//            .filter { element in element > 0 } // operator
+//            .map { "\($0)" } // operator
+//            // onNext만 받아서 작업
+//            .subscribe (onNext: { json in
+//                    self.editView.text = json
+//                    self.setVisibleWithAnimation(self.activityIndicator, false)
+//            })
 //            .subscribe { <#String#> in
 //                <#code#>
 //            }
+        
+        
+        //MARK : - subscribe(나중에 오는 데이터를 처리하려면)는 Observable에서 처리할 수 있다
+        // 이미 위에 observable로 return된 변수들이 있지만 두개의 observable을 한번에 받을 observable을 만들어서 처리한다
+        Observable.zip(observable, helloObservable) { $1 + "\n" + $0 }
+            .observeOn(MainScheduler.instance)
+            .subscribe { json in
+                self.editView.text = json
+                self.setVisibleWithAnimation(self.activityIndicator, false)
+            }
         
     }
 }
