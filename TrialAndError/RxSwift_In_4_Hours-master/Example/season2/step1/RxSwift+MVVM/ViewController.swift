@@ -15,12 +15,29 @@ let MEMBER_LIST_URL = "https://my.api.mockaroo.com/members_with_avatar.json?key=
 class ViewController: UIViewController {
     @IBOutlet var timerLabel: UILabel!
     @IBOutlet var editView: UITextView!
+    
+    //MARK : - 쓰레기통을 만들어 놓음
+    // 나중에 내가 쓰레기통을 비운다는 명령을 실행할 수 있음
+    // 버릴게 많으면 array로 형태 변경
+    // 매번 이렇게 하기가 귀찮기 때문에 sugar가 제공
+    //var dispose: [Disposable]?
+    
+    //MARK : - dispose들을 담는 가방
+    var disposable = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
             self?.timerLabel.text = "\(Date().timeIntervalSince1970)"
         }
+    }
+    
+    
+    //MARK : - 화면이 없어지면 쓰레기통을 비워 없애버림
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // 여러개중에 첫번째 요소만 dispose해버림
+        dispose?.forEach({ $0.dispose() })
     }
 
     private func setVisibleWithAnimation(_ v: UIView?, _ s: Bool) {
@@ -172,6 +189,8 @@ class ViewController: UIViewController {
                 self.editView.text = json
                 self.setVisibleWithAnimation(self.activityIndicator, false)
             }
-        
+            // 버릴걸 명단을 작성해놓음
+            // 버릴때 명단에 있는놈들을 없애버림
+            .disposed(by: disposable)
     }
 }
