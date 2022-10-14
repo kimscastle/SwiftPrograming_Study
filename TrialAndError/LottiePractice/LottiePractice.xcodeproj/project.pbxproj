@@ -8,25 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		C00B954128F968800066EED5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00B954028F968800066EED5 /* AppDelegate.swift */; };
-		C00B954328F968800066EED5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00B954228F968800066EED5 /* SceneDelegate.swift */; };
 		C00B954528F968800066EED5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00B954428F968800066EED5 /* ViewController.swift */; };
 		C00B954828F968800066EED5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00B954628F968800066EED5 /* Main.storyboard */; };
 		C00B954A28F968800066EED5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C00B954928F968800066EED5 /* Assets.xcassets */; };
 		C00B954D28F968800066EED5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00B954B28F968800066EED5 /* LaunchScreen.storyboard */; };
 		C00B955628F968A40066EED5 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C00B955528F968A40066EED5 /* Lottie */; };
 		C00B955828F968C20066EED5 /* HomeLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = C00B955728F968C20066EED5 /* HomeLottie.json */; };
+		C00B955D28F96B630066EED5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C00B955C28F96B630066EED5 /* SnapKit */; };
+		C00B955F28F96CAE0066EED5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00B955E28F96CAE0066EED5 /* HomeViewModel.swift */; };
+		C00B956128F96D2A0066EED5 /* ConstellationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00B956028F96D2A0066EED5 /* ConstellationCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C00B953D28F968800066EED5 /* LottiePractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LottiePractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C00B954028F968800066EED5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C00B954228F968800066EED5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C00B954428F968800066EED5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C00B954728F968800066EED5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C00B954928F968800066EED5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C00B954C28F968800066EED5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C00B954E28F968800066EED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C00B955728F968C20066EED5 /* HomeLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HomeLottie.json; sourceTree = "<group>"; };
+		C00B955E28F96CAE0066EED5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C00B956028F96D2A0066EED5 /* ConstellationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstellationCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +38,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C00B955628F968A40066EED5 /* Lottie in Frameworks */,
+				C00B955D28F96B630066EED5 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +48,7 @@
 		C00B953428F9687F0066EED5 = {
 			isa = PBXGroup;
 			children = (
+				C00B955728F968C20066EED5 /* HomeLottie.json */,
 				C00B953F28F968800066EED5 /* LottiePractice */,
 				C00B953E28F968800066EED5 /* Products */,
 			);
@@ -60,10 +65,10 @@
 		C00B953F28F968800066EED5 /* LottiePractice */ = {
 			isa = PBXGroup;
 			children = (
-				C00B955728F968C20066EED5 /* HomeLottie.json */,
 				C00B954028F968800066EED5 /* AppDelegate.swift */,
-				C00B954228F968800066EED5 /* SceneDelegate.swift */,
 				C00B954428F968800066EED5 /* ViewController.swift */,
+				C00B956028F96D2A0066EED5 /* ConstellationCollectionViewCell.swift */,
+				C00B955E28F96CAE0066EED5 /* HomeViewModel.swift */,
 				C00B954628F968800066EED5 /* Main.storyboard */,
 				C00B954928F968800066EED5 /* Assets.xcassets */,
 				C00B954B28F968800066EED5 /* LaunchScreen.storyboard */,
@@ -90,6 +95,7 @@
 			name = LottiePractice;
 			packageProductDependencies = (
 				C00B955528F968A40066EED5 /* Lottie */,
+				C00B955C28F96B630066EED5 /* SnapKit */,
 			);
 			productName = LottiePractice;
 			productReference = C00B953D28F968800066EED5 /* LottiePractice.app */;
@@ -121,6 +127,7 @@
 			mainGroup = C00B953428F9687F0066EED5;
 			packageReferences = (
 				C00B955428F968A40066EED5 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				C00B955B28F96B630066EED5 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = C00B953E28F968800066EED5 /* Products */;
 			projectDirPath = "";
@@ -152,7 +159,8 @@
 			files = (
 				C00B954528F968800066EED5 /* ViewController.swift in Sources */,
 				C00B954128F968800066EED5 /* AppDelegate.swift in Sources */,
-				C00B954328F968800066EED5 /* SceneDelegate.swift in Sources */,
+				C00B956128F96D2A0066EED5 /* ConstellationCollectionViewCell.swift in Sources */,
+				C00B955F28F96CAE0066EED5 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +390,14 @@
 				kind = branch;
 			};
 		};
+		C00B955B28F96B630066EED5 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -389,6 +405,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C00B955428F968A40066EED5 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		C00B955C28F96B630066EED5 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C00B955B28F96B630066EED5 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
