@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  Lottie
+//  LottiePractice
 //
 //  Created by uiskim on 2022/10/14.
 //
