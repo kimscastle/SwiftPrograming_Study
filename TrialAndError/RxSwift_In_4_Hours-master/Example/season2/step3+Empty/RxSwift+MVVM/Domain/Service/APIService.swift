@@ -13,7 +13,8 @@ let MenuUrl = "https://firebasestorage.googleapis.com/v0/b/rxswiftin4hours.appsp
 class APIService {
     static func fetchAllMenus(onComplete: @escaping (Result<Data, Error>) -> Void) {
         URLSession.shared.dataTask(with: URL(string: MenuUrl)!) { data, res, err in
-            if let err = err {
+            if let err = err { 
+                //MARK : - rx를 사용하지 않기 때문에 콜백함수를 만들어줘야하는데 input이 Result타입이므로(enum) .failure인지 .success인지를 명시해줘야한다
                 onComplete(.failure(err))
                 return
             }
