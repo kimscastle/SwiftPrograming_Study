@@ -10,7 +10,14 @@ import Foundation
 
 // ViewModel
 struct Menu {
+    var id: Int
     var name: String
     var price: Int
     var count: Int
+}
+
+extension Menu {
+    static func fromMenuItems(index: Int, item: MenuItem) -> Menu {
+        return Menu(id: index, name: item.name, price: item.price, count: 0)
+    }
 }

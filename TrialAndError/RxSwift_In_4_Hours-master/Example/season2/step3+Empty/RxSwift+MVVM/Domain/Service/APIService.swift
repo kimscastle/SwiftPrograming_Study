@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 let MenuUrl = "https://firebasestorage.googleapis.com/v0/b/rxswiftin4hours.appspot.com/o/fried_menus.json?alt=media&token=42d5cb7e-8ec4-48f9-bf39-3049e796c936"
 
@@ -27,5 +29,21 @@ class APIService {
             }
             onComplete(.success(data))
         }.resume()
+    }
+    
+    static func fetchAllMenusRx() -> Observable<Data> {
+        return Observable.create { emitter in
+            
+            fetchAllMenus { result in
+                switch result {
+                case .success(let data):
+                    emitter.onNext(data)
+                    emitter.onCompleted()
+                case .failure(let error):
+                    emitter.onError(error)
+                }
+            }
+            return Disposables.create()
+        }
     }
 }

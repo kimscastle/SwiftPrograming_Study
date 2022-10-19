@@ -88,6 +88,9 @@ class ViewController: UIViewController {
                 }
 
                 guard let data = data, let json = String(data: data, encoding: .utf8) else { return }
+                // observable => 데이터를 만들어서 넘겨주는 놈
+                // observer => 데이터를 받는 놈
+                // 구독자에게 json이라는 데이터를 보낸다
                 emitter.onNext(json)
                 emitter.onCompleted()
 
