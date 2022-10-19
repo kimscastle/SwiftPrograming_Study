@@ -8,7 +8,7 @@
 
 import UIKit
 import RxSwift
-import RxCocoa 
+import RxCocoa
 
 class MenuViewController: UIViewController {
     // MARK: - Life Cycle
@@ -31,8 +31,6 @@ class MenuViewController: UIViewController {
                 cell.onChange = { [weak self] increase in
                     self?.viewModel.changeCount(item: item, increase: increase)
                 }
-                 
-                
             }
             .disposed(by: disposeBag)
         

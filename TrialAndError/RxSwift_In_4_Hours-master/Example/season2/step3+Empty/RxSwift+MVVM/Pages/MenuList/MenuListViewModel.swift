@@ -13,7 +13,7 @@ import RxCocoa
 class MenuListViewModel {
 
     lazy var menuObservable = BehaviorSubject<[Menu]>(value: [])
-    //데이터를 전달만해주는 놈 구독한사람들한테 전달할 데이터 -> just안에 들어있는 놈
+    //데이터를 전달만해주는 놈 구독한사람들한테 전달할 데이터 -> just안에 들어있는 놈 : Observable의 역할
     //근데 이놈이 데이터가 계속 바뀌어서 데이터를 받기도 해야함(observer의 역할도 해야함)
     //데이터를 받는다 -> 어디선가 onNext가 가능하다
     
@@ -39,13 +39,10 @@ class MenuListViewModel {
                 return menus
             }
             .take(1)
-            // binder가 아닌 다른 observabele(여기서는 menuObservable)이 받게 하려면 .bind(onNext {})로 넘겨줘야한다
-            // observable이 데이터를 넘겨줬다 -> 그럼 받아야한다 subscribe나 bind로
-            // bind로 받아서 데이터를 넘겨줄건데 binder한테 넘겨줄게 아니네? ..rx...가 없네?
-            // 그러면 onNext로 넘겨주는데 menuObservable이 subject네? onNext로 데이터를 받을수있는녀석이네?
-            // 그럼 .bind(onNext로 넘겨주되 menuObservable.onNext로 데이터를 넘겨줘야겠다
-            .bind(onNext: { menus in
-                self.menuObservable.onNext(menus)
+            // default : .bind(onNext: ) 또는 .subscribe(onNext: )
+            // 혹시나 binder에 보내는경우(rx.블라블라)는 .bind(to: )
+            .bind(onNext: { [weak self] menus in
+                self?.menuObservable.onNext(menus)
             })
     }
     
@@ -61,6 +58,7 @@ class MenuListViewModel {
             .bind(onNext: { menus in
                 self.menuObservable.onNext(menus)
             })
+        
             // 사실 이렇게 바로 없애버리는건 좋지 않음 그렇다고 disposbag을 만들자니 한번쓰고 이 stream이 끊어져야하는데 viewModel자체가 MainViewController가 없어질때까지 유지가 되니까 이걸 그냥 한번만 실행하게 만들자는 의미가 .task(1)이라는 operator
             //.dispose()
     }
