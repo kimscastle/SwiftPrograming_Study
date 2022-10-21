@@ -86,9 +86,8 @@ class MenuViewController: UIViewController {
         //MARK : - 눌렀을때 값자체는 변하지만 ui에 적용이 안되기때문에 아래 실행문들을 또 가져와야한다 viewDidLoad와 중복되니까 함수로 뺴준다
         // -> 이렇게 하기가 싫다....
         //viewModel.totalPrice.onNext(100)
-        // viewModel에 "menuObservable에" 보낸다
+        //viewModel에 "menuObservable에" 보낸다
         viewModel.onOrder()
         
     }
- 
 }

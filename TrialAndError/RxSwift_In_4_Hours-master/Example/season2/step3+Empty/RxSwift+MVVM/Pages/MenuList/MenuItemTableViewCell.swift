@@ -16,7 +16,6 @@ class MenuItemTableViewCell: UITableViewCell {
     var onChange: ((Int) -> Void)?
 
     @IBAction func onIncreaseCount() {
-        print("✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅")
         onChange?(1)
         // onChange를 그냥쓰는건 함수를 가리키는거
         // onChange(1)은 input에 1을 넣고 함수를 실행시키는거

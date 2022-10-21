@@ -19,7 +19,11 @@ class MenuListViewModel {
     
     lazy var itemsCount = menuObservable.map { $0.map { $0.count }.reduce(0, +) }
     //MARK : - 매번 ui를 업데이트 해주는 코드를 사용하는게 불편하다면??? 변하는 값을 관찰하면된다
+    // rxswift의 operator map과 swift의 기본 고차함수 map은 약간 다르다
+    // 데이터 자체를 input으로 넣는다 = rxswift의 map
+    // 데이터의 요소를 차례로 input으로 넣는다 = swift의 map
     lazy var totalPrice = menuObservable.map { $0.map { $0.price * $0.count }.reduce(0, +) }
+
     
     init() {
         _ = APIService.fetchAllMenusRx()
