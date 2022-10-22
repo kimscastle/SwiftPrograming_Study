@@ -124,25 +124,25 @@ class ViewController: UIViewController {
         
         //MARK : - 첫번째 방법(URLSesseion)
         // ui를 건드리는 부분(text를 수정한다던가 animation을 사용한다던가)은 main에서 진행해야한다
-//        editView.text = ""
-//        setVisibleWithAnimation(activityIndicator, true) //이걸 urlsession에 넣으면 에러발생
-//        let url = URL(string: MEMBER_LIST_URL)!
-//        URLSession.shared.dataTask(with: url) { data, response, error in
-//            guard let data = data else {return}
-//            let json = String(data: data, encoding: .utf8)
-//            // ui작업은 다시 main에서 작업할 수 있게
-//            DispatchQueue.main.async {
-//                self.editView.text = json
-//                self.setVisibleWithAnimation(self.activityIndicator, false)
-//            }
-//        }.resume()  // 빼먹으면 안됨
+        editView.text = ""
+        setVisibleWithAnimation(activityIndicator, true) //이걸 urlsession에 넣으면 에러발생
+        let url = URL(string: MEMBER_LIST_URL)!
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else {return}
+            let json = String(data: data, encoding: .utf8)
+            // ui작업은 다시 main에서 작업할 수 있게
+            DispatchQueue.main.async {
+                self.editView.text = json
+                self.setVisibleWithAnimation(self.activityIndicator, false)
+            }
+        }.resume()  // 빼먹으면 안됨
         
         //MARK : - 두번째 방법(DispatchQueue)
-        editView.text = ""
-        setVisibleWithAnimation(activityIndicator, true)
-        // 2.observable로 오는 데이터를 받아서 처리하는 방법
-        let observable = downloadJson(MEMBER_LIST_URL)
-        let helloObservable = Observable.just("Hello World")
+//        editView.text = ""
+//        setVisibleWithAnimation(activityIndicator, true)
+//        // 2.observable로 오는 데이터를 받아서 처리하는 방법
+//        let observable = downloadJson(MEMBER_LIST_URL)
+//        let helloObservable = Observable.just("Hello World")
         //MARK : - .subscribe의 뜻은 "나중에오면" -> "나중에생기는데이터"는 json
         
         // subscribe도 onNext만 받아서 처리할 수 있다
@@ -178,15 +178,15 @@ class ViewController: UIViewController {
         
         //MARK : - subscribe(나중에 오는 데이터를 처리하려면)는 Observable에서 처리할 수 있다
         // 이미 위에 observable로 return된 변수들이 있지만 두개의 observable을 한번에 받을 observable을 만들어서 처리한다
-        Observable.zip(observable, helloObservable) { $1 + "\n" + $0 }
-            .observeOn(MainScheduler.instance)
-            .subscribe { json in
-                self.editView.text = json
-                self.setVisibleWithAnimation(self.activityIndicator, false)
-            }
-            // 버릴걸 명단을 작성해놓음
-            // 버릴때 명단에 있는놈들을 없애버림
-            // 화면이 메모리해제되면 자동으로 없어짐
-            .disposed(by: disposable)
+//        Observable.zip(observable, helloObservable) { $1 + "\n" + $0 }
+//            .observeOn(MainScheduler.instance)
+//            .subscribe { json in
+//                self.editView.text = json
+//                self.setVisibleWithAnimation(self.activityIndicator, false)
+//            }
+//            // 버릴걸 명단을 작성해놓음
+//            // 버릴때 명단에 있는놈들을 없애버림
+//            // 화면이 메모리해제되면 자동으로 없어짐
+//            .disposed(by: disposable)
     }
 }
