@@ -21,7 +21,8 @@ class ReviewTableViewCell: UITableViewCell {
             starPoint.text = review.point
             reviewUploadDate.text = review.date
             content.text = review.content
-            if (content.text as! NSString).size().width < 300 {
+            guard let text = content.text else {return}
+            if (text as NSString).size().width < 300 {
                 moreButton.isHidden = true
             }
         }
