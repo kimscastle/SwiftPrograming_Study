@@ -10,6 +10,8 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+// MARK: - .bind(onNext: ), .subscribe(onNext: )는 데이터를 받아서 ~ 하자 라고 해석
+// MARK: - A.onNext(B)는 A에게 B데이터를 보낸다라고 해석
 class MenuListViewModel {
 
     lazy var menuObservable = BehaviorSubject<[Menu]>(value: [])
