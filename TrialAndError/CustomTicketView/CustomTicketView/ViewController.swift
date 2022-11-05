@@ -20,10 +20,6 @@ class ViewController: UIViewController {
             make.width.equalTo(view.frame.width-100)
             make.height.equalTo(view.frame.height-200)
         }
-        
-        
     }
-
-
 }
 
