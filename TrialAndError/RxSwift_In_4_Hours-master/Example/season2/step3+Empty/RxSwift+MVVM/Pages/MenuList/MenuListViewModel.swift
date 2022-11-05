@@ -70,6 +70,8 @@ class MenuListViewModel {
     }
     
     func changeCount(item: Menu, increase: Int) {
+        // 변화를감지한다 ->
+        // observable은 사실 값을 방출하는
         _ = menuObservable
             .map { menus in
                 menus.map { menu in
@@ -82,7 +84,7 @@ class MenuListViewModel {
                 }
             }
             .take(1)
-            .bind(onNext: { menus in
+            .subscribe(onNext: { menus in
                 self.menuObservable.onNext(menus)
             })
     }

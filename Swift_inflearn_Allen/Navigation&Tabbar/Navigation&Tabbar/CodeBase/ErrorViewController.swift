@@ -74,4 +74,8 @@ class ErrorViewController: UIViewController {
     @objc func backButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
+    
+    deinit {
+        print("ggg")
+    }
 }

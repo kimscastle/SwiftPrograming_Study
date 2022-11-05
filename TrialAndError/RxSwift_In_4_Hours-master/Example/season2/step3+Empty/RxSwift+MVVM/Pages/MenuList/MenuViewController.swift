@@ -45,9 +45,11 @@ class MenuViewController: UIViewController {
             // binder가 아닌 다른 observabele이 받게 하려면 .bind(onNext {})로 넘겨줘야한다
             .bind(to: itemCountLabel.rx.text)
             .disposed(by: disposeBag)
-
+        
+        // observable => 값을 보낼수있는 변수
         viewModel.totalPrice
             .map { $0.currencyKR() }
+            // totalPrice.text에다가 값을 보내준다
             .bind(to: totalPrice.rx.text)
             .disposed(by: disposeBag)
     }

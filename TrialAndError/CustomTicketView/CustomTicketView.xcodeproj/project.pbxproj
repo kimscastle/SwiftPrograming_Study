@@ -7,113 +7,110 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C0C404DE290815120009235A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C404DD290815120009235A /* AppDelegate.swift */; };
-		C0C404E0290815120009235A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C404DF290815120009235A /* SceneDelegate.swift */; };
-		C0C404E2290815120009235A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C404E1290815120009235A /* ViewController.swift */; };
-		C0C404E5290815120009235A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0C404E3290815120009235A /* Main.storyboard */; };
-		C0C404E7290815140009235A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0C404E6290815140009235A /* Assets.xcassets */; };
-		C0C404EA290815140009235A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0C404E8290815140009235A /* LaunchScreen.storyboard */; };
-		C0C404F3290816480009235A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C0C404F2290816480009235A /* SnapKit */; };
-		C0C404F5290833900009235A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C404F4290833900009235A /* DetailViewController.swift */; };
-		C0C404F7290900B30009235A /* PlanetImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C404F6290900B30009235A /* PlanetImageView.swift */; };
+		C048D5F129164AC00015B924 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C048D5F029164AC00015B924 /* AppDelegate.swift */; };
+		C048D5F329164AC00015B924 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C048D5F229164AC00015B924 /* SceneDelegate.swift */; };
+		C048D5F529164AC00015B924 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C048D5F429164AC00015B924 /* ViewController.swift */; };
+		C048D5F829164AC00015B924 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C048D5F629164AC00015B924 /* Main.storyboard */; };
+		C048D5FA29164AC10015B924 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C048D5F929164AC10015B924 /* Assets.xcassets */; };
+		C048D5FD29164AC10015B924 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C048D5FB29164AC10015B924 /* LaunchScreen.storyboard */; };
+		C048D60629164B1C0015B924 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C048D60529164B1C0015B924 /* SnapKit */; };
+		C048D60829164DFD0015B924 /* TicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C048D60729164DFD0015B924 /* TicketView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C0C404DA290815120009235A /* UIView_Tag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIView_Tag.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0C404DD290815120009235A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C0C404DF290815120009235A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C0C404E1290815120009235A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C0C404E4290815120009235A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C0C404E6290815140009235A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C0C404E9290815140009235A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C0C404EB290815140009235A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C0C404F4290833900009235A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		C0C404F6290900B30009235A /* PlanetImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetImageView.swift; sourceTree = "<group>"; };
+		C048D5ED29164AC00015B924 /* CustomTicketView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomTicketView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C048D5F029164AC00015B924 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C048D5F229164AC00015B924 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C048D5F429164AC00015B924 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C048D5F729164AC00015B924 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C048D5F929164AC10015B924 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C048D5FC29164AC10015B924 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C048D5FE29164AC10015B924 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C048D60729164DFD0015B924 /* TicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C0C404D7290815120009235A /* Frameworks */ = {
+		C048D5EA29164ABF0015B924 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0C404F3290816480009235A /* SnapKit in Frameworks */,
+				C048D60629164B1C0015B924 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C0C404D1290815120009235A = {
+		C048D5E429164ABF0015B924 = {
 			isa = PBXGroup;
 			children = (
-				C0C404DC290815120009235A /* UIView_Tag */,
-				C0C404DB290815120009235A /* Products */,
+				C048D5EF29164AC00015B924 /* CustomTicketView */,
+				C048D5EE29164AC00015B924 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		C0C404DB290815120009235A /* Products */ = {
+		C048D5EE29164AC00015B924 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C0C404DA290815120009235A /* UIView_Tag.app */,
+				C048D5ED29164AC00015B924 /* CustomTicketView.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C0C404DC290815120009235A /* UIView_Tag */ = {
+		C048D5EF29164AC00015B924 /* CustomTicketView */ = {
 			isa = PBXGroup;
 			children = (
-				C0C404DD290815120009235A /* AppDelegate.swift */,
-				C0C404DF290815120009235A /* SceneDelegate.swift */,
-				C0C404E1290815120009235A /* ViewController.swift */,
-				C0C404F6290900B30009235A /* PlanetImageView.swift */,
-				C0C404F4290833900009235A /* DetailViewController.swift */,
-				C0C404E3290815120009235A /* Main.storyboard */,
-				C0C404E6290815140009235A /* Assets.xcassets */,
-				C0C404E8290815140009235A /* LaunchScreen.storyboard */,
-				C0C404EB290815140009235A /* Info.plist */,
+				C048D5F029164AC00015B924 /* AppDelegate.swift */,
+				C048D5F229164AC00015B924 /* SceneDelegate.swift */,
+				C048D5F429164AC00015B924 /* ViewController.swift */,
+				C048D60729164DFD0015B924 /* TicketView.swift */,
+				C048D5F629164AC00015B924 /* Main.storyboard */,
+				C048D5F929164AC10015B924 /* Assets.xcassets */,
+				C048D5FB29164AC10015B924 /* LaunchScreen.storyboard */,
+				C048D5FE29164AC10015B924 /* Info.plist */,
 			);
-			path = UIView_Tag;
+			path = CustomTicketView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C0C404D9290815120009235A /* UIView_Tag */ = {
+		C048D5EC29164ABF0015B924 /* CustomTicketView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C0C404EE290815140009235A /* Build configuration list for PBXNativeTarget "UIView_Tag" */;
+			buildConfigurationList = C048D60129164AC10015B924 /* Build configuration list for PBXNativeTarget "CustomTicketView" */;
 			buildPhases = (
-				C0C404D6290815120009235A /* Sources */,
-				C0C404D7290815120009235A /* Frameworks */,
-				C0C404D8290815120009235A /* Resources */,
+				C048D5E929164ABF0015B924 /* Sources */,
+				C048D5EA29164ABF0015B924 /* Frameworks */,
+				C048D5EB29164ABF0015B924 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = UIView_Tag;
+			name = CustomTicketView;
 			packageProductDependencies = (
-				C0C404F2290816480009235A /* SnapKit */,
+				C048D60529164B1C0015B924 /* SnapKit */,
 			);
-			productName = UIView_Tag;
-			productReference = C0C404DA290815120009235A /* UIView_Tag.app */;
+			productName = CustomTicketView;
+			productReference = C048D5ED29164AC00015B924 /* CustomTicketView.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C0C404D2290815120009235A /* Project object */ = {
+		C048D5E529164ABF0015B924 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
 				TargetAttributes = {
-					C0C404D9290815120009235A = {
-						CreatedOnToolsVersion = 14.0.1;
+					C048D5EC29164ABF0015B924 = {
+						CreatedOnToolsVersion = 14.1;
 					};
 				};
 			};
-			buildConfigurationList = C0C404D5290815120009235A /* Build configuration list for PBXProject "UIView_Tag" */;
+			buildConfigurationList = C048D5E829164ABF0015B924 /* Build configuration list for PBXProject "CustomTicketView" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -121,60 +118,59 @@
 				en,
 				Base,
 			);
-			mainGroup = C0C404D1290815120009235A;
+			mainGroup = C048D5E429164ABF0015B924;
 			packageReferences = (
-				C0C404F1290816480009235A /* XCRemoteSwiftPackageReference "SnapKit" */,
+				C048D60429164B1C0015B924 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
-			productRefGroup = C0C404DB290815120009235A /* Products */;
+			productRefGroup = C048D5EE29164AC00015B924 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C0C404D9290815120009235A /* UIView_Tag */,
+				C048D5EC29164ABF0015B924 /* CustomTicketView */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C0C404D8290815120009235A /* Resources */ = {
+		C048D5EB29164ABF0015B924 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0C404EA290815140009235A /* LaunchScreen.storyboard in Resources */,
-				C0C404E7290815140009235A /* Assets.xcassets in Resources */,
-				C0C404E5290815120009235A /* Main.storyboard in Resources */,
+				C048D5FD29164AC10015B924 /* LaunchScreen.storyboard in Resources */,
+				C048D5FA29164AC10015B924 /* Assets.xcassets in Resources */,
+				C048D5F829164AC00015B924 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C0C404D6290815120009235A /* Sources */ = {
+		C048D5E929164ABF0015B924 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0C404F7290900B30009235A /* PlanetImageView.swift in Sources */,
-				C0C404E2290815120009235A /* ViewController.swift in Sources */,
-				C0C404DE290815120009235A /* AppDelegate.swift in Sources */,
-				C0C404E0290815120009235A /* SceneDelegate.swift in Sources */,
-				C0C404F5290833900009235A /* DetailViewController.swift in Sources */,
+				C048D5F529164AC00015B924 /* ViewController.swift in Sources */,
+				C048D5F129164AC00015B924 /* AppDelegate.swift in Sources */,
+				C048D60829164DFD0015B924 /* TicketView.swift in Sources */,
+				C048D5F329164AC00015B924 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C0C404E3290815120009235A /* Main.storyboard */ = {
+		C048D5F629164AC00015B924 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C0C404E4290815120009235A /* Base */,
+				C048D5F729164AC00015B924 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		C0C404E8290815140009235A /* LaunchScreen.storyboard */ = {
+		C048D5FB29164AC10015B924 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C0C404E9290815140009235A /* Base */,
+				C048D5FC29164AC10015B924 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -182,7 +178,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		C0C404EC290815140009235A /* Debug */ = {
+		C048D5FF29164AC10015B924 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -232,7 +228,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -242,7 +238,7 @@
 			};
 			name = Debug;
 		};
-		C0C404ED290815140009235A /* Release */ = {
+		C048D60029164AC10015B924 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -286,7 +282,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -296,7 +292,7 @@
 			};
 			name = Release;
 		};
-		C0C404EF290815140009235A /* Debug */ = {
+		C048D60229164AC10015B924 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -305,7 +301,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z225784MRD;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = UIView_Tag/Info.plist;
+				INFOPLIST_FILE = CustomTicketView/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -316,7 +312,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "uikit.UIView-Tag";
+				PRODUCT_BUNDLE_IDENTIFIER = uikit.CustomTicketView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -324,7 +320,7 @@
 			};
 			name = Debug;
 		};
-		C0C404F0290815140009235A /* Release */ = {
+		C048D60329164AC10015B924 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -333,7 +329,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z225784MRD;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = UIView_Tag/Info.plist;
+				INFOPLIST_FILE = CustomTicketView/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -344,7 +340,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "uikit.UIView-Tag";
+				PRODUCT_BUNDLE_IDENTIFIER = uikit.CustomTicketView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -355,20 +351,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C0C404D5290815120009235A /* Build configuration list for PBXProject "UIView_Tag" */ = {
+		C048D5E829164ABF0015B924 /* Build configuration list for PBXProject "CustomTicketView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C0C404EC290815140009235A /* Debug */,
-				C0C404ED290815140009235A /* Release */,
+				C048D5FF29164AC10015B924 /* Debug */,
+				C048D60029164AC10015B924 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C0C404EE290815140009235A /* Build configuration list for PBXNativeTarget "UIView_Tag" */ = {
+		C048D60129164AC10015B924 /* Build configuration list for PBXNativeTarget "CustomTicketView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C0C404EF290815140009235A /* Debug */,
-				C0C404F0290815140009235A /* Release */,
+				C048D60229164AC10015B924 /* Debug */,
+				C048D60329164AC10015B924 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -376,7 +372,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C0C404F1290816480009235A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		C048D60429164B1C0015B924 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -387,12 +383,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C0C404F2290816480009235A /* SnapKit */ = {
+		C048D60529164B1C0015B924 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C0C404F1290816480009235A /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = C048D60429164B1C0015B924 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = C0C404D2290815120009235A /* Project object */;
+	rootObject = C048D5E529164ABF0015B924 /* Project object */;
 }
