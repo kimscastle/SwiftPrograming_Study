@@ -14,6 +14,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .lightGray
         view.addSubview(ticketView)
         ticketView.snp.makeConstraints { make in
             make.center.equalToSuperview()

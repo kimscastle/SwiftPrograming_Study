@@ -6,18 +6,47 @@
 //
 
 import UIKit
+import SnapKit
 
 class TicketView: UIView {
+    
+    let ticketView: UIView = {
+        let ticket = UIView()
+        ticket.backgroundColor = .white
+        return ticket
+    }()
+    
+    let ticketImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "moviewTitleImage")
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "gdgdg"
+        label.textColor = .black
+        return label
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        backgroundColor = .systemBlue
-//        clipsToBounds = true
-//        layer.cornerRadius = 18
+        addSubview(ticketView)
+        ticketView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        ticketView.addSubview(ticketImage)
+        ticketImage.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(100)
+        }
     }
     
-    override func layoutSubviews() {
+    override func draw(_ rect: CGRect) {
         drawTicket()
+        addDashedBorder()
     }
     
     required init?(coder: NSCoder) {
@@ -28,7 +57,7 @@ class TicketView: UIView {
         // MARK: - 티켓의 기본 틀을 그림
         let ticketShapeLayer = CAShapeLayer()
         ticketShapeLayer.frame = self.bounds
-        ticketShapeLayer.fillColor = UIColor.red.cgColor
+        ticketShapeLayer.fillColor = UIColor.white.cgColor
         let ticketShapePath = UIBezierPath(roundedRect: ticketShapeLayer.bounds, cornerRadius: 18)
 
         // MARK: - 어떤 영역을 빼는게 아니라 path를 알려줘서 그 path대로 따라가게 끔 만들어주는 방법
@@ -69,7 +98,27 @@ class TicketView: UIView {
         ticketShapePath.append(bottomLeftArcPath)
         ticketShapePath.append(bottomRightArcPath)
         ticketShapeLayer.path = ticketShapePath.cgPath
-        layer.addSublayer(ticketShapeLayer)
+        ticketView.layer.mask = ticketShapeLayer
+        ticketView.clipsToBounds = true
+        
+    }
+    
+    func addDashedBorder() {
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.strokeColor = UIColor.blue.cgColor
+        shapeLayer.lineWidth = 2
+        // MARK: -  .lineDashPattern의 의미는 길이20과 빈공간5의 패턴으로 dashLine을 만들어달라는 뜻
+        shapeLayer.lineDashPattern = [10,10]
+
+        let path = CGMutablePath()
+        path.addLines(between: [CGPoint(x: 18, y: 200),
+                                CGPoint(x: self.frame.width-18, y: 200)])
+        
+        
+        path.addLines(between: [CGPoint(x: 18, y: self.bounds.height - 100),
+                                CGPoint(x: self.frame.width-18, y: self.bounds.height - 100)])
+        shapeLayer.path = path
+        layer.addSublayer(shapeLayer)
     }
     
 
