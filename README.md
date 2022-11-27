@@ -6,10 +6,10 @@
 | Present | 22/10/01 | [📸](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/HowToMoveScreen)  | - iOS의 여러가지 화면이동방법 구현(Present) <br />- codebase구현, storyboard구현, 간접세그웨이, 직접세그웨이 |
 | CAEmitterLayer | 22/10/02   | [📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/SparkleAnimation)  | - 카카오톡 돈받은 화면에서 화면터치하면 하트가 계속 나오는 애니메이션 구현<br />- CAEmitterLayer, CAEmitterCell를 이용한 파티클효과 구현   |
 | Lottie | 22/10/14 | [📚](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/LottiePractice) | - Lottie이미지 위에 배경화면 구현<br />- 특정상황에서는 Lottie이미지가 멈추도록 분기처리 |
-|MoreButton|22/10/22|[]()|-리뷰가있는 tableView에서 더보기 버튼을 구현하는 방법<br />-delegate pattern사용법 및 반응형 cell만들기|
-|UIView Tag|22/10/25|[]()|-Tag를 이용해 UIView를 구분하는 방법|
-| TicketView | 22/11/05|[]()|-티켓모양View구현<br />-UIBezierPath의 기본사용방법 |
-|Frame&AutoLayout|22/11/11|[]()|-Frame과 AutoLayout의 차이|
-|Combine|22/11/12|[]()|-Combine기초 연습폴더|
-| RxSwift | 22/11/26 |[]()|- 곰튀김Rxswift 연습폴더|
+|MoreButton|22/10/22|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/MoreButton_CommentBox)|-리뷰가있는 tableView에서 더보기 버튼을 구현하는 방법<br />-delegate pattern사용법 및 반응형 cell만들기|
+|UIView Tag|22/10/25|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/UIView_Tag)|-Tag를 이용해 UIView를 구분하는 방법|
+| TicketView | 22/11/05|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/CustomTicketView)|-티켓모양View구현<br />-UIBezierPath의 기본사용방법 |
+|Frame&AutoLayout|22/11/11|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/FrameAndAutolayout)|-Frame과 AutoLayout의 차이|
+|Combine|22/11/12|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/Combine_Basic)|-Combine기초 연습폴더|
+| RxSwift | 22/11/26 |[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/RxSwift_In_4_Hours-master)|- 곰튀김Rxswift 연습폴더|
 
