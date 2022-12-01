@@ -14,6 +14,9 @@
 		C0A2EC412938B26800667F9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A2EC402938B26800667F9E /* Assets.xcassets */; };
 		C0A2EC442938B26800667F9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A2EC422938B26800667F9E /* LaunchScreen.storyboard */; };
 		C0A2EC4D2938B29C00667F9E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C0A2EC4C2938B29C00667F9E /* SnapKit */; };
+		C0A2EC512938B36D00667F9E /* LottoNumbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A2EC502938B36D00667F9E /* LottoNumbersView.swift */; };
+		C0A2EC532938B37800667F9E /* LottoBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A2EC522938B37800667F9E /* LottoBall.swift */; };
+		C0A2EC552938C01F00667F9E /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A2EC542938C01F00667F9E /* Int+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		C0A2EC402938B26800667F9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0A2EC432938B26800667F9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0A2EC452938B26800667F9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0A2EC502938B36D00667F9E /* LottoNumbersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoNumbersView.swift; sourceTree = "<group>"; };
+		C0A2EC522938B37800667F9E /* LottoBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoBall.swift; sourceTree = "<group>"; };
+		C0A2EC542938C01F00667F9E /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +65,11 @@
 			isa = PBXGroup;
 			children = (
 				C0A2EC372938B26700667F9E /* AppDelegate.swift */,
+				C0A2EC542938C01F00667F9E /* Int+.swift */,
 				C0A2EC392938B26700667F9E /* SceneDelegate.swift */,
 				C0A2EC3B2938B26700667F9E /* ViewController.swift */,
+				C0A2EC522938B37800667F9E /* LottoBall.swift */,
+				C0A2EC502938B36D00667F9E /* LottoNumbersView.swift */,
 				C0A2EC3D2938B26700667F9E /* Main.storyboard */,
 				C0A2EC402938B26800667F9E /* Assets.xcassets */,
 				C0A2EC422938B26800667F9E /* LaunchScreen.storyboard */,
@@ -148,7 +157,10 @@
 			files = (
 				C0A2EC3C2938B26700667F9E /* ViewController.swift in Sources */,
 				C0A2EC382938B26700667F9E /* AppDelegate.swift in Sources */,
+				C0A2EC512938B36D00667F9E /* LottoNumbersView.swift in Sources */,
+				C0A2EC532938B37800667F9E /* LottoBall.swift in Sources */,
 				C0A2EC3A2938B26700667F9E /* SceneDelegate.swift in Sources */,
+				C0A2EC552938C01F00667F9E /* Int+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
