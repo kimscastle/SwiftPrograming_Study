@@ -13,6 +13,7 @@
 		C021007F2988D4110092C9ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C021007D2988D4110092C9ED /* Main.storyboard */; };
 		C02100812988D4120092C9ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C02100802988D4120092C9ED /* Assets.xcassets */; };
 		C02100842988D4120092C9ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C02100822988D4120092C9ED /* LaunchScreen.storyboard */; };
+		C021008D2988D4860092C9ED /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C021008C2988D4860092C9ED /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C021008D2988D4860092C9ED /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = DatePicker;
+			packageProductDependencies = (
+				C021008C2988D4860092C9ED /* SnapKit */,
+			);
 			productName = DatePicker;
 			productReference = C02100742988D4110092C9ED /* DatePicker.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = C021006B2988D4110092C9ED;
+			packageReferences = (
+				C021008B2988D4860092C9ED /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = C02100752988D4110092C9ED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -360,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C021008B2988D4860092C9ED /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C021008C2988D4860092C9ED /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C021008B2988D4860092C9ED /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C021006C2988D4110092C9ED /* Project object */;
 }
