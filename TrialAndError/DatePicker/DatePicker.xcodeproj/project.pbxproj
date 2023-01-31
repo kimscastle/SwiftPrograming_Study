@@ -9,22 +9,24 @@
 /* Begin PBXBuildFile section */
 		C02100782988D4110092C9ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02100772988D4110092C9ED /* AppDelegate.swift */; };
 		C021007A2988D4110092C9ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02100792988D4110092C9ED /* SceneDelegate.swift */; };
-		C021007C2988D4110092C9ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021007B2988D4110092C9ED /* ViewController.swift */; };
+		C021007C2988D4110092C9ED /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021007B2988D4110092C9ED /* DatePickerViewController.swift */; };
 		C021007F2988D4110092C9ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C021007D2988D4110092C9ED /* Main.storyboard */; };
 		C02100812988D4120092C9ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C02100802988D4120092C9ED /* Assets.xcassets */; };
 		C02100842988D4120092C9ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C02100822988D4120092C9ED /* LaunchScreen.storyboard */; };
 		C021008D2988D4860092C9ED /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C021008C2988D4860092C9ED /* SnapKit */; };
+		C02100902988DE8C0092C9ED /* DateFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021008F2988DE8C0092C9ED /* DateFormatter+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C02100742988D4110092C9ED /* DatePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C02100772988D4110092C9ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C02100792988D4110092C9ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C021007B2988D4110092C9ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C021007B2988D4110092C9ED /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		C021007E2988D4110092C9ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C02100802988D4120092C9ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C02100832988D4120092C9ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C02100852988D4120092C9ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C021008F2988DE8C0092C9ED /* DateFormatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,15 +60,24 @@
 		C02100762988D4110092C9ED /* DatePicker */ = {
 			isa = PBXGroup;
 			children = (
+				C021008E2988DE7A0092C9ED /* Extension */,
 				C02100772988D4110092C9ED /* AppDelegate.swift */,
 				C02100792988D4110092C9ED /* SceneDelegate.swift */,
-				C021007B2988D4110092C9ED /* ViewController.swift */,
+				C021007B2988D4110092C9ED /* DatePickerViewController.swift */,
 				C021007D2988D4110092C9ED /* Main.storyboard */,
 				C02100802988D4120092C9ED /* Assets.xcassets */,
 				C02100822988D4120092C9ED /* LaunchScreen.storyboard */,
 				C02100852988D4120092C9ED /* Info.plist */,
 			);
 			path = DatePicker;
+			sourceTree = "<group>";
+		};
+		C021008E2988DE7A0092C9ED /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C021008F2988DE8C0092C9ED /* DateFormatter+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,7 +157,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C021007C2988D4110092C9ED /* ViewController.swift in Sources */,
+				C02100902988DE8C0092C9ED /* DateFormatter+.swift in Sources */,
+				C021007C2988D4110092C9ED /* DatePickerViewController.swift in Sources */,
 				C02100782988D4110092C9ED /* AppDelegate.swift in Sources */,
 				C021007A2988D4110092C9ED /* SceneDelegate.swift in Sources */,
 			);
