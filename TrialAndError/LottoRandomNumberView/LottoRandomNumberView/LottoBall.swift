@@ -24,7 +24,7 @@ enum LottoType {
 
 class LottoBall: UIView {
     
-    static let ballSize = 30
+    static let ballSize = 38
     
     var ballNumber: Int {
         didSet {
@@ -54,7 +54,7 @@ class LottoBall: UIView {
     
     func setUI() {
         self.clipsToBounds = true
-        self.layer.cornerRadius = 15
+        self.layer.cornerRadius = CGFloat(LottoBall.ballSize / 2)
         addSubview(ballNumberLabel)
         ballNumberLabel.snp.makeConstraints { make in
             make.center.equalToSuperview()
