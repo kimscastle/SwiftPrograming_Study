@@ -10,6 +10,8 @@ import SnapKit
 
 final class DatePickerViewController: UIViewController {
     
+    var viewModel = EventViewModel()
+    
     let mainLabel: UILabel = {
         let label = UILabel()
         label.text = "데이트피커"
@@ -22,26 +24,30 @@ final class DatePickerViewController: UIViewController {
         return label
     }()
     
-    let hundredDateLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .red
-        label.textAlignment = .center
-        label.font = .systemFont(ofSize: 20, weight: .light)
-        let today = Calendar.current.date(byAdding: .day, value: Int.hundred-1, to: Date())
-        label.text = DateFormatter().toYearMonthDay(date: today!)
-        return label
+    let eventTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = .red
+        tableView.register(EventTableViewCell.self, forCellReuseIdentifier: EventTableViewCell.identifier)
+        return tableView
     }()
     
-    let datePicker = UIDatePicker()
+    let datePicker: UIDatePicker = {
+        let datePicker = UIDatePicker()
+        let hundred: TimeInterval = -60 * 60 * 24 * 365 * 100
+        datePicker.minimumDate = Date(timeIntervalSinceNow: hundred)
+        datePicker.maximumDate = Date()
+        return datePicker
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setDatePicker()
         setUI()
     }
+
     
     private func setUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = .brown
         view.addSubview(mainLabel)
         mainLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(200)
@@ -52,13 +58,16 @@ final class DatePickerViewController: UIViewController {
         datePicker.snp.makeConstraints { make in
             make.top.equalTo(mainLabel.snp.bottom)
             make.centerX.equalToSuperview()
+            make.height.equalTo(200)
         }
-        
-        view.addSubview(hundredDateLabel)
-        hundredDateLabel.snp.makeConstraints { make in
+        eventTableView.dataSource = self
+        view.addSubview(eventTableView)
+        eventTableView.snp.makeConstraints { make in
             make.top.equalTo(datePicker.snp.bottom)
-            make.leading.trailing.equalToSuperview().inset(50)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
         }
+
     }
     
     private func setDatePicker() {
@@ -73,11 +82,33 @@ final class DatePickerViewController: UIViewController {
     /// eventManager를 만들어서 changedValue를 넘겨주면 값들이 변하게 함수를 만들어야할듯
     /// 필요한거 1.오늘은 몇일째인가, 2. 100일단위 기념일, 3. 1년단위 기념일
     @objc func datePickerChanged() {
+        eventTableView.reloadData()
+        print(datePicker.date)
         // MARK: - 오늘을 포함하려면 100일 뒤의 날짜를 100-1일의 날짜로 포함시켜줘야한다
-        guard let hundredDate = Calendar.current.date(byAdding: .day, value: Int.hundred - 1, to: datePicker.date - 1) else { return }
-        hundredDateLabel.text = DateFormatter().toYearMonthDay(date: hundredDate)
+        viewModel.fetch(seletedDate: datePicker.date).forEach { element in
+            print(element.title)
+            print("D\(element.count(date: datePicker.date))")
+            dump(element.getDateTitle(date: datePicker.date))
+            
+        }
+        
     }
 }
+
+extension DatePickerViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.fetch(seletedDate: datePicker.date).count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: EventTableViewCell.identifier, for: indexPath) as? EventTableViewCell else { return UITableViewCell() }
+        cell.dday.text = String(viewModel.fetch(seletedDate: datePicker.date)[indexPath.row].count(date: datePicker.date))
+        cell.title.text = viewModel.fetch(seletedDate: datePicker.date)[indexPath.row].title
+        cell.dateLabel.text = viewModel.fetch(seletedDate: datePicker.date)[indexPath.row].getDateTitle(date: datePicker.date)
+        return cell
+    }
+}
+
 
 extension Int {
     static let hundred = 100
