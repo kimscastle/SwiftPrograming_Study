@@ -15,7 +15,6 @@ class EventTableViewCell: UITableViewCell {
     //100일 1주년 등등
     let title: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .red
         label.textAlignment = .left
         return label
     }()
@@ -23,7 +22,6 @@ class EventTableViewCell: UITableViewCell {
     //며칠남았는지Dday로 보여줌
     var dday: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .blue
         label.textAlignment = .center
         return label
     }()
@@ -31,7 +29,6 @@ class EventTableViewCell: UITableViewCell {
     //그날짜가 언제인지를 알려줌
     let dateLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .orange
         label.textAlignment = .right
         return label
     }()
@@ -53,19 +50,19 @@ class EventTableViewCell: UITableViewCell {
         title.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(10)
+            make.height.equalTo(20)
         }
         
         dday.snp.makeConstraints { make in
             make.top.equalTo(title.snp.bottom)
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(10)
+            make.height.equalTo(20)
         }
         
         dateLabel.snp.makeConstraints { make in
             make.top.equalTo(dday.snp.bottom)
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(10)
+            make.height.equalTo(20)
         }
         
     }

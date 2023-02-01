@@ -26,7 +26,7 @@ final class DatePickerViewController: UIViewController {
     
     let eventTableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = .red
+        tableView.rowHeight = 60
         tableView.register(EventTableViewCell.self, forCellReuseIdentifier: EventTableViewCell.identifier)
         return tableView
     }()
@@ -102,10 +102,18 @@ extension DatePickerViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: EventTableViewCell.identifier, for: indexPath) as? EventTableViewCell else { return UITableViewCell() }
-        cell.dday.text = String(viewModel.fetch(seletedDate: datePicker.date)[indexPath.row].count(date: datePicker.date))
+        cell.backgroundColor = isDateGone(date: viewModel.fetch(seletedDate: datePicker.date)[indexPath.row].count(date: datePicker.date)) ? .lightGray : .blue
+        
+        
+        
+        cell.dday.text = viewModel.fetch(seletedDate: datePicker.date)[indexPath.row].count(date: datePicker.date) == 0 ? "오늘" : "D"+String(viewModel.fetch(seletedDate: datePicker.date)[indexPath.row].count(date: datePicker.date))
         cell.title.text = viewModel.fetch(seletedDate: datePicker.date)[indexPath.row].title
         cell.dateLabel.text = viewModel.fetch(seletedDate: datePicker.date)[indexPath.row].getDateTitle(date: datePicker.date)
         return cell
+    }
+    
+    private func isDateGone(date count: Int) -> Bool {
+        return count > 0 ?  true : false
     }
 }
 
