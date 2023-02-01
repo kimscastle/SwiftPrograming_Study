@@ -50,7 +50,7 @@ final class DatePickerViewController: UIViewController {
         view.backgroundColor = .brown
         view.addSubview(mainLabel)
         mainLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(200)
+            make.top.equalToSuperview().inset(100)
             make.leading.trailing.equalToSuperview().inset(50)
         }
         
@@ -106,7 +106,7 @@ extension DatePickerViewController: UITableViewDataSource {
         
         
         
-        cell.dday.text = viewModel.fetch(seletedDate: datePicker.date)[indexPath.row].count(date: datePicker.date) == 0 ? "오늘" : "D"+String(viewModel.fetch(seletedDate: datePicker.date)[indexPath.row].count(date: datePicker.date))
+        cell.dday.text = ddayTitle(date: viewModel.fetch(seletedDate: datePicker.date)[indexPath.row].count(date: datePicker.date))
         cell.title.text = viewModel.fetch(seletedDate: datePicker.date)[indexPath.row].title
         cell.dateLabel.text = viewModel.fetch(seletedDate: datePicker.date)[indexPath.row].getDateTitle(date: datePicker.date)
         return cell
@@ -114,6 +114,16 @@ extension DatePickerViewController: UITableViewDataSource {
     
     private func isDateGone(date count: Int) -> Bool {
         return count > 0 ?  true : false
+    }
+    
+    private func ddayTitle(date count: Int) -> String {
+        if count == 0 {
+            return "오늘"
+        } else if count > 0 {
+            return "D+\(count)"
+        } else {
+            return "D\(count)"
+        }
     }
 }
 
