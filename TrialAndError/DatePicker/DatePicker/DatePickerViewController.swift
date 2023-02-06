@@ -24,6 +24,41 @@ final class DatePickerViewController: UIViewController {
         return label
     }()
     
+    let changeDateButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setButtonSetting(title: "만난날짜 변경하기", textColor: .blue, fontSize: 20, fontWeight: .bold)
+        button.addTarget(self, action: #selector(changeDateButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func changeDateButtonTapped() {
+        let alert = UIAlertController(title: "날짜 고르기", message: "날짜를 골라주세요", preferredStyle: .actionSheet)
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.locale = Locale(identifier: "ko_KR")
+        let hundred: TimeInterval = -60 * 60 * 24 * 365 * 100
+        datePicker.minimumDate = Date(timeIntervalSinceNow: hundred)
+        datePicker.maximumDate = Date()
+        datePicker.date = LocalStorageManger.shared.readDate()
+                
+        let ok = UIAlertAction(title: "선택 완료", style: .cancel) { action in
+            LocalStorageManger.shared.setDate(date: datePicker.date)
+            self.viewModel.fetch()
+            self.eventTableView.reloadData()
+        }
+                        
+        alert.addAction(ok)
+                
+        let vc = UIViewController()
+        vc.view = datePicker
+                
+        alert.setValue(vc, forKey: "contentViewController")
+                
+        present(alert, animated: true)
+        
+    }
+        
     let eventTableView: UITableView = {
         let tableView = UITableView()
         tableView.rowHeight = 60
@@ -31,17 +66,9 @@ final class DatePickerViewController: UIViewController {
         return tableView
     }()
     
-    let datePicker: UIDatePicker = {
-        let datePicker = UIDatePicker()
-        let hundred: TimeInterval = -60 * 60 * 24 * 365 * 100
-        datePicker.minimumDate = Date(timeIntervalSinceNow: hundred)
-        datePicker.maximumDate = Date()
-        return datePicker
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setDatePicker()
+        viewModel.fetch()
         setUI()
     }
 
@@ -53,83 +80,32 @@ final class DatePickerViewController: UIViewController {
             make.top.equalToSuperview().inset(100)
             make.leading.trailing.equalToSuperview().inset(50)
         }
-        
-        view.addSubview(datePicker)
-        datePicker.snp.makeConstraints { make in
+    
+        view.addSubview(changeDateButton)
+        changeDateButton.snp.makeConstraints { make in
             make.top.equalTo(mainLabel.snp.bottom)
             make.centerX.equalToSuperview()
-            make.height.equalTo(200)
+            make.height.equalTo(50)
         }
+        
         eventTableView.dataSource = self
         view.addSubview(eventTableView)
         eventTableView.snp.makeConstraints { make in
-            make.top.equalTo(datePicker.snp.bottom)
+            make.top.equalTo(changeDateButton.snp.bottom)
             make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
-
-    }
-    
-    private func setDatePicker() {
-        datePicker.datePickerMode = .date
-        datePicker.preferredDatePickerStyle = .wheels
-        datePicker.locale = Locale(identifier: "ko_KR")
-        datePicker.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
-    }
-    
-    
-    /// datePicker의 날짜가 바뀌면 모든 event들이 업데이트 되어야한다
-    /// eventManager를 만들어서 changedValue를 넘겨주면 값들이 변하게 함수를 만들어야할듯
-    /// 필요한거 1.오늘은 몇일째인가, 2. 100일단위 기념일, 3. 1년단위 기념일
-    @objc func datePickerChanged() {
-        eventTableView.reloadData()
-        print(datePicker.date)
-        // MARK: - 오늘을 포함하려면 100일 뒤의 날짜를 100-1일의 날짜로 포함시켜줘야한다
-        viewModel.fetch(seletedDate: datePicker.date).forEach { element in
-            print(element.title)
-            print("D\(element.count(date: datePicker.date))")
-            dump(element.getDateTitle(date: datePicker.date))
-            
-        }
-        
     }
 }
 
 extension DatePickerViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.fetch(seletedDate: datePicker.date).count
+        return viewModel.event.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: EventTableViewCell.identifier, for: indexPath) as? EventTableViewCell else { return UITableViewCell() }
-        cell.backgroundColor = isDateGone(date: viewModel.fetch(seletedDate: datePicker.date)[indexPath.row].count(date: datePicker.date)) ? .lightGray : .blue
-        
-        
-        
-        cell.dday.text = ddayTitle(date: viewModel.fetch(seletedDate: datePicker.date)[indexPath.row].count(date: datePicker.date))
-        cell.title.text = viewModel.fetch(seletedDate: datePicker.date)[indexPath.row].title
-        cell.dateLabel.text = viewModel.fetch(seletedDate: datePicker.date)[indexPath.row].getDateTitle(date: datePicker.date)
+        cell.data = viewModel.event[indexPath.row]
         return cell
     }
-    
-    private func isDateGone(date count: Int) -> Bool {
-        return count > 0 ?  true : false
-    }
-    
-    private func ddayTitle(date count: Int) -> String {
-        if count == 0 {
-            return "오늘"
-        } else if count > 0 {
-            return "D+\(count)"
-        } else {
-            return "D\(count)"
-        }
-    }
 }
-
-
-extension Int {
-    static let hundred = 100
-    static let year = 365
-}
-

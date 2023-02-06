@@ -20,6 +20,9 @@
 		C02100972988F7C20092C9ED /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02100962988F7C20092C9ED /* EventViewModel.swift */; };
 		C02100992988FC220092C9ED /* Calendar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02100982988FC220092C9ED /* Calendar+.swift */; };
 		C021009B2988FF640092C9ED /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021009A2988FF640092C9ED /* EventTableViewCell.swift */; };
+		C021009D298BB0500092C9ED /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021009C298BB0500092C9ED /* Int+.swift */; };
+		C021009F298BB0650092C9ED /* UIbutton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021009E298BB0650092C9ED /* UIbutton+.swift */; };
+		C02100A22990EB210092C9ED /* LocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02100A12990EB210092C9ED /* LocalStorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,9 @@
 		C02100962988F7C20092C9ED /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		C02100982988FC220092C9ED /* Calendar+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+.swift"; sourceTree = "<group>"; };
 		C021009A2988FF640092C9ED /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		C021009C298BB0500092C9ED /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
+		C021009E298BB0650092C9ED /* UIbutton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIbutton+.swift"; sourceTree = "<group>"; };
+		C02100A12990EB210092C9ED /* LocalStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,7 @@
 		C02100762988D4110092C9ED /* DatePicker */ = {
 			isa = PBXGroup;
 			children = (
+				C02100A02990EAF10092C9ED /* Manager */,
 				C021008E2988DE7A0092C9ED /* Extension */,
 				C02100772988D4110092C9ED /* AppDelegate.swift */,
 				C02100792988D4110092C9ED /* SceneDelegate.swift */,
@@ -81,7 +88,6 @@
 				C02100852988D4120092C9ED /* Info.plist */,
 				C02100922988F06E0092C9ED /* Event.swift */,
 				C02100962988F7C20092C9ED /* EventViewModel.swift */,
-				C02100942988F73C0092C9ED /* EventManager.swift */,
 			);
 			path = DatePicker;
 			sourceTree = "<group>";
@@ -91,8 +97,19 @@
 			children = (
 				C021008F2988DE8C0092C9ED /* DateFormatter+.swift */,
 				C02100982988FC220092C9ED /* Calendar+.swift */,
+				C021009C298BB0500092C9ED /* Int+.swift */,
+				C021009E298BB0650092C9ED /* UIbutton+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		C02100A02990EAF10092C9ED /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C02100942988F73C0092C9ED /* EventManager.swift */,
+				C02100A12990EB210092C9ED /* LocalStorageManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,10 +192,13 @@
 				C021009B2988FF640092C9ED /* EventTableViewCell.swift in Sources */,
 				C02100952988F73C0092C9ED /* EventManager.swift in Sources */,
 				C02100902988DE8C0092C9ED /* DateFormatter+.swift in Sources */,
+				C02100A22990EB210092C9ED /* LocalStorageManager.swift in Sources */,
 				C021007C2988D4110092C9ED /* DatePickerViewController.swift in Sources */,
 				C02100782988D4110092C9ED /* AppDelegate.swift in Sources */,
 				C021007A2988D4110092C9ED /* SceneDelegate.swift in Sources */,
 				C02100972988F7C20092C9ED /* EventViewModel.swift in Sources */,
+				C021009F298BB0650092C9ED /* UIbutton+.swift in Sources */,
+				C021009D298BB0500092C9ED /* Int+.swift in Sources */,
 				C02100932988F06E0092C9ED /* Event.swift in Sources */,
 				C02100992988FC220092C9ED /* Calendar+.swift in Sources */,
 			);

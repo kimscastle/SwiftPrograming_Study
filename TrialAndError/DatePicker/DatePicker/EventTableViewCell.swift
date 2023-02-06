@@ -12,6 +12,15 @@ class EventTableViewCell: UITableViewCell {
     
     static let identifier = "EventTableViewCell"
     
+    var data: Event? {
+        didSet {
+            guard let data = data else { return }
+            dday.text = String(data.count())
+            title.text = data.title
+            dateLabel.text = data.getDateTitle(date: LocalStorageManger.shared.readDate())
+        }
+    }
+    
     //100일 1주년 등등
     let title: UILabel = {
         let label = UILabel()

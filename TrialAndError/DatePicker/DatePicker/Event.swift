@@ -51,8 +51,8 @@ struct Event {
         }
     }
     
-    func count(date: Date) -> Int {
-        return Calendar.countDaysFromNow(fromDate: findDate(date: date))
+    func count() -> Int {
+        return Calendar.countDaysFromNow(fromDate: findDate(date: LocalStorageManger.shared.readDate()))
     }
     
 }

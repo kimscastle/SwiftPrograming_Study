@@ -9,10 +9,10 @@ import UIKit
 
 final class EventViewModel {
     
+    @Published var event: [Event] = []
     
-    func fetch(seletedDate: Date) -> [Event] {
-        let events = EventManager.shared.getEvents(firstDayDate: seletedDate)
-        return events
+    func fetch() {
+        self.event = EventManager.shared.getEvents()
         
     }
 }
