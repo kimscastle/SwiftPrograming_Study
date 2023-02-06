@@ -10,7 +10,7 @@ import UIKit
 class EventManager {
     static let shared = EventManager()
     
-    func getEvents() -> [Event] {
+    func getEvents(completionHandler: @escaping(([Event]) -> Void)) {
         var events: [Event] = []
         // stride to a 는 a까지, stride through a 는 a포함, by는 얼마만큼의 간격으로
         for unit in stride(from: 100, through: 1000, by: 100) {
@@ -25,6 +25,6 @@ class EventManager {
         
         events.append(Event(type: .today, unit: Calendar.countDaysFromNow(fromDate: LocalStorageManger.shared.readDate())))
         events.sort { $0.unit < $1.unit }
-        return events
+        completionHandler(events)
     }
 }

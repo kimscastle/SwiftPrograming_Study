@@ -9,10 +9,11 @@ import UIKit
 
 final class EventViewModel {
     
-    @Published var event: [Event] = []
+    @Published var events: [Event] = []
     
     func fetch() {
-        self.event = EventManager.shared.getEvents()
-        
+        EventManager.shared.getEvents { events in
+            self.events = events
+        }
     }
 }

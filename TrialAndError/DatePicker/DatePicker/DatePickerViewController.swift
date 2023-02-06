@@ -14,13 +14,10 @@ final class DatePickerViewController: UIViewController {
     
     let mainLabel: UILabel = {
         let label = UILabel()
-        label.text = "데이트피커"
         label.textColor = .black
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 20, weight: .bold)
-        
-        // MARK: - 지울거
-        label.backgroundColor = .orange
+        label.text = DateFormatter().toYearMonthDay(date: LocalStorageManger.shared.readDate())
         return label
     }()
     
@@ -44,19 +41,15 @@ final class DatePickerViewController: UIViewController {
                 
         let ok = UIAlertAction(title: "선택 완료", style: .cancel) { action in
             LocalStorageManger.shared.setDate(date: datePicker.date)
+            self.mainLabel.text = DateFormatter().toYearMonthDay(date: datePicker.date)
             self.viewModel.fetch()
             self.eventTableView.reloadData()
         }
-                        
         alert.addAction(ok)
-                
         let vc = UIViewController()
         vc.view = datePicker
-                
         alert.setValue(vc, forKey: "contentViewController")
-                
         present(alert, animated: true)
-        
     }
         
     let eventTableView: UITableView = {
@@ -100,12 +93,12 @@ final class DatePickerViewController: UIViewController {
 
 extension DatePickerViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.event.count
+        return viewModel.events.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: EventTableViewCell.identifier, for: indexPath) as? EventTableViewCell else { return UITableViewCell() }
-        cell.data = viewModel.event[indexPath.row]
+        cell.data = viewModel.events[indexPath.row]
         return cell
     }
 }
