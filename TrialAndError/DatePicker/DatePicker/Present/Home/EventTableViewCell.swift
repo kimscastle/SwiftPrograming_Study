@@ -15,9 +15,28 @@ class EventTableViewCell: UITableViewCell {
     var data: Event? {
         didSet {
             guard let data = data else { return }
-            dday.text = String(data.count())
+            dday.text = makeDdayLabel(with: data.count())
             title.text = data.title
             dateLabel.text = data.getDateTitle(date: LocalStorageManger.shared.readDate())
+            configureCell(with: data)
+            
+        }
+    }
+    
+    private func configureCell(with input: Event) {
+        //오늘이전 이벤트는 조금 흐리게 만들기
+        title.textColor = input.count() > 0 ? .lightGray : .black
+        dday.textColor = input.count() > 0 ? .lightGray : .black
+        dateLabel.textColor = input.count() > 0 ? .lightGray : .black
+    }
+    
+    private func makeDdayLabel(with dayCount: Int) -> String {
+        if dayCount == 0 {
+            return "오늘"
+        } else if dayCount > 0 {
+            return "D+\(dayCount)"
+        } else {
+            return "D\(dayCount)"
         }
     }
     

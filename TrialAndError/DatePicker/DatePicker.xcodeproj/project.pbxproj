@@ -76,18 +76,16 @@
 		C02100762988D4110092C9ED /* DatePicker */ = {
 			isa = PBXGroup;
 			children = (
+				C02100A4299230E90092C9ED /* Present */,
+				C02100A3299230D60092C9ED /* Model */,
 				C02100A02990EAF10092C9ED /* Manager */,
 				C021008E2988DE7A0092C9ED /* Extension */,
 				C02100772988D4110092C9ED /* AppDelegate.swift */,
 				C02100792988D4110092C9ED /* SceneDelegate.swift */,
-				C021007B2988D4110092C9ED /* DatePickerViewController.swift */,
-				C021009A2988FF640092C9ED /* EventTableViewCell.swift */,
 				C021007D2988D4110092C9ED /* Main.storyboard */,
 				C02100802988D4120092C9ED /* Assets.xcassets */,
 				C02100822988D4120092C9ED /* LaunchScreen.storyboard */,
 				C02100852988D4120092C9ED /* Info.plist */,
-				C02100922988F06E0092C9ED /* Event.swift */,
-				C02100962988F7C20092C9ED /* EventViewModel.swift */,
 			);
 			path = DatePicker;
 			sourceTree = "<group>";
@@ -110,6 +108,40 @@
 				C02100A12990EB210092C9ED /* LocalStorageManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		C02100A3299230D60092C9ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C02100922988F06E0092C9ED /* Event.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C02100A4299230E90092C9ED /* Present */ = {
+			isa = PBXGroup;
+			children = (
+				C02100A5299230FE0092C9ED /* Home */,
+			);
+			path = Present;
+			sourceTree = "<group>";
+		};
+		C02100A5299230FE0092C9ED /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C021007B2988D4110092C9ED /* DatePickerViewController.swift */,
+				C021009A2988FF640092C9ED /* EventTableViewCell.swift */,
+				C02100A6299231180092C9ED /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C02100A6299231180092C9ED /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C02100962988F7C20092C9ED /* EventViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

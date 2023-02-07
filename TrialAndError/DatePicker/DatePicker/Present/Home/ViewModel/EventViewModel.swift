@@ -11,7 +11,7 @@ final class EventViewModel {
     
     @Published var events: [Event] = []
     
-    func fetch() {
+    func dateFetch() {
         EventManager.shared.getEvents { events in
             self.events = events
         }

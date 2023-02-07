@@ -42,7 +42,7 @@ final class DatePickerViewController: UIViewController {
         let ok = UIAlertAction(title: "선택 완료", style: .cancel) { action in
             LocalStorageManger.shared.setDate(date: datePicker.date)
             self.mainLabel.text = DateFormatter().toYearMonthDay(date: datePicker.date)
-            self.viewModel.fetch()
+            self.viewModel.dateFetch()
             self.eventTableView.reloadData()
         }
         alert.addAction(ok)
@@ -61,7 +61,7 @@ final class DatePickerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.fetch()
+        viewModel.dateFetch()
         setUI()
     }
 
