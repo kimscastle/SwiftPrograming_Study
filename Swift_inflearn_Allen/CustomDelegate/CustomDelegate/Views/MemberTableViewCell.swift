@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class MemberTableViewCell: UITableViewCell {
+class MemberTableViewCell: UITableViewCell, CellReuseProtocol {
     
     var member: Member? {
         didSet {
@@ -103,3 +103,4 @@ class MemberTableViewCell: UITableViewCell {
         addressLabel.text = data.address
     }
 }
+

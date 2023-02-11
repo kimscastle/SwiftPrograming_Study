@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		81F1A5821F70993500EA065E /* Pods_CustomDelegate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5810C804268AF36E89A2B250 /* Pods_CustomDelegate.framework */; };
+		C027D12329976B55008BDC38 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027D12229976B55008BDC38 /* Protocols.swift */; };
 		C02C11AB28F14EEA00537FD3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02C11AA28F14EEA00537FD3 /* DetailViewController.swift */; };
 		C02C11AD28F14F0500537FD3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02C11AC28F14F0500537FD3 /* DetailView.swift */; };
 		C05F3EF628EF21720088CDF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05F3EF528EF21720088CDF0 /* AppDelegate.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		4E4CD07E351B6A21EA5E2783 /* Pods-CustomDelegate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomDelegate.release.xcconfig"; path = "Target Support Files/Pods-CustomDelegate/Pods-CustomDelegate.release.xcconfig"; sourceTree = "<group>"; };
 		5810C804268AF36E89A2B250 /* Pods_CustomDelegate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomDelegate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C027D12229976B55008BDC38 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		C02C11AA28F14EEA00537FD3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C02C11AC28F14F0500537FD3 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		C05F3EF228EF21720088CDF0 /* CustomDelegate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomDelegate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +92,7 @@
 				C05F3EFE28EF21730088CDF0 /* Assets.xcassets */,
 				C05F3F0028EF21730088CDF0 /* LaunchScreen.storyboard */,
 				C05F3F0328EF21730088CDF0 /* Info.plist */,
+				C027D12229976B55008BDC38 /* Protocols.swift */,
 			);
 			path = CustomDelegate;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				C05F3F1C28F05E170088CDF0 /* MemberListManager.swift in Sources */,
 				C02C11AD28F14F0500537FD3 /* DetailView.swift in Sources */,
 				C05F3F1F28F0609A0088CDF0 /* MemberTableViewCell.swift in Sources */,
+				C027D12329976B55008BDC38 /* Protocols.swift in Sources */,
 				C05F3EFA28EF21720088CDF0 /* ViewController.swift in Sources */,
 				C05F3F1928F05B910088CDF0 /* Member.swift in Sources */,
 				C05F3EF628EF21720088CDF0 /* AppDelegate.swift in Sources */,

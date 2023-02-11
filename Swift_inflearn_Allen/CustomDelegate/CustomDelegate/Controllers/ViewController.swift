@@ -57,7 +57,8 @@ final class ViewController: UIViewController {
         tableView.rowHeight = 70
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(MemberTableViewCell.self, forCellReuseIdentifier: "MemberTableViewCell")
+        //tableView.register(MemberTableViewCell.self, forCellReuseIdentifier: "MemberTableViewCell")
+        MemberTableViewCell.register(tableView: tableView)
     }
     
     func setData() {
@@ -81,7 +82,8 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MemberTableViewCell", for: indexPath) as! MemberTableViewCell
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "MemberTableViewCell", for: indexPath) as! MemberTableViewCell
+        let cell = MemberTableViewCell.reusableCell(tableView: tableView)
         cell.member = memberListManager.getMembersList()[indexPath.row]
         return cell
     }
