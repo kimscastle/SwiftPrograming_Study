@@ -10,13 +10,16 @@ import SnapKit
 
 class ViewController: UIViewController {
     
-    private var people: [Person] = [
-        .init(name: "김의성", age: 27, address: "경기도 남양주시"),
-        .init(name: "김유스", age: 26, address: "경상북도 포항시"),
-        .init(name: "김찰리", age: 25, address: "경상남도 부산시")
-    ]
+    var viewModel = ViewModel()
     
+    // 1.tableView 정의
     private let tableView = UITableView()
+    
+    // 2.DiffableDataSource정의 -> 기존의 DataSource와 Delegate를 대체
+    var diffableDataSource: CustomDiffableDataSource!
+    
+    // 3.SnapShot정의
+    var snapShot: NSDiffableDataSourceSnapshot<Section, Person>!
     
     private lazy var appendPersonButton: UIButton = {
         let button = UIButton(type: .system)
@@ -27,6 +30,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.fetchPeople()
         setUI()
         setTableView()
     }
@@ -42,8 +46,26 @@ class ViewController: UIViewController {
     private func setTableView() {
         view.addSubview(tableView)
         tableView.rowHeight = 70
-        tableView.dataSource = self
         DiffableTableViewCell.register(tableView: tableView)
+        diffableDataSource = CustomDiffableDataSource(tableView: tableView, cellProvider: { tableView, indexPath, itemIdentifier in
+            let cell = DiffableTableViewCell.reusableCell(tableView: tableView)
+            cell.data = itemIdentifier
+            return cell
+        })
+        
+//        diffableDataSource.deletePerson = { index in
+//            self.viewModel.deletePerson(index: index)
+//        }
+        diffableDataSource.delegate = self
+        
+        snapShot = NSDiffableDataSourceSnapshot()
+        
+        snapShot.appendSections([.main])
+        
+        snapShot.appendItems(viewModel.people, toSection: .main)
+        
+        diffableDataSource.apply(snapShot, animatingDifferences: true)
+        
         tableView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(200)
             make.leading.trailing.equalToSuperview()
@@ -52,20 +74,16 @@ class ViewController: UIViewController {
     }
     
     @objc func appendPersonButtonTapped() {
-        people.append(Person(name: "추가됨", age: 111, address: "추가됨"))
-        tableView.reloadData()
+        var snapshot = diffableDataSource.snapshot()
+        let newPerson: Person = .init(name: "추가", age: Int.random(in: 0..<100), address: "추가")
+        snapshot.appendItems([newPerson], toSection: .main)
+        viewModel.people.append(newPerson)
+        diffableDataSource.apply(snapshot, animatingDifferences: true)
     }
 }
 
-extension ViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return people.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = DiffableTableViewCell.reusableCell(tableView: tableView)
-        cell.data = people[indexPath.row]
-        return cell
+extension ViewController: CustomDiffableDataSourceDelegate {
+    func deletePerson(index: Int) {
+        viewModel.deletePerson(index: index)
     }
 }
-

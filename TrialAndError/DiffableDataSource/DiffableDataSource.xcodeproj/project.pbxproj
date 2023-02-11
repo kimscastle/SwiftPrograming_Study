@@ -16,6 +16,8 @@
 		C027D14B299787F0008BDC38 /* CellReusableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027D14A299787F0008BDC38 /* CellReusableProtocol.swift */; };
 		C027D14D29978863008BDC38 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027D14C29978863008BDC38 /* Person.swift */; };
 		C027D14F2997895A008BDC38 /* DiffableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027D14E2997895A008BDC38 /* DiffableTableViewCell.swift */; };
+		C027D1512997A07A008BDC38 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027D1502997A07A008BDC38 /* DataManager.swift */; };
+		C027D1532997A15D008BDC38 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027D1522997A15D008BDC38 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		C027D14A299787F0008BDC38 /* CellReusableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReusableProtocol.swift; sourceTree = "<group>"; };
 		C027D14C29978863008BDC38 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		C027D14E2997895A008BDC38 /* DiffableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableTableViewCell.swift; sourceTree = "<group>"; };
+		C027D1502997A07A008BDC38 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		C027D1522997A15D008BDC38 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +50,7 @@
 		C027D1272997873B008BDC38 = {
 			isa = PBXGroup;
 			children = (
+				C027D1502997A07A008BDC38 /* DataManager.swift */,
 				C027D1322997873B008BDC38 /* DiffableDataSource */,
 				C027D1312997873B008BDC38 /* Products */,
 			);
@@ -71,6 +76,7 @@
 				C027D14A299787F0008BDC38 /* CellReusableProtocol.swift */,
 				C027D14C29978863008BDC38 /* Person.swift */,
 				C027D14E2997895A008BDC38 /* DiffableTableViewCell.swift */,
+				C027D1522997A15D008BDC38 /* ViewModel.swift */,
 			);
 			path = DiffableDataSource;
 			sourceTree = "<group>";
@@ -154,8 +160,10 @@
 				C027D14D29978863008BDC38 /* Person.swift in Sources */,
 				C027D1382997873B008BDC38 /* ViewController.swift in Sources */,
 				C027D1342997873B008BDC38 /* AppDelegate.swift in Sources */,
+				C027D1512997A07A008BDC38 /* DataManager.swift in Sources */,
 				C027D14B299787F0008BDC38 /* CellReusableProtocol.swift in Sources */,
 				C027D14F2997895A008BDC38 /* DiffableTableViewCell.swift in Sources */,
+				C027D1532997A15D008BDC38 /* ViewModel.swift in Sources */,
 				C027D1362997873B008BDC38 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
