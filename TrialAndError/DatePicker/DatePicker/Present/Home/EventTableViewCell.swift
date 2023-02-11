@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class EventTableViewCell: UITableViewCell {
+class EventTableViewCell: UITableViewCell, CellReuseProcotol {
     
     static let identifier = "EventTableViewCell"
     

@@ -23,6 +23,7 @@
 		C021009D298BB0500092C9ED /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021009C298BB0500092C9ED /* Int+.swift */; };
 		C021009F298BB0650092C9ED /* UIbutton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021009E298BB0650092C9ED /* UIbutton+.swift */; };
 		C02100A22990EB210092C9ED /* LocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02100A12990EB210092C9ED /* LocalStorageManager.swift */; };
+		C027D12629976D8A008BDC38 /* CellReuseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027D12529976D8A008BDC38 /* CellReuseProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		C021009C298BB0500092C9ED /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 		C021009E298BB0650092C9ED /* UIbutton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIbutton+.swift"; sourceTree = "<group>"; };
 		C02100A12990EB210092C9ED /* LocalStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageManager.swift; sourceTree = "<group>"; };
+		C027D12529976D8A008BDC38 /* CellReuseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReuseProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		C02100762988D4110092C9ED /* DatePicker */ = {
 			isa = PBXGroup;
 			children = (
+				C027D12429976D78008BDC38 /* Protocols */,
 				C02100A4299230E90092C9ED /* Present */,
 				C02100A3299230D60092C9ED /* Model */,
 				C02100A02990EAF10092C9ED /* Manager */,
@@ -142,6 +145,14 @@
 				C02100962988F7C20092C9ED /* EventViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C027D12429976D78008BDC38 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C027D12529976D8A008BDC38 /* CellReuseProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +241,7 @@
 				C021007A2988D4110092C9ED /* SceneDelegate.swift in Sources */,
 				C02100972988F7C20092C9ED /* EventViewModel.swift in Sources */,
 				C021009F298BB0650092C9ED /* UIbutton+.swift in Sources */,
+				C027D12629976D8A008BDC38 /* CellReuseProtocol.swift in Sources */,
 				C021009D298BB0500092C9ED /* Int+.swift in Sources */,
 				C02100932988F06E0092C9ED /* Event.swift in Sources */,
 				C02100992988FC220092C9ED /* Calendar+.swift in Sources */,

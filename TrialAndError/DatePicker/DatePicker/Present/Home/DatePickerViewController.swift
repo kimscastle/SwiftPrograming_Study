@@ -21,7 +21,7 @@ final class DatePickerViewController: UIViewController {
         return label
     }()
     
-    let changeDateButton: UIButton = {
+    lazy var changeDateButton: UIButton = {
         let button = UIButton(type: .system)
         button.setButtonSetting(title: "만난날짜 변경하기", textColor: .blue, fontSize: 20, fontWeight: .bold)
         button.addTarget(self, action: #selector(changeDateButtonTapped), for: .touchUpInside)
@@ -55,7 +55,6 @@ final class DatePickerViewController: UIViewController {
     let eventTableView: UITableView = {
         let tableView = UITableView()
         tableView.rowHeight = 60
-        tableView.register(EventTableViewCell.self, forCellReuseIdentifier: EventTableViewCell.identifier)
         return tableView
     }()
     
@@ -67,6 +66,7 @@ final class DatePickerViewController: UIViewController {
 
     
     private func setUI() {
+        EventTableViewCell.register(tableView: eventTableView)
         view.backgroundColor = .brown
         view.addSubview(mainLabel)
         mainLabel.snp.makeConstraints { make in
@@ -97,7 +97,7 @@ extension DatePickerViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: EventTableViewCell.identifier, for: indexPath) as? EventTableViewCell else { return UITableViewCell() }
+        let cell = EventTableViewCell.reusableCell(tableView: eventTableView)
         cell.data = viewModel.events[indexPath.row]
         return cell
     }
