@@ -23,4 +23,8 @@ final class ViewModel {
         return models.count
     }
     
+    func appendModel() {
+        models.append(Model(name: "추가된이름", age: 30))
+    }
+    
 }

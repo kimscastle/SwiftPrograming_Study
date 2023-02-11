@@ -16,6 +16,7 @@
 		C027D119299744E5008BDC38 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027D118299744E5008BDC38 /* ViewModel.swift */; };
 		C027D11B29974502008BDC38 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027D11A29974502008BDC38 /* Model.swift */; };
 		C027D11D29974765008BDC38 /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027D11C29974765008BDC38 /* TestTableViewCell.swift */; };
+		C027D11F299755ED008BDC38 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027D11E299755ED008BDC38 /* Protocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		C027D118299744E5008BDC38 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		C027D11A29974502008BDC38 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C027D11C29974765008BDC38 /* TestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
+		C027D11E299755ED008BDC38 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				C027D10F299743E6008BDC38 /* Info.plist */,
 				C027D11A29974502008BDC38 /* Model.swift */,
 				C027D11C29974765008BDC38 /* TestTableViewCell.swift */,
+				C027D11E299755ED008BDC38 /* Protocols.swift */,
 			);
 			path = CellReuseProblem;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			files = (
 				C027D11B29974502008BDC38 /* Model.swift in Sources */,
 				C027D106299743E5008BDC38 /* TestViewController.swift in Sources */,
+				C027D11F299755ED008BDC38 /* Protocols.swift in Sources */,
 				C027D102299743E5008BDC38 /* AppDelegate.swift in Sources */,
 				C027D119299744E5008BDC38 /* ViewModel.swift in Sources */,
 				C027D104299743E5008BDC38 /* SceneDelegate.swift in Sources */,
