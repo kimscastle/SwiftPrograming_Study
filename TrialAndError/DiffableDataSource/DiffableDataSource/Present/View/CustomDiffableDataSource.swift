@@ -1,25 +1,13 @@
 //
-//  Model.swift
+//  CustomDiffableDataSource.swift
 //  DiffableDataSource
 //
-//  Created by uiskim on 2023/02/11.
+//  Created by uiskim on 2023/02/12.
 //
 
 import UIKit
 
-struct Person: Hashable {
-    let name: String
-    let age: Int
-    let address: String
-}
-
-enum Section {
-    case main
-}
-
 class CustomDiffableDataSource: UITableViewDiffableDataSource<Section, Person> {
-    
-    //var deletePerson: ((Int) -> Void)?
     
     var delegate: CustomDiffableDataSourceDelegate?
     
@@ -32,11 +20,6 @@ class CustomDiffableDataSource: UITableViewDiffableDataSource<Section, Person> {
         var snapShot = self.snapshot()
         snapShot.deleteItems([item])
         delegate?.deletePerson(index: indexPath.row)
-        //deletePerson?(indexPath.row)
         self.apply(snapShot, animatingDifferences: true)
     }
-}
-
-protocol CustomDiffableDataSourceDelegate {
-    func deletePerson(index: Int)
 }

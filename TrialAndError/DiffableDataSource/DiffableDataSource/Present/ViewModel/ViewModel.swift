@@ -20,4 +20,8 @@ class ViewModel {
         people.remove(at: index)
     }
     
+    func addPerson(person: Person) {
+        people.append(person)
+    }
+    
 }

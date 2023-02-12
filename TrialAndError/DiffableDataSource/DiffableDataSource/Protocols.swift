@@ -1,5 +1,5 @@
 //
-//  CellReusableProtocol.swift
+//  Protocols.swift
 //  DiffableDataSource
 //
 //  Created by uiskim on 2023/02/11.
@@ -27,4 +27,9 @@ extension CellReusableProtocol where Self: UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: self.identifier) else { fatalError("error \(self.identifier)")}
         return cell as! Self
     }
+}
+
+protocol CustomDiffableDataSourceDelegate {
+    func deletePerson(index: Int)
+    func addPerson(person: Person)
 }
