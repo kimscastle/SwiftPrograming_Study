@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     
     // 2.DiffableDataSource정의 -> 기존의 DataSource와 Delegate를 대체
     var diffableDataSource: CustomDiffableDataSource!
+    //var diffableDataSource: UITableViewDiffableDataSource<Section, Person>!
     
     // 3.SnapShot정의
     var snapShot: NSDiffableDataSourceSnapshot<Section, Person>!
@@ -36,6 +37,7 @@ class ViewController: UIViewController {
     }
     
     private func setUI() {
+
         view.addSubview(appendPersonButton)
         appendPersonButton.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(100)
@@ -55,6 +57,13 @@ class ViewController: UIViewController {
             cell.data = itemIdentifier
             return cell
         })
+        
+//        diffableDataSource = UITableViewDiffableDataSource(tableView: tableView, cellProvider: { tableView, indexPath, itemIdentifier in
+//            let cell = DiffableTableViewCell.reusableCell(tableView: tableView)
+//            // MARK: - indexPath.row를 사용하는게 아니라 그냥 itemIdentifier를 넣어주면 된다
+//            cell.data = itemIdentifier
+//            return cell
+//        })
         
         diffableDataSource.delegate = self
         
