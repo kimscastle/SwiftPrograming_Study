@@ -71,29 +71,29 @@ class ViewController: UIViewController {
 extension UIButton.Configuration {
     
     enum CustomButtonStyle {
-        case basic
-        case sub
-        case disabled
+        case a
+        case b
+        case c
         
         var backgroundColor: UIColor? {
             switch self {
-            case .basic:
-                return UIColor(red: 24/255, green: 206/255, blue: 198/255, alpha: 1.0)
-            case .sub:
-                return UIColor(red: 228/255, green: 246/255, blue: 246/255, alpha: 1.0)
-            case .disabled:
-                return UIColor(red: 227/255, green: 232/255, blue: 235/255, alpha: 1.0)
+            case .a:
+                return .blue
+            case .b:
+                return .black
+            case .c:
+                return .red
             }
         }
         
         var foregroundColor: UIColor? {
             switch self {
-            case .basic:
-                return UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
-            case .sub:
-                return UIColor(red: 0/255, green: 171/255, blue: 182/255, alpha: 1.0)
-            case .disabled:
-                return UIColor(red: 161/255, green: 169/255, blue: 174/255, alpha: 1.0)
+            case .a:
+                return .brown
+            case .b:
+                return .green
+            case .c:
+                return .white
             }
         }
     }
