@@ -13,4 +13,9 @@
 |Frame&AutoLayout|22/11/11|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/FrameAndAutolayout)|-Frame과 AutoLayout의 차이|
 |Combine|22/11/12|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/Combine_Basic)|-Combine기초 연습폴더|
 | RxSwift | 22/11/26 |[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/RxSwift_In_4_Hours-master)|- 곰튀김Rxswift 연습폴더|
+|LottoRandomNumberView|22/12/1|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/LottoRandomNumberView)|-Ball을따로만들어서 랜덤으로 Ball에 숫자를 넣어주는 프로젝트|
+|CellReuseProblem|23/02/11|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/CellReuseProblem)|-cell의 재사용 문제를 해결하는 방법 <br />-custom protocol과 extension 사용|
+|DdayProject|23/02/11|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/DatePicker)|-DatePicker사용법<br />-Dday계산하는 알고리즘|
+|Button Configuration|23/02/16|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/ButtonConfiguration)|-UIButton configuration이용해서 구현하기(WWDC)|
+|KeyPath|23/02/16|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/KeyPath.playground)|-고차함수이용할때 keyPath이용하기<br />-비교매서드 구현방법(>,=)|
 
