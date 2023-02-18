@@ -18,4 +18,5 @@
 |DdayProject|23/02/11|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/DatePicker)|-DatePicker사용법<br />-Dday계산하는 알고리즘|
 |Button Configuration|23/02/16|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/ButtonConfiguration)|-UIButton configuration이용해서 구현하기(WWDC)|
 |KeyPath|23/02/16|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/KeyPath.playground)|-고차함수이용할때 keyPath이용하기<br />-비교매서드 구현방법(>,=)|
+|CoreData|23/02/17|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/CoreDataPractice)|-coredata 사용해서 localDB이용한 연습프로젝트 <br />-공공API, CoreData로 CRUD구현|
 
