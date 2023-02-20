@@ -16,6 +16,7 @@
 |LottoRandomNumberView|22/12/1|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/LottoRandomNumberView)|-Ball을따로만들어서 랜덤으로 Ball에 숫자를 넣어주는 프로젝트|
 |CellReuseProblem|23/02/11|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/CellReuseProblem)|-cell의 재사용 문제를 해결하는 방법 <br />-custom protocol과 extension 사용|
 |DdayProject|23/02/11|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/DatePicker)|-DatePicker사용법<br />-Dday계산하는 알고리즘|
+|DiffableDataSource|23/02/12|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/DiffableDataSource)|-diffableDataSource구현<br />-tableView에서 cell 밀어서 삭제하는 기능구현|
 |Button Configuration|23/02/16|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/ButtonConfiguration)|-UIButton configuration이용해서 구현하기(WWDC)|
 |KeyPath|23/02/16|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/KeyPath.playground)|-고차함수이용할때 keyPath이용하기<br />-비교매서드 구현방법(>,=)|
 |CoreData|23/02/17|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/CoreDataPractice)|-coredata 사용해서 localDB이용한 연습프로젝트 <br />-공공API, CoreData로 CRUD구현|
