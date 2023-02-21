@@ -5,7 +5,7 @@
 //  Created by uiskim on 2023/02/20.
 //
 
-import Foundation
+import UIKit
 
 struct CustomImage {
     static let defaultImage = "photo"
@@ -23,6 +23,5 @@ struct ProgressSize {
     static var progressRoundCorner: Double {
         return self.progressHeight / 2
     }
-    
     private init() {}
 }

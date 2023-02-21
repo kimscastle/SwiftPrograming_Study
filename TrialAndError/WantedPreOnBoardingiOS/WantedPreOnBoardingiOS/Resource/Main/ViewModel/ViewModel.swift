@@ -10,6 +10,7 @@ import UIKit
 class ViewModel {
     var isLoad: Bool = false
     
+    // viewModel에 접근해서 imageUrls를 바꿀수있는 가능성 때문에 private으로 선언
     private var imageUrls = [String]()
     
     func fetchImageUrls() {
@@ -21,6 +22,7 @@ class ViewModel {
         ]
     }
     
+    // imageUrls를 얻고 싶다면 해당 메서드로 얻게끔 설계
     func getImageUrls() -> [String] {
         return imageUrls
     }

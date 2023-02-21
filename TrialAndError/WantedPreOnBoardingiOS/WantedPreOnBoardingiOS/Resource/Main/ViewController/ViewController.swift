@@ -69,6 +69,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = ImageLoadTableViewCell.dequeueReusableCell(tableView: imageLoadTableView)
         cell.selectionStyle = .none
         cell.imageUrl = viewModel.getImageUrls()[indexPath.row]
+        // MARK: - ViewController에서 Cell에 있는 loadImage라는 함수에 접근해서 실행하고싶은데 방법을 모르겠어서 저장속성의 값에따라 이미지를 로드할수있도록 구현(이미지 전체로드버튼)
+        // 분명 더 좋은 방법이있을거같음
         if viewModel.isLoad {
             cell.loadImage()
         }

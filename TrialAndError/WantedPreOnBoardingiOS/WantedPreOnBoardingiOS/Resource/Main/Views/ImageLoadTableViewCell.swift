@@ -10,6 +10,7 @@ import SnapKit
 
 final class ImageLoadTableViewCell: UITableViewCell, CellReuseProtocol {
     
+    // MARK: - 이미지url을 받아와서 이미지 load는 cell에서 할수있게 코드 구성
     var imageUrl: String?
     
     let imageLoadView = UIImageView()
@@ -35,6 +36,8 @@ final class ImageLoadTableViewCell: UITableViewCell, CellReuseProtocol {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
     
     private func setUI() {
         imageLoadView.image = UIImage.makeSFImage(imageString: CustomImage.defaultImage, size: CustomImage.imageSize)
@@ -73,6 +76,8 @@ final class ImageLoadTableViewCell: UITableViewCell, CellReuseProtocol {
         guard let urlString = imageUrl, let url = URL(string: urlString) else { return }
         DispatchQueue.global().async {
             guard let data = try? Data(contentsOf: url) else { return }
+            // 오래걸리는 작업이 일어나고 있는 동안에 url이 바뀔 가능성 제거
+            guard self.imageUrl! == url.absoluteString else { return }
             DispatchQueue.main.async {
                 self.imageLoadView.image = UIImage(data: data)
             }
