@@ -7,21 +7,18 @@
 
 import UIKit
 
-struct CustomImage {
+enum CustomImage {
     static let defaultImage = "photo"
     static let imageSize: CGFloat = 80
-    private init() {}
 }
 
-struct CellSize {
+enum CellSize {
     static let cellHight: CGFloat = 100
-    private init() {}
 }
 
-struct ProgressSize {
+enum ProgressSize {
     static let progressHeight: Double = 8
     static var progressRoundCorner: Double {
         return self.progressHeight / 2
     }
-    private init() {}
 }
