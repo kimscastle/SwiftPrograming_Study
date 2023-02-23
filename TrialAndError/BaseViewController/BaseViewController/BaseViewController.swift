@@ -12,12 +12,6 @@ import SnapKit
 
 class BaseViewController: UIViewController {
     
-    let a = UILabel().then { dd in
-        dd.font = .systemFont(ofSize: 14)
-        dd.text = "ㅎㅎㅎ"
-        dd.
-    }
-    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nil, bundle: nil)
     }

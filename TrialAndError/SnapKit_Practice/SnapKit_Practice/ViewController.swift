@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Then
 import SnapKit
 
 class ViewController: UIViewController {
@@ -16,6 +17,10 @@ class ViewController: UIViewController {
         view.addSubview(v)
         return v
     }()
+    
+    let aa = UIButton().then {
+        $0.setTitle("gg", for: .normal)
+    }
     
     lazy var secondView: UIView = {
         let v = UIView()
