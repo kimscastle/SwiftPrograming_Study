@@ -13,8 +13,8 @@
 		C027A7DE29A756D5004D4FE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C027A7DD29A756D5004D4FE3 /* Assets.xcassets */; };
 		C027A7E129A756D5004D4FE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C027A7DF29A756D5004D4FE3 /* LaunchScreen.storyboard */; };
 		C027A7EA29A7574A004D4FE3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C027A7E929A7574A004D4FE3 /* SnapKit */; };
-		C027A7ED29A758AF004D4FE3 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = C027A7EC29A758AF004D4FE3 /* Then */; };
 		C027A7EF29A75B87004D4FE3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027A7EE29A75B87004D4FE3 /* BaseViewController.swift */; };
+		C0808CE229A7609F00383CAE /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = C0808CE129A7609F00383CAE /* Then */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +34,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C027A7EA29A7574A004D4FE3 /* SnapKit in Frameworks */,
-				C027A7ED29A758AF004D4FE3 /* Then in Frameworks */,
+				C0808CE229A7609F00383CAE /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +89,7 @@
 			name = BaseViewController;
 			packageProductDependencies = (
 				C027A7E929A7574A004D4FE3 /* SnapKit */,
-				C027A7EC29A758AF004D4FE3 /* Then */,
+				C0808CE129A7609F00383CAE /* Then */,
 			);
 			productName = BaseViewController;
 			productReference = C027A7D129A756D4004D4FE3 /* BaseViewController.app */;
@@ -121,7 +121,7 @@
 			mainGroup = C027A7C829A756D4004D4FE3;
 			packageReferences = (
 				C027A7E829A7574A004D4FE3 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				C027A7EB29A758AF004D4FE3 /* XCRemoteSwiftPackageReference "Then" */,
+				C0808CE029A7609F00383CAE /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = C027A7D229A756D4004D4FE3 /* Products */;
 			projectDirPath = "";
@@ -298,6 +298,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,6 +326,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -370,12 +372,12 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		C027A7EB29A758AF004D4FE3 /* XCRemoteSwiftPackageReference "Then" */ = {
+		C0808CE029A7609F00383CAE /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -386,9 +388,9 @@
 			package = C027A7E829A7574A004D4FE3 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		C027A7EC29A758AF004D4FE3 /* Then */ = {
+		C0808CE129A7609F00383CAE /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C027A7EB29A758AF004D4FE3 /* XCRemoteSwiftPackageReference "Then" */;
+			package = C0808CE029A7609F00383CAE /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
