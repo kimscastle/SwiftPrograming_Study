@@ -15,7 +15,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = ViewController() // 시작 VC 작성해주기
+        
+        let navVC = UINavigationController(rootViewController: ViewController())
+        
+        window.rootViewController = navVC // 시작 VC 작성해주기
         window.makeKeyAndVisible()
         self.window = window
     }

@@ -12,26 +12,60 @@ import Then
 
 class ViewController: UIViewController {
     
-    let testLabel: UILabel = UILabel().then {
+    private var testLabel: UILabel = UILabel().then {
         $0.text = "Hello World"
         $0.textAlignment = .center
         $0.textColor = .black
         $0.font = .systemFont(ofSize: 20, weight: .bold)
     }
-
+    
+    private lazy var testButton: UIButton = UIButton().then {
+        $0.setTitle("testButton", for: .normal)
+        $0.backgroundColor = .blue
+        $0.setTitleColor(.white, for: .normal)
+        $0.titleLabel?.font = .systemFont(ofSize: 10, weight: .bold)
+        $0.addTarget(self, action: #selector(testButtonTapped), for: .touchUpInside)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        NotificationCenter.default.addObserver(self, selector: #selector(recieveTestButtonNotification(_:)), name: .testButtonTapped, object: nil)
         setUI()
     }
     
     private func setUI() {
         view.addSubview(testLabel)
         testLabel.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.equalToSuperview().inset(200)
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview()
+            make.height.equalTo(100)
+        }
+        
+        view.addSubview(testButton)
+        testButton.snp.makeConstraints { make in
+            make.top.equalTo(testLabel.snp.bottom).offset(100)
+            make.centerX.equalToSuperview()
+            make.size.equalTo(200)
         }
     }
+    
+    @objc func recieveTestButtonNotification(_ notification: Notification) {
+        guard let text = notification.object as? String else {
+            return
+        }
+        testLabel.text = text
+    }
+    
+    @objc func testButtonTapped() {
+        let nextVC = NextViewController()
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
+}
 
 
+extension Notification.Name {
+    static let testButtonTapped = Notification.Name("aa")
 }
 
