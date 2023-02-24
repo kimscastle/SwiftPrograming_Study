@@ -12,29 +12,42 @@ import Then
 
 class NextViewController: UIViewController {
     
-    private lazy var testButton: UIButton = UIButton().then {
-        $0.setTitle("testButton", for: .normal)
-        $0.backgroundColor = .blue
-        $0.setTitleColor(.white, for: .normal)
-        $0.titleLabel?.font = .systemFont(ofSize: 10, weight: .bold)
-        $0.addTarget(self, action: #selector(testButtonTapped), for: .touchUpInside)
+    private var textfieldView: UITextField = UITextField().then {
+        $0.backgroundColor = .white
+        $0.placeholder = "입력해주세요"
+    }
+    
+    private var testButton: UIButton = UIButton().then {
+        $0.makeCustomButton(title: "Send Data", cornerRadius: 10, fontSize: 20)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        testButton.addTarget(self, action: #selector(testButtonTapped), for: .touchUpInside)
+        view.backgroundColor = .black
         
-        view.backgroundColor = .white
+        view.addSubview(textfieldView)
+        textfieldView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(200)
+            make.leading.trailing.equalToSuperview().inset(50)
+            make.height.equalTo(50)
+        }
+        
         view.addSubview(testButton)
         testButton.snp.makeConstraints { make in
             make.center.equalToSuperview()
-            make.size.equalTo(200)
+            make.rectSize(width: 150, height: 50)
         }
     }
 }
 
 extension NextViewController {
     @objc func testButtonTapped() {
-        NotificationCenter.default.post(name: .testButtonTapped, object: "데이터전달완료")
+        guard let text = textfieldView.text, !text.isEmpty else {
+            print("글자를 입력해주세요")
+            return
+        }
+        NotificationCenter.default.post(name: .testButtonTapped, object: text)
         navigationController?.popViewController(animated: true)
     }
 }

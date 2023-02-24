@@ -20,16 +20,13 @@ class ViewController: UIViewController {
     }
     
     private lazy var testButton: UIButton = UIButton().then {
-        $0.setTitle("testButton", for: .normal)
-        $0.backgroundColor = .blue
-        $0.setTitleColor(.white, for: .normal)
-        $0.titleLabel?.font = .systemFont(ofSize: 10, weight: .bold)
-        $0.addTarget(self, action: #selector(testButtonTapped), for: .touchUpInside)
+        $0.makeCustomButton(title: "Next", cornerRadius: 10, fontSize: 20)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        testButton.addTarget(self, action: #selector(testButtonTapped(_:)), for: .touchUpInside)
         NotificationCenter.default.addObserver(self, selector: #selector(recieveTestButtonNotification(_:)), name: .testButtonTapped, object: nil)
         setUI()
     }
@@ -47,7 +44,7 @@ class ViewController: UIViewController {
         testButton.snp.makeConstraints { make in
             make.top.equalTo(testLabel.snp.bottom).offset(100)
             make.centerX.equalToSuperview()
-            make.size.equalTo(200)
+            make.rectSize(width: 120, height: 50)
         }
     }
     
@@ -58,7 +55,7 @@ class ViewController: UIViewController {
         testLabel.text = text
     }
     
-    @objc func testButtonTapped() {
+    @objc func testButtonTapped(_ sender: Any) {
         let nextVC = NextViewController()
         navigationController?.pushViewController(nextVC, animated: true)
     }
