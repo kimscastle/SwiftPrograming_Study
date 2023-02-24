@@ -8,17 +8,16 @@
 import UIKit
 
 class MainViewModel: BaseViewModel {
-    
+
     typealias value = Model
     
-    private var models: [Model] = [.init(name: "김의성", age: 27)]
+    private var models = [Model]()
     
     func fetchData() {
-        print("fetchData")
-    }
-    
-    func checkViewModel() {
-        print("viewmodel체크")
+        models = [
+            .init(name: "김의성", age: 27),
+            .init(name: "기믜성", age: 26)
+        ]
     }
     
     func getDate() -> [Model] {
@@ -29,4 +28,7 @@ class MainViewModel: BaseViewModel {
         models.append(data)
     }
     
+    func deleteData(index: Int) {
+        models.remove(at: index)
+    }    
 }

@@ -14,4 +14,5 @@ protocol BaseViewModel {
     func fetchData()
     func getDate() -> [value]
     func addData(_ data: value)
+    func deleteData(index: Int)
 }
