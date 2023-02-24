@@ -9,10 +9,10 @@ import UIKit
 
 protocol BaseViewModel {
     // MARK: - value 에는 어떤 타입일지 모르기 때문에 associatedtype을 사용합니다.
-    associatedtype value
+    associatedtype T
     
     func fetchData()
-    func getDate() -> [value]
-    func addData(_ data: value)
+    func getDate() -> [T]
+    func addData(_ data: T)
     func deleteData(index: Int)
 }

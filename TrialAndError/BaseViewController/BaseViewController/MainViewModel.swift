@@ -9,7 +9,7 @@ import UIKit
 
 class MainViewModel: BaseViewModel {
 
-    typealias value = Model
+    typealias T = Model
     
     private var models = [Model]()
     
