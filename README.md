@@ -21,4 +21,5 @@
 |KeyPath|23/02/16|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/KeyPath.playground)|-고차함수이용할때 keyPath이용하기<br />-비교매서드 구현방법(>,=)|
 |CoreData|23/02/17|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/CoreDataPractice)|-coredata 사용해서 localDB이용한 연습프로젝트 <br />-공공API, CoreData로 CRUD구현|
 |WantedPreOnBoarding|23/02/20|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/WantedPreOnBoardingiOS)|-imageUrl로 이미지 로딩하기<br />-23년 원티드프리온보딩 iOS 3월 챌린지 사전과제|
-
+|BaseViewController|23/02/24|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/BaseViewController)|-BaseViewController 사용해서 팀프로젝트에서 코드 일관성있게 사용하기, 중복되는 코드 효율적으로 사용하기<br />-Class의 Generic타입을 이용해서 ViewModel의 의존성 주입하기<br />-라이브러리 Then사용법 익히기|
+|NotificationCenter|23/02/25|[📷](https://github.com/kimscastle/SwiftPrograming_Study/tree/main/TrialAndError/NotificationCenterProject)|-NotificationCenter의 기본적인 사용법 익히기 <br />-ViewController간에 데이터전달을 NotificationCenter로 구현해보기|
