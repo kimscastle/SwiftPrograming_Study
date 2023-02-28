@@ -13,6 +13,14 @@
 		C099CE5E29AC6C2600606A65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C099CE5D29AC6C2600606A65 /* Assets.xcassets */; };
 		C099CE6129AC6C2600606A65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C099CE5F29AC6C2600606A65 /* LaunchScreen.storyboard */; };
 		C099CE6A29AC6CA600606A65 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C099CE6929AC6CA600606A65 /* SnapKit */; };
+		C099CE6C29AE1CEA00606A65 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C099CE6B29AE1CEA00606A65 /* BaseViewController.swift */; };
+		C099CE6F29AE1D8E00606A65 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C099CE6E29AE1D8E00606A65 /* ViewModel.swift */; };
+		C099CE7129AE1E1600606A65 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C099CE7029AE1E1600606A65 /* ChatModel.swift */; };
+		C099CE7429AE213200606A65 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = C099CE7329AE213200606A65 /* Then */; };
+		C099CE7629AE214F00606A65 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C099CE7529AE214F00606A65 /* Protocols.swift */; };
+		C099CE7829AE23E800606A65 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C099CE7729AE23E800606A65 /* ChatTableViewCell.swift */; };
+		C099CE7A29AE281000606A65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C099CE7929AE281000606A65 /* Constants.swift */; };
+		C099CE7C29AE35F400606A65 /* extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C099CE7B29AE35F400606A65 /* extenstions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +31,13 @@
 		C099CE5D29AC6C2600606A65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C099CE6029AC6C2600606A65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C099CE6229AC6C2600606A65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C099CE6B29AE1CEA00606A65 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C099CE6E29AE1D8E00606A65 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		C099CE7029AE1E1600606A65 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
+		C099CE7529AE214F00606A65 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		C099CE7729AE23E800606A65 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		C099CE7929AE281000606A65 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C099CE7B29AE35F400606A65 /* extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extenstions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +46,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C099CE6A29AC6CA600606A65 /* SnapKit in Frameworks */,
+				C099CE7429AE213200606A65 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +72,19 @@
 		C099CE5329AC6C2500606A65 /* ChatBubble */ = {
 			isa = PBXGroup;
 			children = (
+				C099CE7B29AE35F400606A65 /* extenstions.swift */,
 				C099CE5429AC6C2500606A65 /* AppDelegate.swift */,
 				C099CE5629AC6C2500606A65 /* SceneDelegate.swift */,
 				C099CE5829AC6C2500606A65 /* ViewController.swift */,
 				C099CE5D29AC6C2600606A65 /* Assets.xcassets */,
 				C099CE5F29AC6C2600606A65 /* LaunchScreen.storyboard */,
 				C099CE6229AC6C2600606A65 /* Info.plist */,
+				C099CE6B29AE1CEA00606A65 /* BaseViewController.swift */,
+				C099CE6E29AE1D8E00606A65 /* ViewModel.swift */,
+				C099CE7029AE1E1600606A65 /* ChatModel.swift */,
+				C099CE7529AE214F00606A65 /* Protocols.swift */,
+				C099CE7729AE23E800606A65 /* ChatTableViewCell.swift */,
+				C099CE7929AE281000606A65 /* Constants.swift */,
 			);
 			path = ChatBubble;
 			sourceTree = "<group>";
@@ -84,6 +107,7 @@
 			name = ChatBubble;
 			packageProductDependencies = (
 				C099CE6929AC6CA600606A65 /* SnapKit */,
+				C099CE7329AE213200606A65 /* Then */,
 			);
 			productName = ChatBubble;
 			productReference = C099CE5129AC6C2500606A65 /* ChatBubble.app */;
@@ -115,6 +139,7 @@
 			mainGroup = C099CE4829AC6C2500606A65;
 			packageReferences = (
 				C099CE6829AC6CA600606A65 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				C099CE7229AE213200606A65 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = C099CE5229AC6C2500606A65 /* Products */;
 			projectDirPath = "";
@@ -142,9 +167,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C099CE6F29AE1D8E00606A65 /* ViewModel.swift in Sources */,
 				C099CE5929AC6C2500606A65 /* ViewController.swift in Sources */,
+				C099CE7629AE214F00606A65 /* Protocols.swift in Sources */,
+				C099CE6C29AE1CEA00606A65 /* BaseViewController.swift in Sources */,
 				C099CE5529AC6C2500606A65 /* AppDelegate.swift in Sources */,
+				C099CE7829AE23E800606A65 /* ChatTableViewCell.swift in Sources */,
+				C099CE7C29AE35F400606A65 /* extenstions.swift in Sources */,
 				C099CE5729AC6C2500606A65 /* SceneDelegate.swift in Sources */,
+				C099CE7129AE1E1600606A65 /* ChatModel.swift in Sources */,
+				C099CE7A29AE281000606A65 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +394,14 @@
 				kind = branch;
 			};
 		};
+		C099CE7229AE213200606A65 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -369,6 +409,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C099CE6829AC6CA600606A65 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		C099CE7329AE213200606A65 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C099CE7229AE213200606A65 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

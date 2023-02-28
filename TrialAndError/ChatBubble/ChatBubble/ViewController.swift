@@ -7,77 +7,64 @@
 
 import UIKit
 
-import SnapKit
-
-class ViewController: UIViewController {
-
-    let label: UILabel = {
-        let v = UILabel()
-        v.text = "ggggasfsfsafadfsaffadsfksjfsjofjoejofjeojwojefiwjeojfowejfojfowiejfowejfowjefojowjfoewjfowjefoiwㅁㄴㄹㄴㅁㄹㄴㅁㄹㄴㅁㄹㅁㄴ"
-        v.font = .systemFont(ofSize: 20, weight: .bold)
-        v.textAlignment = .left
-        v.backgroundColor = .red
-        v.numberOfLines = 0
-        return v
-    }()
+final class ViewController: BaseVC<ViewModel> {
     
-    let timeLabel: UILabel = {
-        let v = UILabel()
-        v.text = "2월27일"
-        v.font = .systemFont(ofSize: 15, weight: .light)
-        v.textAlignment = .left
-        return v
-    }()
+    private var chatTableView = UITableView()
     
-    let testLabel: UILabel = {
-        let v = UILabel()
-        v.text = "tstestLabeltestLabeltestLabel"
-        v.font = .systemFont(ofSize: 15, weight: .bold)
-        v.textAlignment = .left
-        v.backgroundColor = .blue
-        return v
-    }()
-    
-    let testTimeLabel: UILabel = {
-        let v = UILabel()
-        v.text = "test"
-        v.font = .systemFont(ofSize: 10, weight: .light)
-        v.textAlignment = .left
-        v.backgroundColor = .brown
-        v.textColor = .white
-        return v
-    }()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        view.addSubview(label)
-        label.setContentHuggingPriority(UILayoutPriority.defaultLow, for: .vertical)
-        label.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(10)
-            make.centerY.equalToSuperview()
-            make.trailing.lessThanOrEqualToSuperview().inset(50)
-        }
-        
-        view.addSubview(timeLabel)
-        timeLabel.snp.makeConstraints { make in
-            make.leading.equalTo(label.snp.trailing)
-            make.bottom.equalTo(label.snp.bottom)
-        }
-        
-        view.addSubview(testLabel)
-        testLabel.snp.makeConstraints { make in
-            make.leading.equalTo(label.snp.leading)
-            make.top.equalTo(label.snp.bottom).offset(100)
-        }
-        
-        view.addSubview(testTimeLabel)
-        testTimeLabel.snp.makeConstraints { make in
-            make.leading.equalTo(testLabel.snp.trailing)
-            make.bottom.equalTo(testLabel.snp.bottom)
-        }
+    private lazy var appendChatButton: UIButton = UIButton().then {
+        $0.customButton(title: "채팅 추가하기")
+        $0.addTarget(self, action: #selector(appendChatButtonTapped), for: .touchUpInside)
     }
 
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewModel.fetchData()
+        setTableView()
+    }
+    
+    private func setTableView() {
+        chatTableView.dataSource = self
+        chatTableView.rowHeight = UITableView.automaticDimension
+        chatTableView.separatorStyle = .none
+        ChatTableViewCell.register(tableView: chatTableView)
+        
+    }
+    
+    override func setUI() {
+        view.addSubview(chatTableView)
+        view.addSubview(appendChatButton)
+    }
+    
+    override func configureUI() {
+        chatTableView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview().inset(100)
+        }
+        appendChatButton.snp.makeConstraints { make in
+            make.top.equalTo(chatTableView.snp.bottom)
+            make.leading.trailing.equalToSuperview().inset(100)
+            make.height.equalTo(50)
+        }
+    }
 }
 
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.getData().count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = ChatTableViewCell.dequeueResuableCell(tableView: chatTableView)
+        cell.chat = viewModel.getData()[indexPath.row]
+        cell.selectionStyle = .none
+        return cell
+    }
+}
+
+extension ViewController {
+    @objc func appendChatButtonTapped() {
+        viewModel.addData(ChatModel.basicChat)
+        chatTableView.reloadData()
+    }
+}
