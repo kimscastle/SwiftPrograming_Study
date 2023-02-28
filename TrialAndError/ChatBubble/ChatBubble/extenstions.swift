@@ -19,10 +19,10 @@ extension ConstraintMaker {
 }
 
 extension UIButton {
-    func customButton(title: String) {
+    func customButton(title: String, color: UIColor) {
         self.clipsToBounds = true
         self.layer.cornerRadius = 5
-        self.backgroundColor = .blue
+        self.backgroundColor = color
         self.setTitle(title, for: .normal)
         self.titleLabel?.font = .systemFont(ofSize: 10, weight: .bold)
     }

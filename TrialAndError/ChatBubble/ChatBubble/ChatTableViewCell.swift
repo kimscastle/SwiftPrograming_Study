@@ -55,7 +55,7 @@ class ChatTableViewCell: UITableViewCell, ReuseCellProtocol {
     }
     
     private func setMySend() {
-        content.snp.makeConstraints { make in
+        content.snp.remakeConstraints { make in
             make.centerY.equalToSuperview()
             make.trailing.equalToSuperview().inset(30)
             make.leading.greaterThanOrEqualToSuperview().inset(200)
@@ -64,7 +64,7 @@ class ChatTableViewCell: UITableViewCell, ReuseCellProtocol {
     }
     
     private func setOtherSend() {
-        content.snp.makeConstraints { make in
+        content.snp.remakeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().inset(30)
             make.trailing.lessThanOrEqualToSuperview().inset(200)

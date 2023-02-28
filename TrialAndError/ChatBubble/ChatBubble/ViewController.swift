@@ -11,9 +11,14 @@ final class ViewController: BaseVC<ViewModel> {
     
     private var chatTableView = UITableView()
     
-    private lazy var appendChatButton: UIButton = UIButton().then {
-        $0.customButton(title: "채팅 추가하기")
-        $0.addTarget(self, action: #selector(appendChatButtonTapped), for: .touchUpInside)
+    private lazy var appendMyChatButton: UIButton = UIButton().then {
+        $0.customButton(title: "나의 채팅 추가하기", color: .blue)
+        $0.addTarget(self, action: #selector(appendMyChatButtonTapped), for: .touchUpInside)
+    }
+    
+    private lazy var appendOtherChatButton: UIButton = UIButton().then {
+        $0.customButton(title: "상대방 채팅 추가하기", color: .red)
+        $0.addTarget(self, action: #selector(appendOtherChatButtonTapped), for: .touchUpInside)
     }
 
     override func viewDidLoad() {
@@ -28,11 +33,13 @@ final class ViewController: BaseVC<ViewModel> {
         chatTableView.separatorStyle = .none
         ChatTableViewCell.register(tableView: chatTableView)
         
+        
     }
     
     override func setUI() {
         view.addSubview(chatTableView)
-        view.addSubview(appendChatButton)
+        view.addSubview(appendMyChatButton)
+        view.addSubview(appendOtherChatButton)
     }
     
     override func configureUI() {
@@ -41,9 +48,17 @@ final class ViewController: BaseVC<ViewModel> {
             make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview().inset(100)
         }
-        appendChatButton.snp.makeConstraints { make in
+        appendMyChatButton.snp.makeConstraints { make in
             make.top.equalTo(chatTableView.snp.bottom)
-            make.leading.trailing.equalToSuperview().inset(100)
+            make.leading.equalToSuperview().inset(20)
+            make.width.equalTo(100)
+            make.height.equalTo(50)
+        }
+        
+        appendOtherChatButton.snp.makeConstraints { make in
+            make.top.equalTo(chatTableView.snp.bottom)
+            make.trailing.equalToSuperview().inset(20)
+            make.width.equalTo(100)
             make.height.equalTo(50)
         }
     }
@@ -63,8 +78,18 @@ extension ViewController: UITableViewDataSource {
 }
 
 extension ViewController {
-    @objc func appendChatButtonTapped() {
+    @objc func appendMyChatButtonTapped() {
         viewModel.addData(ChatModel.basicChat)
+        scrollToButton()
+    }
+    
+    @objc func appendOtherChatButtonTapped() {
+        viewModel.addData(.init(content: "상대방님의 메세지입니다", date: "22년2월29일", send: false))
+        scrollToButton()
+    }
+    
+    private func scrollToButton() {
         chatTableView.reloadData()
+        chatTableView.scrollToRow(at: IndexPath(row: viewModel.getData().count-1, section: 0), at: .bottom, animated: true)
     }
 }
