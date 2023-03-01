@@ -18,7 +18,16 @@ class ViewModel: BaseViewModel {
             ChatModel(content: "안녕하세요", date: "22년2월28일", send: true),
             ChatModel(content: "네 안녕하세요 ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ반가워요ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ", date: "22년2월28일", send: false),
             ChatModel(content: "저는 김의성이라고 합니다 잘부탁드립니다", date: "22년2월28일", send: true),
-            ChatModel(content: "안녕하세요\n 이야기는 많이들었습니다\n저는 김유스라고합니다\n앞으로잘부탁드립니다\nㅎㅎㅎㅎㅎㅎ", date: "22년2월28일", send: false)
+            ChatModel(content: "안녕하세요\n 이야기는 많이들었습니다\n저는 김유스라고합니다\n앞으로잘부탁드립니다\nㅎㅎㅎㅎㅎㅎ", date: "22년2월28일", send: false),
+            ChatModel(content: "ggg", date: "dd", send: true),
+            ChatModel(content: "ggg", date: "dd", send: true),
+            ChatModel(content: "ggg", date: "dd", send: true),
+            ChatModel(content: "네 안녕하세요 ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ반가워요ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ", date: "22년2월28일", send: false),
+            ChatModel(content: "ggg", date: "dd", send: true),
+            ChatModel(content: "ggg", date: "dd", send: true),
+            ChatModel(content: "ggg", date: "dd", send: true),
+            ChatModel(content: "네 안녕하세요 ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ반가워요ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ", date: "22년2월28일", send: false),
+            
         ]
     }
     
