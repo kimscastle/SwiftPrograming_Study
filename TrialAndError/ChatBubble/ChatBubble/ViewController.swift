@@ -10,9 +10,9 @@ import UIKit
 
 final class ViewController: BaseVC<ViewModel> {
     
-    private var chatTableView = UITableView()
-
     private lazy var chatView = ChatTextView()
+    
+    private lazy var chatTableView = UITableView()
     
     override func viewWillAppear(_ animated: Bool) {
         self.addKeyboardNotifications()
@@ -59,7 +59,7 @@ final class ViewController: BaseVC<ViewModel> {
     override func configureUI() {
         chatTableView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.height.greaterThanOrEqualTo(650)
+            make.height.equalTo(650)
             make.bottom.equalTo(chatView.snp.top)
             
         }
