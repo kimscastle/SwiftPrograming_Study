@@ -31,7 +31,7 @@ class ChatTableViewCell: UITableViewCell, ReuseCellProtocol {
     }
     
     private var dataLabel: UILabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 7, weight: .light)
+        $0.font = .systemFont(ofSize: 10, weight: .light)
         $0.textColor = .black
         $0.textAlignment = .left
     }
@@ -61,6 +61,10 @@ class ChatTableViewCell: UITableViewCell, ReuseCellProtocol {
             make.leading.greaterThanOrEqualToSuperview().inset(200)
             make.top.bottom.equalToSuperview().inset(30)
         }
+        dataLabel.snp.remakeConstraints { make in
+            make.trailing.equalTo(bubbleImage.snp.leading).offset(-10)
+            make.bottom.equalTo(bubbleImage.snp.bottom)
+        }
     }
     
     private func setOtherSend() {
@@ -69,6 +73,11 @@ class ChatTableViewCell: UITableViewCell, ReuseCellProtocol {
             make.leading.equalToSuperview().inset(30)
             make.trailing.lessThanOrEqualToSuperview().inset(200)
             make.top.bottom.equalToSuperview().inset(30)
+        }
+        
+        dataLabel.snp.remakeConstraints { make in
+            make.leading.equalTo(bubbleImage.snp.trailing).offset(10)
+            make.bottom.equalTo(bubbleImage.snp.bottom)
         }
     }
 }

@@ -11,12 +11,8 @@ import UIKit
 final class ViewController: BaseVC<ViewModel> {
     
     private var chatTableView = UITableView()
-    
-    private lazy var chatTextView: UITextView = UITextView().then {
-        $0.backgroundColor = .gray
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 5
-    }
+
+    private lazy var chatView = ChatTextView()
     
     override func viewWillAppear(_ animated: Bool) {
         self.addKeyboardNotifications()
@@ -51,26 +47,28 @@ final class ViewController: BaseVC<ViewModel> {
     }
     
     private func setTextView() {
-        chatTextView.delegate = self
-        chatTextView.isScrollEnabled = false
+        chatView.chatTextView.delegate = self
+        chatView.delegate = self
     }
     
     override func setUI() {
         view.addSubview(chatTableView)
-        view.addSubview(chatTextView)
+        view.addSubview(chatView)
     }
     
     override func configureUI() {
         chatTableView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(50)
             make.leading.trailing.equalToSuperview()
-            make.bottom.equalTo(chatTextView.snp.top).offset(-10)
+            make.height.greaterThanOrEqualTo(650)
+            make.bottom.equalTo(chatView.snp.top)
+            
         }
 
-        chatTextView.snp.remakeConstraints { make in
-            make.height.lessThanOrEqualTo(60)
-            make.leading.trailing.equalToSuperview().inset(20)
-            make.bottom.equalToSuperview().inset(20)
+        chatView.snp.makeConstraints { make in
+            make.top.equalTo(chatTableView.snp.bottom)
+            make.height.lessThanOrEqualTo(chatView.chatTextView.intrinsicContentSize.height*3)
+            make.leading.trailing.equalToSuperview().inset(10)
+            make.bottom.equalToSuperview().inset(40)
         }
     }
 }
@@ -89,11 +87,18 @@ extension ViewController: UITableViewDataSource {
 }
 
 extension ViewController {
-    @objc private func hideKeyboard(_ sender: Any) {
-        view.endEditing(true)
+    private func addKeyboardNotifications(){
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification , object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    private func removeKeyboardNotifications(){
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification , object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     private func scrollToButton(animate: Bool) {
+        view.layoutIfNeeded()
         chatTableView.reloadData()
         chatTableView.scrollToRow(at: IndexPath(row: viewModel.getData().count-1, section: 0), at: .bottom, animated: animate)
     }
@@ -102,29 +107,18 @@ extension ViewController {
 extension ViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         textView.becomeFirstResponder()
-        scrollToButton(animate: true)
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        let estimatedSize = textView.sizeThatFits(CGSize(width: textView.frame.width, height: 60.0))
+        let estimatedSize = textView.sizeThatFits(CGSize(width: textView.frame.width, height: textView.frame.height))
         textView.isScrollEnabled = estimatedSize.height <= 60 ? false : true
+        chatView.sendButton.isHidden = textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? true : false
     }
 }
 
 extension ViewController {
-    func addKeyboardNotifications(){
-        // 키보드가 나타날 때 앱에게 알리는 메서드 추가
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification , object: nil)
-        // 키보드가 사라질 때 앱에게 알리는 메서드 추가
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-
-    // 노티피케이션을 제거하는 메서드
-    func removeKeyboardNotifications(){
-        // 키보드가 나타날 때 앱에게 알리는 메서드 제거
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification , object: nil)
-        // 키보드가 사라질 때 앱에게 알리는 메서드 제거
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    @objc private func hideKeyboard(_ sender: Any) {
+        view.endEditing(true)
     }
     
     @objc func keyboardWillShow(_ notification: NSNotification) {
@@ -138,5 +132,12 @@ extension ViewController {
 
     @objc func keyboardWillHide(_ notification: NSNotification) {
         self.view.transform = .identity
+    }
+}
+
+extension ViewController: MessageDelegate {
+    func sendMessage(message: ChatModel) {
+        viewModel.addData(message)
+        scrollToButton(animate: true)
     }
 }

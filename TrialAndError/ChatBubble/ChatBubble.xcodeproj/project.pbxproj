@@ -21,6 +21,7 @@
 		C099CE7829AE23E800606A65 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C099CE7729AE23E800606A65 /* ChatTableViewCell.swift */; };
 		C099CE7A29AE281000606A65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C099CE7929AE281000606A65 /* Constants.swift */; };
 		C099CE7C29AE35F400606A65 /* extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C099CE7B29AE35F400606A65 /* extenstions.swift */; };
+		C099CE7E29B07C2800606A65 /* ChatTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C099CE7D29B07C2800606A65 /* ChatTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		C099CE7729AE23E800606A65 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		C099CE7929AE281000606A65 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C099CE7B29AE35F400606A65 /* extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extenstions.swift; sourceTree = "<group>"; };
+		C099CE7D29B07C2800606A65 /* ChatTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				C099CE7529AE214F00606A65 /* Protocols.swift */,
 				C099CE7729AE23E800606A65 /* ChatTableViewCell.swift */,
 				C099CE7929AE281000606A65 /* Constants.swift */,
+				C099CE7D29B07C2800606A65 /* ChatTextView.swift */,
 			);
 			path = ChatBubble;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			files = (
 				C099CE6F29AE1D8E00606A65 /* ViewModel.swift in Sources */,
 				C099CE5929AC6C2500606A65 /* ViewController.swift in Sources */,
+				C099CE7E29B07C2800606A65 /* ChatTextView.swift in Sources */,
 				C099CE7629AE214F00606A65 /* Protocols.swift in Sources */,
 				C099CE6C29AE1CEA00606A65 /* BaseViewController.swift in Sources */,
 				C099CE5529AC6C2500606A65 /* AppDelegate.swift in Sources */,
