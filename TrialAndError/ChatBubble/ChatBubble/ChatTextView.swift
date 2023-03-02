@@ -22,18 +22,13 @@ class ChatTextView: UIView {
         $0.backgroundColor = .gray
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 5
+        $0.isScrollEnabled = false
     }
     
     lazy var sendButton: UIButton = UIButton().then {
         $0.customButton(title: "Go", color: .black)
         $0.isHidden = true
         $0.addTarget(self, action: #selector(sendButtonTapped(_:)), for: .touchUpInside)
-    }
-    
-    @objc func sendButtonTapped(_ sender: Any) {
-        self.delegate?.sendMessage(message: .init(content: chatTextView.text, date: "3월2일", send: true))
-        chatTextView.text = ""
-        sendButton.isHidden = true
     }
 
     override init(frame: CGRect) {
@@ -67,5 +62,14 @@ class ChatTextView: UIView {
     private func setTextView() {
         chatTextView.isScrollEnabled = false
         chatTextView.sizeToFit()
+    }
+}
+
+extension ChatTextView {
+    @objc func sendButtonTapped(_ sender: Any) {
+        self.delegate?.sendMessage(message: .init(content: chatTextView.text, date: "3월2일", send: true))
+        chatTextView.isScrollEnabled = false
+        chatTextView.text = nil
+        sendButton.isHidden = true
     }
 }

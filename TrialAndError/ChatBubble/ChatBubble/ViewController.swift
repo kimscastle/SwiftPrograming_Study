@@ -61,12 +61,10 @@ final class ViewController: BaseVC<ViewModel> {
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(650)
             make.bottom.equalTo(chatView.snp.top)
-            
         }
 
         chatView.snp.makeConstraints { make in
-            make.top.equalTo(chatTableView.snp.bottom)
-            make.height.lessThanOrEqualTo(chatView.chatTextView.intrinsicContentSize.height*3)
+            make.height.lessThanOrEqualTo(chatView.chatTextView.frame.height*3)
             make.leading.trailing.equalToSuperview().inset(10)
             make.bottom.equalToSuperview().inset(40)
         }
@@ -98,7 +96,6 @@ extension ViewController {
     }
     
     private func scrollToButton(animate: Bool) {
-        view.layoutIfNeeded()
         chatTableView.reloadData()
         chatTableView.scrollToRow(at: IndexPath(row: viewModel.getData().count-1, section: 0), at: .bottom, animated: animate)
     }
