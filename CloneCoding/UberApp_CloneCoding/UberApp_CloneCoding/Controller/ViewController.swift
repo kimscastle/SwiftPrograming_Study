@@ -7,7 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+import SnapKit
+import Then
+
+class LoginController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
