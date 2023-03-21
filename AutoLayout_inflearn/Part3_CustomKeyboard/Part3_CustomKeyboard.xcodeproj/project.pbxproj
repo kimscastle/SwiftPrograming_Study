@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C011A64729C9D02E0088CA7D /* CustomKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = C011A64629C9D02E0088CA7D /* CustomKeyboard.xib */; };
 		C062DE2829C9CE5A008C08DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C062DE2729C9CE5A008C08DA /* AppDelegate.swift */; };
 		C062DE2A29C9CE5A008C08DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C062DE2929C9CE5A008C08DA /* SceneDelegate.swift */; };
 		C062DE2C29C9CE5A008C08DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C062DE2B29C9CE5A008C08DA /* ViewController.swift */; };
 		C062DE2F29C9CE5A008C08DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C062DE2D29C9CE5A008C08DA /* Main.storyboard */; };
 		C062DE3129C9CE5B008C08DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C062DE3029C9CE5B008C08DA /* Assets.xcassets */; };
 		C062DE3429C9CE5B008C08DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C062DE3229C9CE5B008C08DA /* LaunchScreen.storyboard */; };
+		C062DE3C29C9CF62008C08DA /* CustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C062DE3B29C9CF62008C08DA /* CustomKeyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C011A64629C9D02E0088CA7D /* CustomKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomKeyboard.xib; sourceTree = "<group>"; };
 		C062DE2429C9CE5A008C08DA /* Part3_CustomKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Part3_CustomKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C062DE2729C9CE5A008C08DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C062DE2929C9CE5A008C08DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		C062DE3029C9CE5B008C08DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C062DE3329C9CE5B008C08DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C062DE3529C9CE5B008C08DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C062DE3B29C9CF62008C08DA /* CustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKeyboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				C062DE3029C9CE5B008C08DA /* Assets.xcassets */,
 				C062DE3229C9CE5B008C08DA /* LaunchScreen.storyboard */,
 				C062DE3529C9CE5B008C08DA /* Info.plist */,
+				C062DE3B29C9CF62008C08DA /* CustomKeyboard.swift */,
+				C011A64629C9D02E0088CA7D /* CustomKeyboard.xib */,
 			);
 			path = Part3_CustomKeyboard;
 			sourceTree = "<group>";
@@ -128,6 +134,7 @@
 				C062DE3429C9CE5B008C08DA /* LaunchScreen.storyboard in Resources */,
 				C062DE3129C9CE5B008C08DA /* Assets.xcassets in Resources */,
 				C062DE2F29C9CE5A008C08DA /* Main.storyboard in Resources */,
+				C011A64729C9D02E0088CA7D /* CustomKeyboard.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +148,7 @@
 				C062DE2C29C9CE5A008C08DA /* ViewController.swift in Sources */,
 				C062DE2829C9CE5A008C08DA /* AppDelegate.swift in Sources */,
 				C062DE2A29C9CE5A008C08DA /* SceneDelegate.swift in Sources */,
+				C062DE3C29C9CF62008C08DA /* CustomKeyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
