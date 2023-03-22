@@ -12,7 +12,7 @@ import Then
 
 // MARK: - BaseViewController<T>는 ViewController를 상속하고 BindVIewModelProtocol을 채택한 타입이다
 // 이때 T는 generic이고 ViewController가 class이기때문에 class에서 generic은 사용할때 T에 타입을 명시를 해줘야하고 해당타입을 viewController의 T로 인식한다
-typealias BaseViewController<T> = ViewController<T> & BindViewModelProtocol where T: BaseViewModel
+typealias BaseViewController<T> = ViewController<T> where T: BaseViewModel
 
 // MARK: - viewModel관련해서 꼭 구현해야할 함수의 경우 여기서 구현해주면된다
 protocol BindViewModelProtocol {

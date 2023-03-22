@@ -9,9 +9,9 @@ import UIKit
 
 class MainViewController: BaseViewController<MainViewModel> {
 
-    func bindViewModel() {
-        viewModel.fetchData()
-    }
+//    func bindViewModel() {
+//        viewModel.fetchData()
+//    }
 
     private var testLabel: UILabel = UILabel().then {
         $0.text = "testLabel"
@@ -22,7 +22,7 @@ class MainViewController: BaseViewController<MainViewModel> {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindViewModel()
+//        bindViewModel()
     }
     
     override func setUI() {
