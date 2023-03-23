@@ -13,6 +13,8 @@
 		C011A6D029CC86280088CA7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C011A6CE29CC86280088CA7D /* Main.storyboard */; };
 		C011A6D229CC862A0088CA7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C011A6D129CC862A0088CA7D /* Assets.xcassets */; };
 		C011A6D529CC862A0088CA7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C011A6D329CC862A0088CA7D /* LaunchScreen.storyboard */; };
+		C011A6DD29CC87C90088CA7D /* DiagonalCusomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C011A6DC29CC87C90088CA7D /* DiagonalCusomImageView.swift */; };
+		C011A6DF29CC889F0088CA7D /* night_sky.png in Resources */ = {isa = PBXBuildFile; fileRef = C011A6DE29CC889F0088CA7D /* night_sky.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		C011A6D129CC862A0088CA7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C011A6D429CC862A0088CA7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C011A6D629CC862A0088CA7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C011A6DC29CC87C90088CA7D /* DiagonalCusomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagonalCusomImageView.swift; sourceTree = "<group>"; };
+		C011A6DE29CC889F0088CA7D /* night_sky.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = night_sky.png; path = "../../Lecture Image Resource/night_sky.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				C011A6D129CC862A0088CA7D /* Assets.xcassets */,
 				C011A6D329CC862A0088CA7D /* LaunchScreen.storyboard */,
 				C011A6D629CC862A0088CA7D /* Info.plist */,
+				C011A6DC29CC87C90088CA7D /* DiagonalCusomImageView.swift */,
+				C011A6DE29CC889F0088CA7D /* night_sky.png */,
 			);
 			path = Part7_StroyboardCodeConnect;
 			sourceTree = "<group>";
@@ -125,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C011A6DF29CC889F0088CA7D /* night_sky.png in Resources */,
 				C011A6D529CC862A0088CA7D /* LaunchScreen.storyboard in Resources */,
 				C011A6D229CC862A0088CA7D /* Assets.xcassets in Resources */,
 				C011A6D029CC86280088CA7D /* Main.storyboard in Resources */,
@@ -141,6 +148,7 @@
 				C011A6CD29CC86280088CA7D /* ViewController.swift in Sources */,
 				C011A6C929CC86280088CA7D /* AppDelegate.swift in Sources */,
 				C011A6CB29CC86280088CA7D /* SceneDelegate.swift in Sources */,
+				C011A6DD29CC87C90088CA7D /* DiagonalCusomImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
