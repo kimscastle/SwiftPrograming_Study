@@ -13,6 +13,11 @@
 		C011A71429CD64110088CA7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C011A71229CD64110088CA7D /* Main.storyboard */; };
 		C011A71629CD64120088CA7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C011A71529CD64120088CA7D /* Assets.xcassets */; };
 		C011A71929CD64120088CA7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C011A71729CD64120088CA7D /* LaunchScreen.storyboard */; };
+		C011A72129CD643B0088CA7D /* bg5.png in Resources */ = {isa = PBXBuildFile; fileRef = C011A72029CD643B0088CA7D /* bg5.png */; };
+		C011A72329CD64630088CA7D /* balloon_3.png in Resources */ = {isa = PBXBuildFile; fileRef = C011A72229CD64630088CA7D /* balloon_3.png */; };
+		C011A72529CD64E40088CA7D /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C011A72429CD64E40088CA7D /* PopupViewController.swift */; };
+		C011A72729CD68670088CA7D /* PopupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C011A72629CD68670088CA7D /* PopupViewController.storyboard */; };
+		C011A72929CD6F870088CA7D /* done_check_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C011A72829CD6F870088CA7D /* done_check_icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		C011A71529CD64120088CA7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C011A71829CD64120088CA7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C011A71A29CD64120088CA7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C011A72029CD643B0088CA7D /* bg5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg5.png; path = "../../Lecture Image Resource/bg5.png"; sourceTree = "<group>"; };
+		C011A72229CD64630088CA7D /* balloon_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = balloon_3.png; path = "../../Lecture Image Resource/balloon_3.png"; sourceTree = "<group>"; };
+		C011A72429CD64E40088CA7D /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		C011A72629CD68670088CA7D /* PopupViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopupViewController.storyboard; sourceTree = "<group>"; };
+		C011A72829CD6F870088CA7D /* done_check_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = done_check_icon.png; path = "../../Lecture Image Resource/done_check_icon.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +73,11 @@
 				C011A71529CD64120088CA7D /* Assets.xcassets */,
 				C011A71729CD64120088CA7D /* LaunchScreen.storyboard */,
 				C011A71A29CD64120088CA7D /* Info.plist */,
+				C011A72029CD643B0088CA7D /* bg5.png */,
+				C011A72229CD64630088CA7D /* balloon_3.png */,
+				C011A72429CD64E40088CA7D /* PopupViewController.swift */,
+				C011A72629CD68670088CA7D /* PopupViewController.storyboard */,
+				C011A72829CD6F870088CA7D /* done_check_icon.png */,
 			);
 			path = Part9_PopUpLayout;
 			sourceTree = "<group>";
@@ -125,8 +140,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C011A72729CD68670088CA7D /* PopupViewController.storyboard in Resources */,
+				C011A72129CD643B0088CA7D /* bg5.png in Resources */,
 				C011A71929CD64120088CA7D /* LaunchScreen.storyboard in Resources */,
+				C011A72929CD6F870088CA7D /* done_check_icon.png in Resources */,
 				C011A71629CD64120088CA7D /* Assets.xcassets in Resources */,
+				C011A72329CD64630088CA7D /* balloon_3.png in Resources */,
 				C011A71429CD64110088CA7D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,6 +160,7 @@
 				C011A71129CD64110088CA7D /* ViewController.swift in Sources */,
 				C011A70D29CD64110088CA7D /* AppDelegate.swift in Sources */,
 				C011A70F29CD64110088CA7D /* SceneDelegate.swift in Sources */,
+				C011A72529CD64E40088CA7D /* PopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
