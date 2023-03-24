@@ -94,6 +94,12 @@
                                     <action selector="checkButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tNY-ZU-kTt"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oed-Zp-sDb">
+                                <rect key="frame" x="159" y="648" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="0.81971750827814571" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
