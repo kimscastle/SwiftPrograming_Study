@@ -31,10 +31,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        resultLabel.layer.cornerRadius = 20
+        //resultLabel.layer.cornerRadius = 20
         // MARK: - 둘중에 하나 편한걸로 사용하면된다
         //resultLabel.clipsToBounds = true
-        resultLabel.layer.masksToBounds = true
+        //resultLabel.layer.masksToBounds = true
         
 
     }
