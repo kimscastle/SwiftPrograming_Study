@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  TvingSettingView
+//  ScrollableSegmentMenu
 //
-//  Created by uiskim on 2023/04/27.
+//  Created by uiskim on 2023/04/30.
 //
 
 import UIKit

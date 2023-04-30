@@ -9,10 +9,6 @@ import UIKit
 
 class MainViewController: BaseViewController<MainViewModel> {
 
-//    func bindViewModel() {
-//        viewModel.fetchData()
-//    }
-
     private var testLabel: UILabel = UILabel().then {
         $0.text = "testLabel"
         $0.font = .systemFont(ofSize: 15)
@@ -22,7 +18,8 @@ class MainViewController: BaseViewController<MainViewModel> {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-//        bindViewModel()
+        // 주입된 viewModel사용가능
+        viewModel.deleteData(index: 1)
     }
     
     override func setUI() {
@@ -35,6 +32,5 @@ class MainViewController: BaseViewController<MainViewModel> {
             make.size.equalTo(100)
         }
     }
-
 }
 

@@ -39,17 +39,16 @@ class SettingTableViewCell: UITableViewCell {
     }
     
     private func setUI() {
+        selectionStyle = .none
         backgroundColor = .black
         addSubview(label)
         addSubview(myImageView)
         label.snp.makeConstraints { make in
-//            make.top.equalToSuperview()
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().inset(20)
         }
         
         myImageView.snp.makeConstraints { make in
-//            make.top.equalToSuperview()
             make.centerY.equalToSuperview()
             make.trailing.equalToSuperview().inset(20)
             make.size.equalTo(20)

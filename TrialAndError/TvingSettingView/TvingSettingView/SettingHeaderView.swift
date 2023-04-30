@@ -87,6 +87,8 @@ class SettingHeaderView: UIView {
             make.top.equalTo(profileCahsInfoView.snp.bottom).offset(10)
             make.height.equalTo(60)
         }
+        
+        print(self.frame.height)
 
     }
     

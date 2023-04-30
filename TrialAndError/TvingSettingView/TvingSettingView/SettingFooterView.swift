@@ -27,6 +27,9 @@ class SettingFooterView: UIView {
         super.init(frame: frame)
         backgroundColor = .black
         addSubview(button)
+        button.addButtonAction { _ in
+            print("로그아웃")
+        }
 
     }
     

@@ -13,7 +13,7 @@ class SettingTableViewSectionHeader: UIView {
     
     let line: UIView = {
         let view = UIView()
-        view.backgroundColor = .gray
+        view.backgroundColor = .red
         return view
     }()
 
