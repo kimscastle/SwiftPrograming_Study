@@ -28,17 +28,22 @@ class ViewController: UIViewController {
         case i = "티빙 알아보기"
     }
     
-    let customNavigationBar = CustomNavigationView()
-    
     let data = [UserSettingType.allCases.map {$0.rawValue}, AppInfoType.allCases.map {$0.rawValue}]
     
     let settingView = UITableView(frame: .zero, style: .grouped)
+    
+    lazy var testButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("ㅎㅎㅎ", for: .normal)
+        button.addTarget(self, action: #selector(tapped), for: .touchUpInside)
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(settingView)
-
-        tvingNaviBar(.white, left: [UIImageView(image: UIImage(systemName: "flame"))], right: [])
+        self.navigationController?.navigationBar.barStyle = .black
+        tvingNaviBar(.white, left: [UIImageView(image: UIImage(systemName: "flame"))], right: [testButton], true)
         settingView.sectionFooterHeight = 0
         settingView.separatorStyle = .none
         settingView.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.cellId)
@@ -56,10 +61,12 @@ class ViewController: UIViewController {
         settingView.tableHeaderView = SettingHeaderView(frame: .init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 280))
         settingView.tableFooterView = SettingFooterView(frame: .init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 150))
     }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+
+    @objc func tapped() {
+        let vc = TestViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
+    
 }
 
 
@@ -83,18 +90,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.cellId, for: indexPath) as? SettingTableViewCell else { return SettingTableViewCell()}
         cell.label.text = data[indexPath.section][indexPath.row]
         return cell
-    }
-}
-
-extension UIViewController {
-    func tvingNaviBar<T: UIView, A: UIView>(backgroundColor: UIColor = .black, _ tintColor: UIColor, left leftItems: [T], right rightItems: [A]) {
-        let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = backgroundColor
-        self.navigationController?.navigationBar.standardAppearance = appearance
-        self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        self.navigationController?.navigationBar.tintColor = tintColor
-        self.navigationItem.setLeftBarButtonItems(leftItems.map {UIBarButtonItem(customView: $0)}, animated: false)
-        self.navigationItem.setRightBarButtonItems(rightItems.map {UIBarButtonItem(customView: $0)}, animated: false)
     }
 }
 
@@ -163,3 +158,27 @@ extension UITableView {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+extension UIViewController {
+    func tvingNaviBar<T: UIView, A: UIView>(backgroundColor: UIColor = .black, _ tintColor: UIColor, left leftItems: [T], right rightItems: [A], _ a: Bool) {
+
+
+        self.navigationController?.navigationBar.tintColor = tintColor
+        self.navigationItem.setLeftBarButtonItems(leftItems.map {UIBarButtonItem(customView: $0)}, animated: false)
+        self.navigationItem.setRightBarButtonItems(rightItems.map {UIBarButtonItem(customView: $0)}, animated: false)
+    }
+}

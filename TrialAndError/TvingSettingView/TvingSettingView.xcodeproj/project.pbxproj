@@ -18,6 +18,7 @@
 		C0A9FEDD29FA445B00B89AC7 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A9FEDC29FA445B00B89AC7 /* SettingTableViewCell.swift */; };
 		C0A9FEDF29FA499A00B89AC7 /* SettingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A9FEDE29FA499A00B89AC7 /* SettingHeaderView.swift */; };
 		C0A9FEE129FA52C900B89AC7 /* SettingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A9FEE029FA52C900B89AC7 /* SettingFooterView.swift */; };
+		C0A9FF3529FE4FE700B89AC7 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A9FF3429FE4FE700B89AC7 /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		C0A9FEDC29FA445B00B89AC7 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		C0A9FEDE29FA499A00B89AC7 /* SettingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingHeaderView.swift; sourceTree = "<group>"; };
 		C0A9FEE029FA52C900B89AC7 /* SettingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingFooterView.swift; sourceTree = "<group>"; };
+		C0A9FF3429FE4FE700B89AC7 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				C0A9FEDC29FA445B00B89AC7 /* SettingTableViewCell.swift */,
 				C0A9FEDE29FA499A00B89AC7 /* SettingHeaderView.swift */,
 				C0A9FEE029FA52C900B89AC7 /* SettingFooterView.swift */,
+				C0A9FF3429FE4FE700B89AC7 /* TestViewController.swift */,
 			);
 			path = TvingSettingView;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				C0A9FEDF29FA499A00B89AC7 /* SettingHeaderView.swift in Sources */,
 				C0A9FEDB29FA384200B89AC7 /* CustomNavigationView.swift in Sources */,
 				C0A9FEC229FA305600B89AC7 /* AppDelegate.swift in Sources */,
+				C0A9FF3529FE4FE700B89AC7 /* TestViewController.swift in Sources */,
 				C0A9FEC429FA305600B89AC7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +312,7 @@
 				INFOPLIST_FILE = TvingSettingView/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -335,6 +340,7 @@
 				INFOPLIST_FILE = TvingSettingView/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
