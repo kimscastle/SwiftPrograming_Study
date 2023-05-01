@@ -20,7 +20,8 @@ extension TableViewCellReuseProtocol {
     static func register(tableView: UITableView) {
         // MARK: - 타입속성에서 self를 사용하면, 인스턴스가 아니라 타입의 value(Self.self)를 가리킨다
         // 즉, 타입속성에서 다른 타입속성에 접근하려면 self로 접근해야한다
-        // 어차피 static변수에서 Self는 자기자신의 "타입"근데 우리는 타입의 value를 넣어줘야하니까 Self.self가 맞는데
+        // extension에서 Self는 해당 프로토콜을 채택한 "타입"근데 우리는 타입자체를 넣어줄수없기때문에 value를 넣어줘야하니까 Self.self가 맞는데
+        // AnyClass는 메타타입 -> 하지만 input으로 타입자체를 넣어줄수없으니 .self로 value화 해주는거임
         // static변수에서 Self.self를 그냥 self라고 써도된다는거임
         tableView.register(Self.self, forCellReuseIdentifier: self.reuseIdentifier)
         //== tableView.register(Self.self, forCellReuseIdentifier: self.reuseIdentifier)
