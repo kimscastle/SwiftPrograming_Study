@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  InfinityCarusel
+//  CompositionLayout_Tving
 //
-//  Created by uiskim on 2023/04/27.
+//  Created by uiskim on 2023/05/02.
 //
 
 import UIKit
@@ -15,7 +15,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(windowScene: windowScene)
-        self.window?.rootViewController = ViewController()
+        let navigationController = UINavigationController(rootViewController: ViewController())
+        self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
     }
 

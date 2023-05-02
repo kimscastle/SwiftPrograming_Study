@@ -59,32 +59,18 @@ class CarouselView: UIView {
         return pageControl
     }()
     
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//    }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setHierarchy()
         setUI()
         setDelegate()
         setCarouselProperty()
-        activateTimer(2)
+        activateTimer(4)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-//    override var preferredStatusBarStyle: UIStatusBarStyle {
-//        return .lightContent
-//    }
-    
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//
-//    }
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
@@ -110,9 +96,7 @@ extension CarouselView: UICollectionViewDataSource {
 extension CarouselView: UICollectionViewDelegate {
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-
-        
-        initalizeTimer(interval: 2)
+        initalizeTimer(interval: 4)
         
         let nextPage = Metric.cellWidth * Double(carouselItemCount - 2)
         let initalPage = Metric.cellWidth
@@ -132,6 +116,11 @@ extension CarouselView: UICollectionViewDelegate {
         
         pageControl.currentPage = Int(scrollView.contentOffset.x / scrollView.frame.maxX) - 1
         
+    }
+    
+    func initalizeTimer(interval: Double) {
+        invalidateTimer()
+        activateTimer(interval)
     }
 }
 
@@ -167,13 +156,10 @@ private extension CarouselView {
         carouselItemCount = items.count
     }
     
-    func initalizeTimer(interval: Double) {
-        invalidateTimer()
-        activateTimer(interval)
-    }
+
     
     func activateTimer(_ interval: Double) {
-        carouselTimer = Timer.addCarouselTimerAction(timeInterval: 2) {
+        carouselTimer = Timer.addCarouselTimerAction(timeInterval: interval) {
             self.slidePageAutometically(from: self.carouselView, range: self.initalItemCount)
         }
     }
@@ -208,5 +194,30 @@ private extension CarouselView {
     
     func invalidateTimer() {
         carouselTimer?.invalidate()
+    }
+}
+
+struct TvingPoster {
+    let posterImage: UIImage?
+    let title: String
+    let content: String
+}
+
+extension TvingPoster {
+    static func dummy() -> [TvingPoster] {
+        return [
+            .init(posterImage: .one,
+                  title: "최강야구",
+                  content: "사상 최강 야구팀이 생겼다!\n야구 강팀이 펼치는 양보없는 대결"),
+            .init(posterImage: .two,
+                  title: "패밀리",
+                  content: "본격 가족사수 첩보 코미디 시작!\n평범한가족의 아슬아슬한 이중생활"),
+            .init(posterImage: .three,
+                  title: "래빗홀",
+                  content: "개인주의는 기본, 사사로운감정은 환영\n100프로사심기반 여행프로젝트"),
+            .init(posterImage: .four,
+                  title: "아워게임",
+                  content: "LG Twins의 그 험난했던 2022시즌!\n오직티빙에서만 볼수있는 이야기")
+        ]
     }
 }
