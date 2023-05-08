@@ -23,7 +23,6 @@ class SettingTableViewSectionHeader: UIView {
         addSubview(line)
         line.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(15)
-//            make.top.equalToSuperview()
             make.centerY.equalToSuperview()
             make.height.equalTo(1)
         }

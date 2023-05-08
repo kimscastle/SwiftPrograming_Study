@@ -15,7 +15,6 @@ class SettingTableViewCell: UITableViewCell {
     
     let label: UILabel = {
         let label = UILabel()
-        label.text = "gggggggggg"
         label.textColor = .white
         return label
     }()

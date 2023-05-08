@@ -1,5 +1,5 @@
 //
-//  FamousLiveChannelCollectionViewCell.swift
+//  RankingCollectionViewCell.swift
 //  CompositionalLayout
 //
 //  Created by uiskim on 2023/05/01.
@@ -7,8 +7,8 @@
 
 import UIKit
 import SnapKit
-class FamousLiveChannelCollectionViewCell: UICollectionViewCell {
-    static let cellId = "FamousLiveChannelCollectionViewCell"
+class RankingCollectionViewCell: UICollectionViewCell {
+    static let cellId = "RankingCollectionViewCell"
     
     var data: VideoInfo? {
         didSet {
@@ -20,7 +20,7 @@ class FamousLiveChannelCollectionViewCell: UICollectionViewCell {
     
     let posterView: UIImageView = {
         let view = UIImageView()
-        view.contentMode = .scaleAspectFit
+        view.contentMode = .scaleToFill
         view.clipsToBounds = true
         return view
     }()
@@ -34,9 +34,9 @@ class FamousLiveChannelCollectionViewCell: UICollectionViewCell {
     
     let subtitle: UILabel = {
         let label = UILabel()
-        label.text = "34.6%"
-        label.textColor = .cyan
+        label.text = "1등"
         label.font = .systemFont(ofSize: 10, weight: .regular)
+        label.textColor = .cyan
         return label
     }()
     

@@ -20,6 +20,26 @@
 		C027D1E229A3A068008BDC38 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027D1E129A3A068008BDC38 /* UIImage+.swift */; };
 		C027D1E429A48538008BDC38 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027D1E329A48538008BDC38 /* UIButton+.swift */; };
 		C027D1EF29A48CBD008BDC38 /* UIProgressView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027D1EE29A48CBD008BDC38 /* UIProgressView+.swift */; };
+		C09E97572A02D94900475DDC /* CustomMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09E973D2A02D94800475DDC /* CustomMenuBar.swift */; };
+		C09E97582A02D94900475DDC /* ParamountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09E973F2A02D94800475DDC /* ParamountViewController.swift */; };
+		C09E97592A02D94900475DDC /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09E97402A02D94800475DDC /* MovieViewController.swift */; };
+		C09E975A2A02D94900475DDC /* RealTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09E97412A02D94800475DDC /* RealTimeViewController.swift */; };
+		C09E975B2A02D94900475DDC /* TvProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09E97422A02D94800475DDC /* TvProgramViewController.swift */; };
+		C09E975C2A02D94900475DDC /* KidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09E97432A02D94800475DDC /* KidViewController.swift */; };
+		C09E975D2A02D94900475DDC /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09E97442A02D94800475DDC /* MenuCollectionViewCell.swift */; };
+		C09E975E2A02D94900475DDC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09E97462A02D94900475DDC /* Model.swift */; };
+		C09E975F2A02D94900475DDC /* ListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09E97472A02D94900475DDC /* ListSection.swift */; };
+		C09E97602A02D94900475DDC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09E97492A02D94900475DDC /* Extensions.swift */; };
+		C09E97612A02D94900475DDC /* MustWatchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09E974C2A02D94900475DDC /* MustWatchCollectionViewCell.swift */; };
+		C09E97622A02D94900475DDC /* FamousLiveChannelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09E974D2A02D94900475DDC /* FamousLiveChannelCollectionViewCell.swift */; };
+		C09E97632A02D94900475DDC /* WatchingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09E974E2A02D94900475DDC /* WatchingCollectionViewCell.swift */; };
+		C09E97642A02D94900475DDC /* QuickVODCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09E974F2A02D94900475DDC /* QuickVODCollectionViewCell.swift */; };
+		C09E97652A02D94900475DDC /* RankingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09E97502A02D94900475DDC /* RankingCollectionViewCell.swift */; };
+		C09E97662A02D94900475DDC /* TotalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09E97512A02D94900475DDC /* TotalViewController.swift */; };
+		C09E97672A02D94900475DDC /* HeaderSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09E97522A02D94900475DDC /* HeaderSupplementaryView.swift */; };
+		C09E97682A02D94900475DDC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09E97532A02D94900475DDC /* ViewController.swift */; };
+		C09E97692A02D94900475DDC /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09E97552A02D94900475DDC /* CollectionViewCell.swift */; };
+		C09E976A2A02D94900475DDC /* CaruselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09E97562A02D94900475DDC /* CaruselView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +57,26 @@
 		C027D1E129A3A068008BDC38 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		C027D1E329A48538008BDC38 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		C027D1EE29A48CBD008BDC38 /* UIProgressView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIProgressView+.swift"; sourceTree = "<group>"; };
+		C09E973D2A02D94800475DDC /* CustomMenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMenuBar.swift; sourceTree = "<group>"; };
+		C09E973F2A02D94800475DDC /* ParamountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParamountViewController.swift; sourceTree = "<group>"; };
+		C09E97402A02D94800475DDC /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		C09E97412A02D94800475DDC /* RealTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealTimeViewController.swift; sourceTree = "<group>"; };
+		C09E97422A02D94800475DDC /* TvProgramViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvProgramViewController.swift; sourceTree = "<group>"; };
+		C09E97432A02D94800475DDC /* KidViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidViewController.swift; sourceTree = "<group>"; };
+		C09E97442A02D94800475DDC /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		C09E97462A02D94900475DDC /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		C09E97472A02D94900475DDC /* ListSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListSection.swift; sourceTree = "<group>"; };
+		C09E97492A02D94900475DDC /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C09E974C2A02D94900475DDC /* MustWatchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MustWatchCollectionViewCell.swift; sourceTree = "<group>"; };
+		C09E974D2A02D94900475DDC /* FamousLiveChannelCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamousLiveChannelCollectionViewCell.swift; sourceTree = "<group>"; };
+		C09E974E2A02D94900475DDC /* WatchingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchingCollectionViewCell.swift; sourceTree = "<group>"; };
+		C09E974F2A02D94900475DDC /* QuickVODCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickVODCollectionViewCell.swift; sourceTree = "<group>"; };
+		C09E97502A02D94900475DDC /* RankingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingCollectionViewCell.swift; sourceTree = "<group>"; };
+		C09E97512A02D94900475DDC /* TotalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalViewController.swift; sourceTree = "<group>"; };
+		C09E97522A02D94900475DDC /* HeaderSupplementaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderSupplementaryView.swift; sourceTree = "<group>"; };
+		C09E97532A02D94900475DDC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C09E97552A02D94900475DDC /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		C09E97562A02D94900475DDC /* CaruselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaruselView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +124,12 @@
 				C027D1DB29A36C60008BDC38 /* Protocols.swift */,
 				C027D1DF29A39DE7008BDC38 /* Constant.swift */,
 				C027D1E129A3A068008BDC38 /* UIImage+.swift */,
+				C09E97542A02D94900475DDC /* CaruselView */,
+				C09E974A2A02D94900475DDC /* Compositional */,
+				C09E97452A02D94900475DDC /* Data */,
+				C09E973C2A02D94800475DDC /* Menu */,
+				C09E97482A02D94900475DDC /* Utility */,
+				C09E97532A02D94900475DDC /* ViewController.swift */,
 				C027D1E329A48538008BDC38 /* UIButton+.swift */,
 				C027D1EE29A48CBD008BDC38 /* UIProgressView+.swift */,
 			);
@@ -149,6 +195,76 @@
 				C027D1DD29A391D2008BDC38 /* ViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C09E973C2A02D94800475DDC /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				C09E973D2A02D94800475DDC /* CustomMenuBar.swift */,
+				C09E973E2A02D94800475DDC /* DummyVC */,
+				C09E97442A02D94800475DDC /* MenuCollectionViewCell.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		C09E973E2A02D94800475DDC /* DummyVC */ = {
+			isa = PBXGroup;
+			children = (
+				C09E973F2A02D94800475DDC /* ParamountViewController.swift */,
+				C09E97402A02D94800475DDC /* MovieViewController.swift */,
+				C09E97412A02D94800475DDC /* RealTimeViewController.swift */,
+				C09E97422A02D94800475DDC /* TvProgramViewController.swift */,
+				C09E97432A02D94800475DDC /* KidViewController.swift */,
+			);
+			path = DummyVC;
+			sourceTree = "<group>";
+		};
+		C09E97452A02D94900475DDC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C09E97462A02D94900475DDC /* Model.swift */,
+				C09E97472A02D94900475DDC /* ListSection.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C09E97482A02D94900475DDC /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				C09E97492A02D94900475DDC /* Extensions.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		C09E974A2A02D94900475DDC /* Compositional */ = {
+			isa = PBXGroup;
+			children = (
+				C09E974B2A02D94900475DDC /* Cell */,
+				C09E97512A02D94900475DDC /* TotalViewController.swift */,
+				C09E97522A02D94900475DDC /* HeaderSupplementaryView.swift */,
+			);
+			path = Compositional;
+			sourceTree = "<group>";
+		};
+		C09E974B2A02D94900475DDC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C09E974C2A02D94900475DDC /* MustWatchCollectionViewCell.swift */,
+				C09E974D2A02D94900475DDC /* FamousLiveChannelCollectionViewCell.swift */,
+				C09E974E2A02D94900475DDC /* WatchingCollectionViewCell.swift */,
+				C09E974F2A02D94900475DDC /* QuickVODCollectionViewCell.swift */,
+				C09E97502A02D94900475DDC /* RankingCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C09E97542A02D94900475DDC /* CaruselView */ = {
+			isa = PBXGroup;
+			children = (
+				C09E97552A02D94900475DDC /* CollectionViewCell.swift */,
+				C09E97562A02D94900475DDC /* CaruselView.swift */,
+			);
+			path = CaruselView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,15 +343,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C09E97592A02D94900475DDC /* MovieViewController.swift in Sources */,
+				C09E975B2A02D94900475DDC /* TvProgramViewController.swift in Sources */,
 				C027D1E029A39DE7008BDC38 /* Constant.swift in Sources */,
+				C09E97662A02D94900475DDC /* TotalViewController.swift in Sources */,
+				C09E976A2A02D94900475DDC /* CaruselView.swift in Sources */,
 				C027D1DC29A36C60008BDC38 /* Protocols.swift in Sources */,
 				C027D1C729A36856008BDC38 /* ViewController.swift in Sources */,
 				C027D1DA29A36BFA008BDC38 /* ImageLoadTableViewCell.swift in Sources */,
+				C09E975F2A02D94900475DDC /* ListSection.swift in Sources */,
 				C027D1E429A48538008BDC38 /* UIButton+.swift in Sources */,
+				C09E97642A02D94900475DDC /* QuickVODCollectionViewCell.swift in Sources */,
 				C027D1C329A36856008BDC38 /* AppDelegate.swift in Sources */,
+				C09E975A2A02D94900475DDC /* RealTimeViewController.swift in Sources */,
+				C09E975E2A02D94900475DDC /* Model.swift in Sources */,
+				C09E97622A02D94900475DDC /* FamousLiveChannelCollectionViewCell.swift in Sources */,
+				C09E97672A02D94900475DDC /* HeaderSupplementaryView.swift in Sources */,
+				C09E975D2A02D94900475DDC /* MenuCollectionViewCell.swift in Sources */,
+				C09E975C2A02D94900475DDC /* KidViewController.swift in Sources */,
+				C09E97652A02D94900475DDC /* RankingCollectionViewCell.swift in Sources */,
+				C09E97692A02D94900475DDC /* CollectionViewCell.swift in Sources */,
+				C09E97682A02D94900475DDC /* ViewController.swift in Sources */,
+				C09E97572A02D94900475DDC /* CustomMenuBar.swift in Sources */,
+				C09E97612A02D94900475DDC /* MustWatchCollectionViewCell.swift in Sources */,
 				C027D1E229A3A068008BDC38 /* UIImage+.swift in Sources */,
+				C09E97602A02D94900475DDC /* Extensions.swift in Sources */,
+				C09E97632A02D94900475DDC /* WatchingCollectionViewCell.swift in Sources */,
 				C027D1EF29A48CBD008BDC38 /* UIProgressView+.swift in Sources */,
 				C027D1DE29A391D2008BDC38 /* ViewModel.swift in Sources */,
+				C09E97582A02D94900475DDC /* ParamountViewController.swift in Sources */,
 				C027D1C529A36856008BDC38 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

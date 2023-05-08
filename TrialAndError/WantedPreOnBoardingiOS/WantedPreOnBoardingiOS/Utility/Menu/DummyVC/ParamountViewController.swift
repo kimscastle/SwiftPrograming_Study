@@ -1,21 +1,17 @@
 //
-//  KidViewController.swift
+//  ParamountViewController.swift
 //  CompositionLayout_Tving
 //
 //  Created by uiskim on 2023/05/02.
 //
 
 import UIKit
-import SnapKit
 
-class KidViewController: UIViewController {
-    
-
+class ParamountViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemTeal
-
+        view.backgroundColor = .purple
         // Do any additional setup after loading the view.
     }
     
