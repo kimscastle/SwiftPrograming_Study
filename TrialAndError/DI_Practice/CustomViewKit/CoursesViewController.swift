@@ -8,10 +8,7 @@
 import UIKit
 
 public protocol DataFetchable {
-    /// 데이터를 넘겨받기만 해야하는거 아닐까...? 왜냐면 애초에 APICaller라는 모듈은 독립적이어야하는데 쟤가 Course를 알고있으면 안되는거아닌가...?
-    /// 그러면 여기서 받은 데이터를 가지고 Decode해주는 방식이 맞는건가...?
-    /// 근데 ViewController에서 Decode를 해주는 방식 조금 어색한거같은데...?
-    func fetchCourseNames(completion: @escaping(Data) -> Void)
+    func fetchCoures<T: Codable>(returnType: [T].Type, completion: @escaping([T]) -> Void)
 }
 
 struct Course: Codable {
@@ -46,11 +43,11 @@ public class CoursesViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         view.backgroundColor = .systemBackground
-        dataFetchable.fetchCourseNames { [weak self] data in
-            guard let model = try? JSONDecoder().decode([Course].self, from: data) else { fatalError("decode오류") }
-            self?.courses = model
+
+        dataFetchable.fetchCoures(returnType: [Course].self) { models in
+            self.courses = models
             DispatchQueue.main.async {
-                self?.tableView.reloadData()
+                self.tableView.reloadData()
             }
         }
     }
