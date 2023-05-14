@@ -8,7 +8,7 @@
 import UIKit
 
 public protocol DataFetchable {
-    func fetchCoures<T: Codable>(returnType: [T].Type, completion: @escaping([T]) -> Void)
+    func fetchCoures<T: Codable>(returnType: T.Type, completion: @escaping(T) -> Void)
 }
 
 struct Course: Codable {
