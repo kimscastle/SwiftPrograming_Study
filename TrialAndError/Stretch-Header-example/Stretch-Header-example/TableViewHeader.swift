@@ -22,7 +22,8 @@ class TableViewHeader: UITableViewHeaderFooterView {
     private func setLayout() {
         self.addSubview(imageView)
         imageView.snp.makeConstraints {
-            $0.top.bottom.leading.trailing.equalToSuperview()
+            $0.top.leading.trailing.equalToSuperview()
+            $0.height.equalTo(300)
         }
     }
     
@@ -32,7 +33,9 @@ class TableViewHeader: UITableViewHeaderFooterView {
     
     func setResizeView(_ yValue: CGFloat) {
             self.imageView.snp.remakeConstraints {
-                $0.top.bottom.leading.trailing.equalToSuperview().inset(yValue)
+                $0.top.equalToSuperview().inset(yValue)
+                $0.leading.trailing.equalToSuperview()
+                $0.height.equalTo(300-yValue)
             }
         }
 }
