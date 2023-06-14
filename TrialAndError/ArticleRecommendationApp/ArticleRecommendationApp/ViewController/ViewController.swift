@@ -78,9 +78,7 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        view.addSubview(suggestionLabel)
-        view.addSubview(suggestionArticleCollectionView)
-        view.addSubview(myArticleTableView)
+        view.addsubViews(suggestionLabel, suggestionArticleCollectionView, myArticleTableView)
         suggestionLabel.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin)
             make.leading.equalToSuperview().inset(20)
