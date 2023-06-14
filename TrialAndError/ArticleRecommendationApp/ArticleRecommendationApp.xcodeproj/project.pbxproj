@@ -17,6 +17,9 @@
 		C070C0F42A3975E6000C2883 /* TableViewCellReuseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070C0F32A3975E6000C2883 /* TableViewCellReuseProtocol.swift */; };
 		C070C0F62A39799A000C2883 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070C0F52A39799A000C2883 /* ArticleTableViewCell.swift */; };
 		C070C0F82A397ACC000C2883 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070C0F72A397ACC000C2883 /* Article.swift */; };
+		C070C0FA2A39B87C000C2883 /* CollectionViewCellReuseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070C0F92A39B87C000C2883 /* CollectionViewCellReuseProtocol.swift */; };
+		C070C0FC2A39B926000C2883 /* SuggestionArticleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070C0FB2A39B926000C2883 /* SuggestionArticleCollectionViewCell.swift */; };
+		C070C0FF2A39C946000C2883 /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070C0FE2A39C946000C2883 /* UICollectionView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		C070C0F32A3975E6000C2883 /* TableViewCellReuseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellReuseProtocol.swift; sourceTree = "<group>"; };
 		C070C0F52A39799A000C2883 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		C070C0F72A397ACC000C2883 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		C070C0F92A39B87C000C2883 /* CollectionViewCellReuseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellReuseProtocol.swift; sourceTree = "<group>"; };
+		C070C0FB2A39B926000C2883 /* SuggestionArticleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionArticleCollectionViewCell.swift; sourceTree = "<group>"; };
+		C070C0FE2A39C946000C2883 /* UICollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 		C070C0D92A387265000C2883 /* ArticleRecommendationApp */ = {
 			isa = PBXGroup;
 			children = (
+				C070C0FD2A39C938000C2883 /* Extensions */,
 				C070C0DA2A387265000C2883 /* AppDelegate.swift */,
 				C070C0DC2A387265000C2883 /* SceneDelegate.swift */,
 				C070C0DE2A387265000C2883 /* ViewController.swift */,
@@ -74,8 +81,18 @@
 				C070C0F32A3975E6000C2883 /* TableViewCellReuseProtocol.swift */,
 				C070C0F52A39799A000C2883 /* ArticleTableViewCell.swift */,
 				C070C0F72A397ACC000C2883 /* Article.swift */,
+				C070C0F92A39B87C000C2883 /* CollectionViewCellReuseProtocol.swift */,
+				C070C0FB2A39B926000C2883 /* SuggestionArticleCollectionViewCell.swift */,
 			);
 			path = ArticleRecommendationApp;
+			sourceTree = "<group>";
+		};
+		C070C0FD2A39C938000C2883 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C070C0FE2A39C946000C2883 /* UICollectionView+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,11 +171,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C070C0FC2A39B926000C2883 /* SuggestionArticleCollectionViewCell.swift in Sources */,
 				C070C0F82A397ACC000C2883 /* Article.swift in Sources */,
 				C070C0F22A3872F5000C2883 /* ArticleRecommendationModel.mlmodel in Sources */,
 				C070C0F42A3975E6000C2883 /* TableViewCellReuseProtocol.swift in Sources */,
+				C070C0FF2A39C946000C2883 /* UICollectionView+.swift in Sources */,
 				C070C0DF2A387265000C2883 /* ViewController.swift in Sources */,
 				C070C0DB2A387265000C2883 /* AppDelegate.swift in Sources */,
+				C070C0FA2A39B87C000C2883 /* CollectionViewCellReuseProtocol.swift in Sources */,
 				C070C0F62A39799A000C2883 /* ArticleTableViewCell.swift in Sources */,
 				C070C0DD2A387265000C2883 /* SceneDelegate.swift in Sources */,
 			);

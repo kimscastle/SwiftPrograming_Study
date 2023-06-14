@@ -17,12 +17,13 @@ final class ArticleTableViewCell: UITableViewCell, TableViewCellReuseProtocol {
     
     private let contentName: UILabel = {
         let label = UILabel()
-        label.textColor = .red
+        label.textColor = .black
         return label
     }()
     
     private let isLike: UIButton = {
         let button = UIButton(type: .custom)
+        button.tintColor = .red
         return button
     }()
     
