@@ -21,6 +21,7 @@
 		C070C0FC2A39B926000C2883 /* SuggestionArticleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070C0FB2A39B926000C2883 /* SuggestionArticleCollectionViewCell.swift */; };
 		C070C0FF2A39C946000C2883 /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070C0FE2A39C946000C2883 /* UICollectionView+.swift */; };
 		C070C1062A39D169000C2883 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070C1052A39D169000C2883 /* UIView+.swift */; };
+		C070C1082A39D39B000C2883 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070C1072A39D39B000C2883 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		C070C0FB2A39B926000C2883 /* SuggestionArticleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionArticleCollectionViewCell.swift; sourceTree = "<group>"; };
 		C070C0FE2A39C946000C2883 /* UICollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+.swift"; sourceTree = "<group>"; };
 		C070C1052A39D169000C2883 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		C070C1072A39D39B000C2883 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +76,7 @@
 			children = (
 				C070C1042A39D155000C2883 /* CoreML */,
 				C070C1032A39D145000C2883 /* Protocols */,
-				C070C1022A39D138000C2883 /* ViewController */,
+				C070C1022A39D138000C2883 /* Present */,
 				C070C1012A39D126000C2883 /* Model */,
 				C070C1002A39D11A000C2883 /* Cell */,
 				C070C0FD2A39C938000C2883 /* Extensions */,
@@ -113,12 +115,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		C070C1022A39D138000C2883 /* ViewController */ = {
+		C070C1022A39D138000C2883 /* Present */ = {
 			isa = PBXGroup;
 			children = (
-				C070C0DE2A387265000C2883 /* ViewController.swift */,
+				C070C10A2A39DA96000C2883 /* ViewModel */,
+				C070C1092A39DA90000C2883 /* ViewController */,
 			);
-			path = ViewController;
+			path = Present;
 			sourceTree = "<group>";
 		};
 		C070C1032A39D145000C2883 /* Protocols */ = {
@@ -136,6 +139,22 @@
 				C070C0F12A3872F5000C2883 /* ArticleRecommendationModel.mlmodel */,
 			);
 			path = CoreML;
+			sourceTree = "<group>";
+		};
+		C070C1092A39DA90000C2883 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C070C0DE2A387265000C2883 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C070C10A2A39DA96000C2883 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C070C1072A39D39B000C2883 /* ViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +243,7 @@
 				C070C0FA2A39B87C000C2883 /* CollectionViewCellReuseProtocol.swift in Sources */,
 				C070C1062A39D169000C2883 /* UIView+.swift in Sources */,
 				C070C0F62A39799A000C2883 /* ArticleTableViewCell.swift in Sources */,
+				C070C1082A39D39B000C2883 /* ViewModel.swift in Sources */,
 				C070C0DD2A387265000C2883 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
