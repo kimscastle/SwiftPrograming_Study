@@ -9,16 +9,22 @@ import UIKit
 
 import CoreML
 
-protocol BaseViewModel: AnyObject {
-    var data: [Article] { get set }
-    var suggestionArticleList: [String] { get set }
-    var reloadData: (()->Void)? { get set }
+protocol BaseViewModel: ViewModelInput, ViewModelOutput {}
+//typealias BaseViewModel = ViewModelInput & ViewModelOutput
+
+protocol ViewModelInput {
     func storeUserLikeDate(key: String, value: Double)
+}
+
+protocol ViewModelOutput {
+    var reloadData: (() -> Void)? { get set }
+    var suggestionArticleList: [String] { get set }
+    var data: [Article] { get set }
 }
 
 final class ViewModel: BaseViewModel {
     
-    var reloadData: (()->Void)?
+    var reloadData: (() -> Void)?
 
     var data: [Article] = [
         .init(articelName: "태교하는방법", articelLike: false),
