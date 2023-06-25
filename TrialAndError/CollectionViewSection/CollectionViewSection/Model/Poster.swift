@@ -75,3 +75,19 @@ extension Poster {
         ]
     }
 }
+
+struct SampleImageConcludeCellSize {
+    let cellSize: CGSize
+    let datas: [SampleImage]
+}
+
+
+struct SampleImage {
+    let image: UIImage
+}
+
+extension SampleImage {
+    static func dummy() -> [[SampleImage]] {
+        return [[]]
+    }
+}
