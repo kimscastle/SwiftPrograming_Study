@@ -13,6 +13,7 @@
 		C07D88EC2A47E8CF005C2417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C07D88EB2A47E8CF005C2417 /* Assets.xcassets */; };
 		C07D88EF2A47E8CF005C2417 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C07D88ED2A47E8CF005C2417 /* LaunchScreen.storyboard */; };
 		C07D88F82A47E937005C2417 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C07D88F72A47E937005C2417 /* SnapKit */; };
+		C07D88FA2A47EC27005C2417 /* FloatingActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07D88F92A47EC27005C2417 /* FloatingActionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		C07D88EB2A47E8CF005C2417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C07D88EE2A47E8CF005C2417 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C07D88F02A47E8CF005C2417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C07D88F92A47EC27005C2417 /* FloatingActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				C07D88EB2A47E8CF005C2417 /* Assets.xcassets */,
 				C07D88ED2A47E8CF005C2417 /* LaunchScreen.storyboard */,
 				C07D88F02A47E8CF005C2417 /* Info.plist */,
+				C07D88F92A47EC27005C2417 /* FloatingActionViewController.swift */,
 			);
 			path = FloatingButton;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			files = (
 				C07D88E72A47E8CE005C2417 /* ViewController.swift in Sources */,
 				C07D88E32A47E8CE005C2417 /* AppDelegate.swift in Sources */,
+				C07D88FA2A47EC27005C2417 /* FloatingActionViewController.swift in Sources */,
 				C07D88E52A47E8CE005C2417 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
