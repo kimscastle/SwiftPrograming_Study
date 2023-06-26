@@ -21,6 +21,8 @@
 		C0E220A22A49BC2400346E8C /* ThumbNailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E220A12A49BC2400346E8C /* ThumbNailCell.swift */; };
 		C0E220A42A49BC3400346E8C /* BlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E220A32A49BC3400346E8C /* BlockCell.swift */; };
 		C0E220A62A49E15500346E8C /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E220A52A49E15500346E8C /* ArticleCell.swift */; };
+		C0E220A82A49EB5200346E8C /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E220A72A49EB5200346E8C /* ArticleView.swift */; };
+		C0E220AD2A49F07700346E8C /* ArticleProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E220AC2A49F07700346E8C /* ArticleProgress.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		C0E220A12A49BC2400346E8C /* ThumbNailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbNailCell.swift; sourceTree = "<group>"; };
 		C0E220A32A49BC3400346E8C /* BlockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockCell.swift; sourceTree = "<group>"; };
 		C0E220A52A49E15500346E8C /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
+		C0E220A72A49EB5200346E8C /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
+		C0E220AC2A49F07700346E8C /* ArticleProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleProgress.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 		C0E220932A49B61100346E8C /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				C0E220AB2A49F05600346E8C /* View */,
 				C0E220962A49B66E00346E8C /* Model */,
 				C0E220952A49B63100346E8C /* Cell */,
 				C0E220942A49B61B00346E8C /* ViewController */,
@@ -128,6 +133,15 @@
 				C0E220992A49B68A00346E8C /* ArticleContentType.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C0E220AB2A49F05600346E8C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C0E220A72A49EB5200346E8C /* ArticleView.swift */,
+				C0E220AC2A49F07700346E8C /* ArticleProgress.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,9 +224,11 @@
 				C0E220802A49B46D00346E8C /* MainViewController.swift in Sources */,
 				C0E2209A2A49B68A00346E8C /* ArticleContentType.swift in Sources */,
 				C0E2209C2A49BBDB00346E8C /* ContentCell.swift in Sources */,
+				C0E220AD2A49F07700346E8C /* ArticleProgress.swift in Sources */,
 				C0E220A02A49BC0800346E8C /* TitleCell.swift in Sources */,
 				C0E220A22A49BC2400346E8C /* ThumbNailCell.swift in Sources */,
 				C0E2209E2A49BBF300346E8C /* QuoteCell.swift in Sources */,
+				C0E220A82A49EB5200346E8C /* ArticleView.swift in Sources */,
 				C0E2207C2A49B46D00346E8C /* AppDelegate.swift in Sources */,
 				C0E2207E2A49B46D00346E8C /* SceneDelegate.swift in Sources */,
 				C0E220A42A49BC3400346E8C /* BlockCell.swift in Sources */,
