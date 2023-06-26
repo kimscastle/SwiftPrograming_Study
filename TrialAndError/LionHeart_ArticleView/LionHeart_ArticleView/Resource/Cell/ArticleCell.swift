@@ -158,7 +158,7 @@ class ArticleCell: UITableViewCell, ArticleViewProtocol {
     }
     
     func setThumbNailCell(content: UIImage) {
-        var thumbNail: UIImageView = {
+        let thumbNail: UIImageView = {
             let imageView = UIImageView()
             imageView.contentMode = .scaleAspectFill
             imageView.clipsToBounds = true
@@ -173,14 +173,14 @@ class ArticleCell: UITableViewCell, ArticleViewProtocol {
     }
     
     func setBlockCell(content: String) {
-        var bulb: UIImageView = {
+        let bulb: UIImageView = {
             let imageView = UIImageView(image: UIImage(systemName: "lightbulb"))
             imageView.contentMode = .scaleAspectFill
             imageView.tintColor = .yellow
             return imageView
         }()
         
-        var block: UIView = {
+        let block: UIView = {
             let view = UIView()
             view.backgroundColor = .lightGray
             return view
@@ -192,6 +192,7 @@ class ArticleCell: UITableViewCell, ArticleViewProtocol {
             label.textColor = .white
             label.textAlignment = .left
             label.numberOfLines = 0
+            label.text = content
             return label
         }()
         

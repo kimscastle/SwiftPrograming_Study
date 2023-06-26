@@ -18,7 +18,7 @@ final class MainViewController: UIViewController {
     private lazy var progressView: UIProgressView = {
         let view = UIProgressView()
         view.trackTintColor = .lightGray
-        view.progressTintColor = .systemBlue
+        view.progressTintColor = .black
         view.progressViewStyle = .bar
         view.transform = CGAffineTransform(scaleX: 1, y: 2)
         view.progress = 0
@@ -39,6 +39,7 @@ final class MainViewController: UIViewController {
         articleView.register(TitleCell.self, forCellReuseIdentifier: TitleCell.identifier)
         articleView.register(ThumbNailCell.self, forCellReuseIdentifier: ThumbNailCell.identifier)
         articleView.register(BlockCell.self, forCellReuseIdentifier: BlockCell.identifier)
+//        articleView.register(ArticleCell.self, forCellReuseIdentifier: ArticleCell.identifier)
         view.addSubview(articleView)
         articleView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
@@ -87,6 +88,10 @@ extension MainViewController: UITableViewDataSource {
             cell.selectionStyle = .none
             return cell
         }
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: ArticleCell.identifier, for: indexPath) as? ArticleCell else { return ArticleCell() }
+//        cell.input = articleData[indexPath.row]
+//        cell.selectionStyle = .none
+//        return cell
     }
 }
 
