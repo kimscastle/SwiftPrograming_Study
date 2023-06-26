@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  LionHeart_ArticleView
 //
 //  Created by uiskim on 2023/06/26.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
