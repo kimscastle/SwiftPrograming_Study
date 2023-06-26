@@ -14,24 +14,43 @@ final class MainViewController: UIViewController {
     private let articleData = Article.datas()
     
     private let articleView = UITableView()
+    
+    private lazy var progressView: UIProgressView = {
+        let view = UIProgressView()
+        view.trackTintColor = .lightGray
+        view.progressTintColor = .systemBlue
+        view.progressViewStyle = .bar
+        view.transform = CGAffineTransform(scaleX: 1, y: 2)
+        view.progress = 0
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         articleView.separatorStyle = .none
         articleView.dataSource = self
         articleView.delegate = self
+        
+        self.articleView.rowHeight = UITableView.automaticDimension
         
         articleView.register(ContentCell.self, forCellReuseIdentifier: ContentCell.identifier)
         articleView.register(QuoteCell.self, forCellReuseIdentifier: QuoteCell.identifier)
         articleView.register(TitleCell.self, forCellReuseIdentifier: TitleCell.identifier)
         articleView.register(ThumbNailCell.self, forCellReuseIdentifier: ThumbNailCell.identifier)
         articleView.register(BlockCell.self, forCellReuseIdentifier: BlockCell.identifier)
-        
         view.addSubview(articleView)
         articleView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
         
+        view.addSubview(progressView)
+        progressView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.leading.trailing.equalToSuperview()
+        }
     }
 }
 
@@ -72,6 +91,17 @@ extension MainViewController: UITableViewDataSource {
 }
 
 extension MainViewController: UITableViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let percentage = (scrollView.contentOffset.y / (scrollView.contentSize.height - scrollView.frame.size.height))
+        progressView.progress = Float(percentage)
+    }
     
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+      return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
 }
-

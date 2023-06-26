@@ -21,6 +21,7 @@ class ThumbNailCell: UITableViewCell {
     private var thumbNail: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
 
