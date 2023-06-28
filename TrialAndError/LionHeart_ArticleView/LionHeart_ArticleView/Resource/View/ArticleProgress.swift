@@ -13,7 +13,7 @@ final class ArticleProgress: UIProgressView {
         super.init(frame: .zero)
         self.progressViewStyle = .bar
         self.trackTintColor = .lightGray
-        self.progressTintColor = .systemBlue
+        self.progressTintColor = .black
         self.transform = CGAffineTransform(scaleX: 1, y: 2)
         self.progress = 0
     }
