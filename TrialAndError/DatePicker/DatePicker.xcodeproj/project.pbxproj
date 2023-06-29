@@ -13,7 +13,6 @@
 		C021007F2988D4110092C9ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C021007D2988D4110092C9ED /* Main.storyboard */; };
 		C02100812988D4120092C9ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C02100802988D4120092C9ED /* Assets.xcassets */; };
 		C02100842988D4120092C9ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C02100822988D4120092C9ED /* LaunchScreen.storyboard */; };
-		C021008D2988D4860092C9ED /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C021008C2988D4860092C9ED /* SnapKit */; };
 		C02100902988DE8C0092C9ED /* DateFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021008F2988DE8C0092C9ED /* DateFormatter+.swift */; };
 		C02100932988F06E0092C9ED /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02100922988F06E0092C9ED /* Event.swift */; };
 		C02100952988F73C0092C9ED /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02100942988F73C0092C9ED /* EventManager.swift */; };
@@ -24,6 +23,7 @@
 		C021009F298BB0650092C9ED /* UIbutton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021009E298BB0650092C9ED /* UIbutton+.swift */; };
 		C02100A22990EB210092C9ED /* LocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02100A12990EB210092C9ED /* LocalStorageManager.swift */; };
 		C027D12629976D8A008BDC38 /* CellReuseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027D12529976D8A008BDC38 /* CellReuseProtocol.swift */; };
+		C0778A792A4C14D900F287E8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C0778A782A4C14D900F287E8 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C021008D2988D4860092C9ED /* SnapKit in Frameworks */,
+				C0778A792A4C14D900F287E8 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,7 +172,7 @@
 			);
 			name = DatePicker;
 			packageProductDependencies = (
-				C021008C2988D4860092C9ED /* SnapKit */,
+				C0778A782A4C14D900F287E8 /* SnapKit */,
 			);
 			productName = DatePicker;
 			productReference = C02100742988D4110092C9ED /* DatePicker.app */;
@@ -203,7 +203,7 @@
 			);
 			mainGroup = C021006B2988D4110092C9ED;
 			packageReferences = (
-				C021008B2988D4860092C9ED /* XCRemoteSwiftPackageReference "SnapKit" */,
+				C0778A772A4C14D900F287E8 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = C02100752988D4110092C9ED /* Products */;
 			projectDirPath = "";
@@ -466,20 +466,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C021008B2988D4860092C9ED /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		C0778A772A4C14D900F287E8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
-				branch = develop;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C021008C2988D4860092C9ED /* SnapKit */ = {
+		C0778A782A4C14D900F287E8 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C021008B2988D4860092C9ED /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = C0778A772A4C14D900F287E8 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
