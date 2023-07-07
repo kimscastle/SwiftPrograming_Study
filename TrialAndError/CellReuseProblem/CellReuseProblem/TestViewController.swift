@@ -56,7 +56,7 @@ final class TestViewController: UIViewController {
         // MARK: - 여기서 AnyClass는 typeAlias이며 메타타입이다. 즉, 여기다가는 타입을 넘겨줘야하는데 타입의 value를 넘겨줘야하므로 타입.self로 넘겨줬던것이다
         //testTableView.register(<#T##cellClass: AnyClass?##AnyClass?#>, forCellReuseIdentifier: <#T##String#>)
         // 기존 : testTableView.register(TestTableViewCell.self, forCellReuseIdentifier: TestTableViewCell.identifier)
-        TestTableViewCell.register(tableView: testTableView)
+        TestTableViewCell.register(to: testTableView)
         testTableView.dataSource = self
         // MARK: - 이거 없으면 경고뜸
         testTableView.rowHeight = 70
@@ -76,8 +76,8 @@ extension TestViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 기존 : guard let cell = tableView.dequeueReusableCell(withIdentifier: TestTableViewCell.identifier, for: indexPath) as? TestTableViewCell else { return UITableViewCell() }
-        let cell = TestTableViewCell.dequeueReusableCell(tableView: testTableView)
-        cell.data = viewModel.models[indexPath.row]
+        let cell = TestTableViewCell.dequeueReusableCell(to: testTableView)
+        cell.inputData = viewModel.models[indexPath.row]
         return cell
     }
 }

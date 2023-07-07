@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Model {
+struct Model: Codable {
     let name: String
     let age: Int
 }
