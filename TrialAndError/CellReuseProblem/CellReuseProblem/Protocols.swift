@@ -7,19 +7,26 @@
 
 import UIKit
 
-protocol TableViewCellReuseProtocol where Self: UITableViewCell {
-    associatedtype T: Codable
+
+
+protocol TableViewCellRegisterDequeueProtocol where Self: UITableViewCell {
+    associatedtype T: AppData
     
     static func register(to tableView: UITableView)
     // MARK: - 여기서 Self는 타입인데 protocol을 채택하는 타입을 이야기함(확장성을 고려할수있게됨)
     // 프로토콜에서 Self는 타입자체를 가리킴
     static func dequeueReusableCell(to tableView: UITableView) -> Self
     static var reuseIdentifier: String { get }
+    
+    // 1번.didSet
     var inputData: T? { get set }
+    
+    // 2번.configureCell
+    //func configureCell(input: T)
 }
 
 // MARK: - TableViewCelled라는 프로토콜은 기본값(defalult)를 가진다 -> 언제? -> UITableViewCell이라는 타입의 클래스에 채택되었을때만!
-extension TableViewCellReuseProtocol {
+extension TableViewCellRegisterDequeueProtocol {
     static func register(to tableView: UITableView) {
         // MARK: - 타입속성에서 self를 사용하면, 인스턴스가 아니라 타입의 value(Self.self)를 가리킨다
         // 즉, 타입속성에서 다른 타입속성에 접근하려면 self로 접근해야한다

@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class TestTableViewCell: UITableViewCell, TableViewCellReuseProtocol {
+final class TestTableViewCell: UITableViewCell, TableViewCellRegisterDequeueProtocol {
 
     //기존방식은 static변수로 직접 cellid나 cellidentifer를 지정해두고(보통은 클래스명이랑 똑같이 만든다)그래야 타입자체의 value값을 넣을 수 있으니까 .self로
     //static let identifier = "TestTableViewCell"

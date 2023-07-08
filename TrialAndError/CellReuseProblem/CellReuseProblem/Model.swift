@@ -7,7 +7,19 @@
 
 import Foundation
 
-struct Model: Codable {
+/// 명시용
+protocol DTO {}
+protocol AppData {}
+
+typealias Request = Encodable
+typealias Response = Decodable
+
+struct Model: Request, AppData {
+    let name: String
+    let age: Int
+}
+
+struct ModelDTO: Codable, DTO {
     let name: String
     let age: Int
 }
