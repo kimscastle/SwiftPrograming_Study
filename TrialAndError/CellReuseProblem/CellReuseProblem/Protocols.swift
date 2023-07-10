@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 protocol TableViewCellRegisterDequeueProtocol where Self: UITableViewCell {
     associatedtype T: AppData
     
@@ -17,12 +15,7 @@ protocol TableViewCellRegisterDequeueProtocol where Self: UITableViewCell {
     // 프로토콜에서 Self는 타입자체를 가리킴
     static func dequeueReusableCell(to tableView: UITableView) -> Self
     static var reuseIdentifier: String { get }
-    
-    // 1번.didSet
     var inputData: T? { get set }
-    
-    // 2번.configureCell
-    //func configureCell(input: T)
 }
 
 // MARK: - TableViewCelled라는 프로토콜은 기본값(defalult)를 가진다 -> 언제? -> UITableViewCell이라는 타입의 클래스에 채택되었을때만!
@@ -33,7 +26,7 @@ extension TableViewCellRegisterDequeueProtocol {
         // extension에서 Self는 해당 프로토콜을 채택한 "타입"근데 우리는 타입자체를 넣어줄수없기때문에 value를 넣어줘야하니까 Self.self가 맞는데
         // AnyClass는 메타타입 -> 하지만 input으로 타입자체를 넣어줄수없으니 .self로 value화 해주는거임
         // static변수에서 Self.self를 그냥 self라고 써도된다는거임
-        tableView.register(Self.self, forCellReuseIdentifier: self.reuseIdentifier)
+        tableView.register(Self.self, forCellReuseIdentifier: Self.reuseIdentifier)
         //== tableView.register(Self.self, forCellReuseIdentifier: self.reuseIdentifier)
         // MARK: - register에는 AnyClass라는 메타타입의 value값과 CellIdentifier이 들어가야함
         // cellidentifer은 다른 static변수인 reuseIdentifier을 넣어주면됨
@@ -41,7 +34,7 @@ extension TableViewCellRegisterDequeueProtocol {
     }
     
     static func dequeueReusableCell(to tableView: UITableView) -> Self {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.reuseIdentifier), let returnCell = cell as? Self else { fatalError("Error! \(self.reuseIdentifier)") }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Self.reuseIdentifier), let returnCell = cell as? Self else { fatalError("Error! \(Self.reuseIdentifier)") }
         return returnCell
     }
     
