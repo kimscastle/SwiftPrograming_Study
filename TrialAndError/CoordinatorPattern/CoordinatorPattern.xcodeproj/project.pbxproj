@@ -20,6 +20,7 @@
 		C0DFC9A42ACAAB1E0010DF95 /* ChooseProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DFC9A32ACAAB1E0010DF95 /* ChooseProductViewController.swift */; };
 		C0DFC9A62ACAAB2C0010DF95 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DFC9A52ACAAB2C0010DF95 /* HistoryViewController.swift */; };
 		C0DFC9A82ACAAB350010DF95 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DFC9A72ACAAB350010DF95 /* ProfileViewController.swift */; };
+		C0DFC9AB2ACABC3E0010DF95 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DFC9AA2ACABC3E0010DF95 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		C0DFC9A32ACAAB1E0010DF95 /* ChooseProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseProductViewController.swift; sourceTree = "<group>"; };
 		C0DFC9A52ACAAB2C0010DF95 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		C0DFC9A72ACAAB350010DF95 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C0DFC9AA2ACABC3E0010DF95 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		C0DFC9A92ACABBE20010DF95 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				C0DFC9AA2ACABC3E0010DF95 /* Coordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			files = (
 				C0DFC9412AC2B98C0010DF95 /* AppDelegate.swift in Sources */,
 				C0DFC9432AC2B98C0010DF95 /* SceneDelegate.swift in Sources */,
+				C0DFC9AB2ACABC3E0010DF95 /* Coordinator.swift in Sources */,
 				C0DFC9A62ACAAB2C0010DF95 /* HistoryViewController.swift in Sources */,
 				C0DFC99E2ACAAAD50010DF95 /* RegisterViewController.swift in Sources */,
 				C0DFC99C2ACAAACA0010DF95 /* LoginViewController.swift in Sources */,
