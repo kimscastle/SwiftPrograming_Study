@@ -40,8 +40,6 @@ class ProductListViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubview(productListLabel)
         view.addSubview(chooseProductButton)
-        
-        
         productListLabel.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
@@ -57,5 +55,4 @@ class ProductListViewController: UIViewController {
     @objc func buttonTapped() {
         coordinator.goToChooseProductViewController()
     }
-
 }

@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
         return label
     }()
     
-    let productListButton: UIButton = {
+    lazy var productListButton: UIButton = {
         let button = UIButton()
         button.setTitle("물품리스트보러가기", for: .normal)
         button.backgroundColor = .green
@@ -76,6 +76,8 @@ class HomeViewController: UIViewController {
     }
     
     @objc func logoutButtonTapped() {
+        UserDefaults.standard.set(false, forKey: "isLogined")
+        print("유저가 로그아웃했습니다")
         coordinator.goToLogin()
     }
     

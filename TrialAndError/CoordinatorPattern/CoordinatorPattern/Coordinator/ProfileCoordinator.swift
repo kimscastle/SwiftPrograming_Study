@@ -28,7 +28,13 @@ final class ProfileCoordinator: Coordinator {
     }
     
     func goToProfile() {
-        let profileViewController = ProfileViewController()
+        let profileViewController = ProfileViewController(coordinator: self)
         navigationController.pushViewController(profileViewController, animated: true)
+    }
+}
+        
+extension ProfileCoordinator: ProfileNavigation {
+    func resign() {
+        print("✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅")
     }
 }

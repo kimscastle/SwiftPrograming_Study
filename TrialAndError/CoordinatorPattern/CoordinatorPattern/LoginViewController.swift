@@ -9,12 +9,6 @@ import UIKit
 
 import SnapKit
 
-protocol LoginNavigation: AnyObject {
-    func goToRegisterViewController()
-    func goToHomeViewController()
-    func goToLogin()
-}
-
 final class LoginViewController: UIViewController {
     
     weak var coordinator: LoginNavigation!
@@ -52,8 +46,7 @@ final class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     override func viewDidLoad() {
@@ -82,6 +75,8 @@ final class LoginViewController: UIViewController {
     }
     
     @objc func loginButtonTapped() {
+        UserDefaults.standard.set(true, forKey: "isLogined")
+        print("유저가 로그인했습니다")
         coordinator.goToHomeViewController()
     }
     

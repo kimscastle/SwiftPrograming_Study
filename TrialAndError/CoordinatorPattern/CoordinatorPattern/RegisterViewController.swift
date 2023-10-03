@@ -55,6 +55,10 @@ class RegisterViewController: UIViewController {
     }
     
     @objc func loginButtonTapped() {
-        coordinator.goToLogin()
+        UserDefaults.standard.set(true, forKey: "isLogined")
+        print("유저가 로그인했습니다")
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) { [weak self] in
+            self?.coordinator.goToHomeViewController()
+        }
     }
 }

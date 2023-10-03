@@ -16,7 +16,7 @@ final class AuthCoordinator: Coordinator {
     
     func start() {
         print("auth탭코디네이터시작")
-        goToLogin()
+        showSplashViewController()
     }
     
     deinit {
@@ -29,6 +29,13 @@ final class AuthCoordinator: Coordinator {
 }
 
 extension AuthCoordinator: LoginNavigation {
+    
+    func showSplashViewController() {
+        let splashViewController = SplashViewController(coordinator: self)
+        navigationController.pushViewController(splashViewController, animated: false)
+    }
+    
+    
     func goToRegisterViewController() {
         let registerViewController = RegisterViewController(coordinator: self)
         navigationController.pushViewController(registerViewController, animated: true)
