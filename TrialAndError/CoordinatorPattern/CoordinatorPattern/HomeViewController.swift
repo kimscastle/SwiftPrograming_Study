@@ -7,8 +7,26 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+protocol HomeNavigation: AnyObject {
+    func backToHome()
+    func goToProductListViewController()
+    func goToChooseProductViewController()
+    func goToLogin()
+}
 
+class HomeViewController: UIViewController {
+    
+    weak var coordinator: HomeNavigation!
+    
+    init(coordinator: HomeNavigation!) {
+        self.coordinator = coordinator
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     let homeLabel: UILabel = {
         let label = UILabel()
         label.text = "홈뷰컨입니다"
@@ -19,14 +37,16 @@ class HomeViewController: UIViewController {
         let button = UIButton()
         button.setTitle("물품리스트보러가기", for: .normal)
         button.backgroundColor = .green
+        button.addTarget(self, action: #selector(productListButtonTapped), for: .touchUpInside)
         return button
     }()
     
-    let logoutButton: UIButton = {
+    lazy var logoutButton: UIButton = {
         let button = UIButton()
         button.setTitle("로그아웃하기", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .red
+        button.addTarget(self, action: #selector(logoutButtonTapped), for: .touchUpInside)
         return button
     }()
 
@@ -53,5 +73,13 @@ class HomeViewController: UIViewController {
             make.top.equalTo(productListButton.snp.bottom).offset(40)
             make.centerX.equalToSuperview()
         }
+    }
+    
+    @objc func logoutButtonTapped() {
+        coordinator.goToLogin()
+    }
+    
+    @objc func productListButtonTapped() {
+        coordinator.goToProductListViewController()
     }
 }

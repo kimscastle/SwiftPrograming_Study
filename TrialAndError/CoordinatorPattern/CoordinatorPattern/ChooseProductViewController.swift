@@ -8,7 +8,17 @@
 import UIKit
 
 class ChooseProductViewController: UIViewController {
-
+    
+    weak var coordinator: HomeNavigation!
+    
+    init(coordinator: HomeNavigation!) {
+        self.coordinator = coordinator
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     let chooseProducLabel: UILabel = {
         let label = UILabel()
@@ -16,10 +26,11 @@ class ChooseProductViewController: UIViewController {
         return label
     }()
     
-    let goHomeButton: UIButton = {
+    lazy var goHomeButton: UIButton = {
         let button = UIButton()
         button.setTitle("홈으로 돌아가기", for: .normal)
         button.backgroundColor = .green
+        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -41,5 +52,9 @@ class ChooseProductViewController: UIViewController {
             make.height.equalTo(50)
             make.leading.trailing.equalToSuperview().inset(50)
         }
+    }
+    
+    @objc func buttonTapped() {
+        coordinator.goToHome()
     }
 }

@@ -9,16 +9,28 @@ import UIKit
 
 class ProductListViewController: UIViewController {
 
+    weak var coordinator: HomeNavigation!
+    
+    init(coordinator: HomeNavigation!) {
+        self.coordinator = coordinator
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     let productListLabel: UILabel = {
         let label = UILabel()
         label.text = "물품리스트입니다"
         return label
     }()
     
-    let chooseProductButton: UIButton = {
+    lazy var chooseProductButton: UIButton = {
         let button = UIButton()
         button.setTitle("내가 고른 물건 보러가기", for: .normal)
         button.backgroundColor = .green
+        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -40,6 +52,10 @@ class ProductListViewController: UIViewController {
             make.height.equalTo(50)
             make.leading.trailing.equalToSuperview().inset(50)
         }
+    }
+    
+    @objc func buttonTapped() {
+        coordinator.goToChooseProductViewController()
     }
 
 }

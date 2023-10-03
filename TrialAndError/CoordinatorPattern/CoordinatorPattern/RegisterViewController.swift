@@ -8,6 +8,17 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
+    
+    weak var coordinator: LoginNavigation!
+    
+    init(coordinator: LoginNavigation) {
+        self.coordinator = coordinator
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     let registerLabel: UILabel = {
         let label = UILabel()
@@ -15,10 +26,11 @@ class RegisterViewController: UIViewController {
         return label
     }()
     
-    let goLoginButton: UIButton = {
+    lazy var goLoginButton: UIButton = {
         let button = UIButton()
         button.setTitle("로그인으로 돌아가기", for: .normal)
         button.setTitleColor(.blue, for: .normal)
+        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -41,5 +53,8 @@ class RegisterViewController: UIViewController {
             make.leading.trailing.equalToSuperview().inset(50)
         }
     }
-
+    
+    @objc func loginButtonTapped() {
+        coordinator.goToLogin()
+    }
 }

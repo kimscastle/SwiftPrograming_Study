@@ -9,7 +9,24 @@ import UIKit
 
 import SnapKit
 
+protocol LoginNavigation: AnyObject {
+    func goToRegisterViewController()
+    func goToHomeViewController()
+    func goToLogin()
+}
+
 final class LoginViewController: UIViewController {
+    
+    weak var coordinator: LoginNavigation!
+    
+    init(coordinator: LoginNavigation) {
+        self.coordinator = coordinator
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     private let LoginLabel: UILabel = {
         let label = UILabel()
@@ -17,19 +34,27 @@ final class LoginViewController: UIViewController {
         return label
     }()
     
-    let loginButton: UIButton = {
+    lazy var loginButton: UIButton = {
         let button = UIButton()
         button.setTitle("로그인하기", for: .normal)
         button.backgroundColor = .orange
+        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
     }()
     
-    let registerButton: UIButton = {
+    lazy var registerButton: UIButton = {
         let button = UIButton()
         button.setTitle("회원가입하러가기", for: .normal)
         button.setTitleColor(.blue, for: .normal)
+        button.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
         return button
     }()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,5 +79,13 @@ final class LoginViewController: UIViewController {
             make.top.equalTo(loginButton.snp.bottom).offset(40)
             make.centerX.equalToSuperview()
         }
+    }
+    
+    @objc func loginButtonTapped() {
+        coordinator.goToHomeViewController()
+    }
+    
+    @objc func registerButtonTapped() {
+        coordinator.goToRegisterViewController()
     }
 }

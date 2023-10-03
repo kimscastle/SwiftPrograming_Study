@@ -17,6 +17,7 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         view.addSubview(profileLabel)
         profileLabel.snp.makeConstraints { make in
             make.center.equalToSuperview()
