@@ -55,6 +55,6 @@ class ChooseProductViewController: UIViewController {
     }
     
     @objc func buttonTapped() {
-        coordinator.goToHome()
+        coordinator.backToHome()
     }
 }
