@@ -44,7 +44,6 @@ extension HomeCoordinator {
     func logout() {
         let appCoordinator = parentCoordinator as! AppCoordinator
         appCoordinator.startIntroCoordinator()
-        appCoordinator.childDidFinish(self)
     }
     
     func backToHome() {

@@ -76,11 +76,6 @@ final class LoginViewController: UIViewController {
         }
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        print("사라진뒤auth코디네이터")
-        print(coordinator.navigationController.viewControllers)
-    }
-    
     @objc func loginButtonTapped() {
         UserDefaults.standard.set(true, forKey: "isLogined")
         print("유저가 로그인했습니다")

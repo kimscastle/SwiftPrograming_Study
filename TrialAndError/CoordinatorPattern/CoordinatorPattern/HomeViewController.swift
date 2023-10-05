@@ -74,7 +74,6 @@ class HomeViewController: UIViewController {
         UserDefaults.standard.set(false, forKey: "isLogined")
         print("유저가 로그아웃했습니다")
         coordinator.logout()
-//        coordinator.goToLogin()
     }
     
     @objc func productListButtonTapped() {

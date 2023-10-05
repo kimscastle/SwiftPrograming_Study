@@ -28,8 +28,9 @@ final class ProfileCoordinator: Coordinator {
     }
 }
         
-extension ProfileCoordinator: ProfileNavigation {
+extension ProfileCoordinator {
     func resign() {
-        print("✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅")
+        let appCoordinator = parentCoordinator as! AppCoordinator
+        appCoordinator.startIntroCoordinator()
     }
 }

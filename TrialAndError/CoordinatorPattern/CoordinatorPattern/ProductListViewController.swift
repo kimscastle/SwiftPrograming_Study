@@ -37,6 +37,8 @@ class ProductListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("물품리스트 뷰컨")
+        print(coordinator.navigationController.viewControllers)
         view.backgroundColor = .white
         view.addSubview(productListLabel)
         view.addSubview(chooseProductButton)

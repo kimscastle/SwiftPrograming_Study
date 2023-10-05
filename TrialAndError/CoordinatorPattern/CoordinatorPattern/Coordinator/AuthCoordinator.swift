@@ -27,7 +27,7 @@ extension AuthCoordinator {
     
     func showLoginView() {
         let loginViewController = LoginViewController(coordinator: self)
-        self.navigationController.pushViewController(loginViewController, animated: true)
+        self.navigationController.pushViewController(loginViewController, animated: false)
     }
     
     
@@ -39,6 +39,5 @@ extension AuthCoordinator {
     func goToHomeViewController() {
         let appCoordinator = parentCoordinator as! AppCoordinator
         appCoordinator.startHomeTabbarCoordinator()
-        appCoordinator.childDidFinish(self)
     }
 }

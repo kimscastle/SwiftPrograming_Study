@@ -7,15 +7,11 @@
 
 import UIKit
 
-protocol ProfileNavigation: AnyObject {
-    func resign()
-}
-
 class ProfileViewController: UIViewController {
     
-    weak var coordinator: ProfileNavigation!
+    weak var coordinator: ProfileCoordinator!
     
-    init(coordinator: ProfileNavigation) {
+    init(coordinator: ProfileCoordinator) {
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
@@ -40,6 +36,8 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("프로필 뷰컨")
+        print(coordinator.navigationController.viewControllers)
         view.backgroundColor = .white
         view.addSubview(profileLabel)
         view.addSubview(resignButton)
@@ -54,6 +52,7 @@ class ProfileViewController: UIViewController {
     }
     
     @objc func resignButtonTapped() {
+        UserDefaults.standard.set(false, forKey: "isLogined")
         coordinator.resign()
     }
 }

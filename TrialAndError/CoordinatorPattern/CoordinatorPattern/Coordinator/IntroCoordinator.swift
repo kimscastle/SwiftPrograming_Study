@@ -32,13 +32,13 @@ extension IntroCoordinator {
     
     func showLoginView() {
         let appCoordinator = parentCoordinator as! AppCoordinator
+        navigationController.viewControllers.removeAll()
         appCoordinator.startAuthCoordinator()
-        appCoordinator.childDidFinish(self)
     }
     
     func showHomeTabView() {
         let appCorrdinator = parentCoordinator as! AppCoordinator
+        navigationController.viewControllers.removeAll()
         appCorrdinator.startHomeTabbarCoordinator()
-        appCorrdinator.childDidFinish(self)
     }
 }
