@@ -15,12 +15,7 @@ final class ProfileCoordinator: Coordinator {
     var navigationController: UINavigationController
     
     func start() {
-        print("프로필코디네이터시작")
         goToProfile()
-    }
-    
-    deinit {
-        print("프로필코디네이터해제")
     }
     
     init(navigationController: UINavigationController) {

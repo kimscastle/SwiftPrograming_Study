@@ -15,12 +15,7 @@ final class AuthCoordinator: Coordinator {
     var navigationController: UINavigationController
     
     func start() {
-        print("auth탭코디네이터시작")
         showLoginView()
-    }
-    
-    deinit {
-        print("auth탭코디네이터해제")
     }
     
     init(navigationController: UINavigationController) {

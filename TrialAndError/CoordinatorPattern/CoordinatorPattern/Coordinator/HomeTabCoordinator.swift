@@ -19,7 +19,6 @@ final class HomeTabCoordinator: Coordinator {
     }
     
     func start() {
-        print("홈탭코디네이터시작")
         goToHomeTabbar()
     }
     
@@ -50,9 +49,5 @@ final class HomeTabCoordinator: Coordinator {
         
         homeCoordinator.start()
         profileCoordinator.start()
-    }
-    
-    deinit {
-        print("홈탭코디네이터해제")
     }
 }

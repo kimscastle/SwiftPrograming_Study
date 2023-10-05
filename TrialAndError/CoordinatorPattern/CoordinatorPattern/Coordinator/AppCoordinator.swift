@@ -19,7 +19,6 @@ final class AppCoordinator: Coordinator {
     var navigationController: UINavigationController
     
     func start() {
-        print("앱코디네이터시작")
         startIntroCoordinator()
     }
     
@@ -48,9 +47,5 @@ final class AppCoordinator: Coordinator {
         introCoordinator.parentCoordinator = self
         children.append(introCoordinator)
         introCoordinator.start()
-    }
-    
-    deinit {
-        print("앱코디네이터해제")
     }
 }

@@ -16,19 +16,12 @@ final class HomeCoordinator: Coordinator {
     var navigationController: UINavigationController
     
     func start() {
-        print("홈코디네이터시작")
         showHomeView()
     }
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
-    
-    deinit {
-        print("홈코디네이터해제")
-    }
-    
-
 }
 
 extension HomeCoordinator {
