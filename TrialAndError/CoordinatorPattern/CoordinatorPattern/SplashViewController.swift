@@ -7,17 +7,15 @@
 
 import UIKit
 
+protocol SplashNavigation: AnyObject {
+    func loginButtonTapped(isLogined: Bool)
+}
+
 class SplashViewController: UIViewController {
     
-    weak var coordinator: IntroCoordinator!
+    weak var coordinator: SplashNavigation!
     
-    private let splashLabel: UILabel = {
-        let label = UILabel()
-        label.text = "스플래시뷰입니다"
-        return label
-    }()
-    
-    init(coordinator: IntroCoordinator) {
+    init(coordinator: SplashNavigation) {
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
@@ -25,6 +23,12 @@ class SplashViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    private let splashLabel: UILabel = {
+        let label = UILabel()
+        label.text = "스플래시뷰입니다"
+        return label
+    }()
     
     
     override func viewDidLoad() {
@@ -34,13 +38,7 @@ class SplashViewController: UIViewController {
             self.view.backgroundColor = .white
         } completion: { _ in
             let isLogined = UserDefaults.standard.bool(forKey: "isLogined")
-            if isLogined {
-                print("유저가 이전에 로그인했었기 때문에 홈뷰로 이동합니다")
-                self.coordinator.showHomeTabView()
-            } else {
-                print("유저가 이전에 로그인하지 않았기 때문에 로그인뷰로 이동합니다")
-                self.coordinator.showLoginView()
-            }
+            self.coordinator.loginButtonTapped(isLogined: isLogined)
         }
     }
 }

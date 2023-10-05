@@ -7,11 +7,15 @@
 
 import UIKit
 
+protocol ProductListNavigation: AnyObject {
+    func choseMyProductListButtonTapped()
+}
+
 class ProductListViewController: UIViewController {
 
-    weak var coordinator: HomeCoordinator!
+    weak var coordinator: ProductListNavigation!
     
-    init(coordinator: HomeCoordinator!) {
+    init(coordinator: ProductListNavigation) {
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
@@ -37,8 +41,6 @@ class ProductListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("물품리스트 뷰컨")
-        print(coordinator.navigationController.viewControllers)
         view.backgroundColor = .white
         view.addSubview(productListLabel)
         view.addSubview(chooseProductButton)
@@ -55,6 +57,6 @@ class ProductListViewController: UIViewController {
     }
     
     @objc func buttonTapped() {
-        coordinator.showChooseProductViewController()
+        coordinator.choseMyProductListButtonTapped()
     }
 }

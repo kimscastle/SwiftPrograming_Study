@@ -10,11 +10,7 @@ import UIKit
 final class AppCoordinator: Coordinator {
     weak var parentCoordinator: Coordinator?
     
-    var children: [Coordinator] = [] {
-        didSet {
-            print("appCoordinator의 Child \(children)")
-        }
-    }
+    var children: [Coordinator] = []
     
     var navigationController: UINavigationController
     

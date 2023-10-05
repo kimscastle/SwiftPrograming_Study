@@ -9,11 +9,16 @@ import UIKit
 
 import SnapKit
 
+protocol LoginNavigation: AnyObject {
+    func loginButtonTapped()
+    func registerButtonTapped()
+}
+
 final class LoginViewController: UIViewController {
     
-    var coordinator: AuthCoordinator!
+    weak var coordinator: LoginNavigation!
     
-    init(coordinator: AuthCoordinator) {
+    init(coordinator: LoginNavigation) {
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
@@ -51,8 +56,6 @@ final class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("auth코디네이터")
-        print(coordinator.navigationController.viewControllers)
         view.backgroundColor = .white
         view.addSubview(LoginLabel)
         view.addSubview(loginButton)
@@ -79,10 +82,12 @@ final class LoginViewController: UIViewController {
     @objc func loginButtonTapped() {
         UserDefaults.standard.set(true, forKey: "isLogined")
         print("유저가 로그인했습니다")
-        coordinator.goToHomeViewController()
+        coordinator.loginButtonTapped()
     }
     
     @objc func registerButtonTapped() {
-        coordinator.goToRegisterViewController()
+        coordinator.registerButtonTapped()
     }
 }
+
+

@@ -21,23 +21,21 @@ final class AuthCoordinator: Coordinator {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
-}
-
-extension AuthCoordinator {
     
     func showLoginView() {
         let loginViewController = LoginViewController(coordinator: self)
         self.navigationController.pushViewController(loginViewController, animated: false)
     }
-    
-    
-    func goToRegisterViewController() {
-        let registerViewController = RegisterViewController(coordinator: self)
-        navigationController.pushViewController(registerViewController, animated: true)
-    }
-    
-    func goToHomeViewController() {
+}
+
+extension AuthCoordinator: LoginNavigation, RegisterNaviation {
+    func loginButtonTapped() {
         let appCoordinator = parentCoordinator as! AppCoordinator
         appCoordinator.startHomeTabbarCoordinator()
+    }
+    
+    func registerButtonTapped() {
+        let registerViewController = RegisterViewController(coordinator: self)
+        navigationController.pushViewController(registerViewController, animated: true)
     }
 }

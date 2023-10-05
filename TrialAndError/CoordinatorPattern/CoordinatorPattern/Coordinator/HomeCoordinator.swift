@@ -22,31 +22,30 @@ final class HomeCoordinator: Coordinator {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
-}
-
-extension HomeCoordinator {
+    
     func showHomeView() {
         let homeViewController = HomeViewController(coordinator: self)
         navigationController.pushViewController(homeViewController, animated: true)
     }
+}
+
+extension HomeCoordinator: HomeNavigation, ProductListNavigation, ChooseProductNavigation {
+    func goHomeButtonTapped() {
+        navigationController.popToRootViewController(animated: true)
+    }
     
-    func showChooseProductViewController() {
+    func choseMyProductListButtonTapped() {
         let chooseProductViewController = ChooseProductViewController(coordinator: self)
         navigationController.pushViewController(chooseProductViewController, animated: true)
-        
     }
     
-    func showProductListViewController() {
-        let productListViewController = ProductListViewController(coordinator: self)
-        navigationController.pushViewController(productListViewController, animated: true)
-    }
-    
-    func logout() {
+    func logoutButtonTapped() {
         let appCoordinator = parentCoordinator as! AppCoordinator
         appCoordinator.startIntroCoordinator()
     }
     
-    func backToHome() {
-        navigationController.popToRootViewController(animated: true)
+    func productListButtonTapped() {
+        let productListViewController = ProductListViewController(coordinator: self)
+        navigationController.pushViewController(productListViewController, animated: true)
     }
 }

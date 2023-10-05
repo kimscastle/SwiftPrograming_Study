@@ -28,8 +28,8 @@ final class ProfileCoordinator: Coordinator {
     }
 }
         
-extension ProfileCoordinator {
-    func resign() {
+extension ProfileCoordinator: ProfileNavigation {
+    func resignButtonTapped() {
         let appCoordinator = parentCoordinator as! AppCoordinator
         appCoordinator.startIntroCoordinator()
     }

@@ -7,11 +7,16 @@
 
 import UIKit
 
+protocol HomeNavigation: AnyObject {
+    func logoutButtonTapped()
+    func productListButtonTapped()
+}
+
 class HomeViewController: UIViewController {
     
-    weak var coordinator: HomeCoordinator!
+    weak var coordinator: HomeNavigation!
     
-    init(coordinator: HomeCoordinator!) {
+    init(coordinator: HomeNavigation) {
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
@@ -45,8 +50,6 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("홈뷰(탭바X)코디네이터")
-        print(coordinator.navigationController.viewControllers)
         view.backgroundColor = .white
         view.addSubview(homeLabel)
         view.addSubview(productListButton)
@@ -73,10 +76,10 @@ class HomeViewController: UIViewController {
     @objc func logoutButtonTapped() {
         UserDefaults.standard.set(false, forKey: "isLogined")
         print("유저가 로그아웃했습니다")
-        coordinator.logout()
+        coordinator.logoutButtonTapped()
     }
     
     @objc func productListButtonTapped() {
-        coordinator.showProductListViewController()
+        coordinator.productListButtonTapped()
     }
 }
