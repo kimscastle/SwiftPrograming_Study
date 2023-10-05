@@ -21,7 +21,6 @@
 		C0DFC9A02ACAAAF80010DF95 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DFC99F2ACAAAF80010DF95 /* HomeViewController.swift */; };
 		C0DFC9A22ACAAB120010DF95 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DFC9A12ACAAB120010DF95 /* ProductListViewController.swift */; };
 		C0DFC9A42ACAAB1E0010DF95 /* ChooseProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DFC9A32ACAAB1E0010DF95 /* ChooseProductViewController.swift */; };
-		C0DFC9A62ACAAB2C0010DF95 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DFC9A52ACAAB2C0010DF95 /* HistoryViewController.swift */; };
 		C0DFC9A82ACAAB350010DF95 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DFC9A72ACAAB350010DF95 /* ProfileViewController.swift */; };
 		C0DFC9AB2ACABC3E0010DF95 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DFC9AA2ACABC3E0010DF95 /* Coordinator.swift */; };
 		C0DFC9AD2ACABD680010DF95 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DFC9AC2ACABD680010DF95 /* AppCoordinator.swift */; };
@@ -47,7 +46,6 @@
 		C0DFC99F2ACAAAF80010DF95 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C0DFC9A12ACAAB120010DF95 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		C0DFC9A32ACAAB1E0010DF95 /* ChooseProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseProductViewController.swift; sourceTree = "<group>"; };
-		C0DFC9A52ACAAB2C0010DF95 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		C0DFC9A72ACAAB350010DF95 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C0DFC9AA2ACABC3E0010DF95 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		C0DFC9AC2ACABD680010DF95 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 				C0DFC99F2ACAAAF80010DF95 /* HomeViewController.swift */,
 				C0DFC9A12ACAAB120010DF95 /* ProductListViewController.swift */,
 				C0DFC9A32ACAAB1E0010DF95 /* ChooseProductViewController.swift */,
-				C0DFC9A52ACAAB2C0010DF95 /* HistoryViewController.swift */,
 				C0DFC9A72ACAAB350010DF95 /* ProfileViewController.swift */,
 				C04455FE2ACBDC5100983189 /* ViewControllerUtill.swift */,
 				C04456002ACBE78A00983189 /* SplashViewController.swift */,
@@ -206,7 +203,6 @@
 				C0DFC9432AC2B98C0010DF95 /* SceneDelegate.swift in Sources */,
 				C0DFC9AB2ACABC3E0010DF95 /* Coordinator.swift in Sources */,
 				C0DFC9B32ACB8D9B0010DF95 /* HomeCoordinator.swift in Sources */,
-				C0DFC9A62ACAAB2C0010DF95 /* HistoryViewController.swift in Sources */,
 				C0DFC99E2ACAAAD50010DF95 /* RegisterViewController.swift in Sources */,
 				C0DFC99C2ACAAACA0010DF95 /* LoginViewController.swift in Sources */,
 				C0DFC9AF2ACABE870010DF95 /* HomeTabCoordinator.swift in Sources */,
