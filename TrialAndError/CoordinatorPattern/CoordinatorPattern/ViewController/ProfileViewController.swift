@@ -10,16 +10,7 @@ import SnapKit
 
 class ProfileViewController: UIViewController {
     
-    weak var coordinator: ProfileNavigation!
-    
-    init(coordinator: ProfileNavigation) {
-        self.coordinator = coordinator
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    weak var coordinator: ProfileNavigation?
 
     let profileLabel: UILabel = {
         let label = UILabel()
@@ -52,6 +43,6 @@ class ProfileViewController: UIViewController {
     
     @objc func resignButtonTapped() {
         UserDefaults.standard.set(false, forKey: "isLogined")
-        coordinator.resignButtonTapped()
+        coordinator?.resignButtonTapped()
     }
 }

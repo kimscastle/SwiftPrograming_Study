@@ -22,7 +22,6 @@ final class HomeTabCoordinator: Coordinator {
         goToHomeTabbar()
     }
     
-    /// tabbar의 경우 각각의 tab에 각각의 navigation controller가 필요하다
     func goToHomeTabbar() {
         let tabbarController = UITabBarController()
         let homeNavigationController = UINavigationController()
@@ -42,6 +41,7 @@ final class HomeTabCoordinator: Coordinator {
         profileNavigationController.tabBarItem = profileItem
         
         tabbarController.viewControllers = [homeNavigationController, profileNavigationController]
+        navigationController.viewControllers.removeAll()
         navigationController.pushViewController(tabbarController, animated: true)
         navigationController.isNavigationBarHidden = true
         parentCoordinator?.children.append(homeCoordinator)

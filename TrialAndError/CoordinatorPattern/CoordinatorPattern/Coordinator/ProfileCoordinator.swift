@@ -23,7 +23,8 @@ final class ProfileCoordinator: Coordinator {
     }
     
     func goToProfile() {
-        let profileViewController = ProfileViewController(coordinator: self)
+        let profileViewController = ProfileViewController()
+        profileViewController.coordinator = self
         navigationController.pushViewController(profileViewController, animated: true)
     }
 }

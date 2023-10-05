@@ -10,16 +10,7 @@ import SnapKit
 
 final class LoginViewController: UIViewController {
     
-    weak var coordinator: LoginNavigation!
-    
-    init(coordinator: LoginNavigation) {
-        self.coordinator = coordinator
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    weak var coordinator: LoginNavigation?
     
     private let LoginLabel: UILabel = {
         let label = UILabel()
@@ -76,11 +67,11 @@ final class LoginViewController: UIViewController {
     @objc func loginButtonTapped() {
         UserDefaults.standard.set(true, forKey: "isLogined")
         print("유저가 로그인했습니다")
-        coordinator.loginButtonTapped()
+        coordinator?.loginButtonTapped()
     }
     
     @objc func registerButtonTapped() {
-        coordinator.registerButtonTapped()
+        coordinator?.registerButtonTapped()
     }
 }
 

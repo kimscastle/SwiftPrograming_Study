@@ -10,16 +10,7 @@ import SnapKit
 
 class ChooseProductViewController: UIViewController {
     
-    weak var coordinator: ChooseProductNavigation!
-    
-    init(coordinator: ChooseProductNavigation) {
-        self.coordinator = coordinator
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    weak var coordinator: ChooseProductNavigation?
 
     let chooseProducLabel: UILabel = {
         let label = UILabel()
@@ -56,6 +47,6 @@ class ChooseProductViewController: UIViewController {
     }
     
     @objc func buttonTapped() {
-        coordinator.goHomeButtonTapped()
+        coordinator?.goHomeButtonTapped()
     }
 }

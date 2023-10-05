@@ -24,7 +24,8 @@ final class HomeCoordinator: Coordinator {
     }
     
     func showHomeView() {
-        let homeViewController = HomeViewController(coordinator: self)
+        let homeViewController = HomeViewController()
+        homeViewController.coordinator = self
         navigationController.pushViewController(homeViewController, animated: true)
     }
 }
@@ -35,7 +36,8 @@ extension HomeCoordinator: HomeNavigation, ProductListNavigation, ChooseProductN
     }
     
     func choseMyProductListButtonTapped() {
-        let chooseProductViewController = ChooseProductViewController(coordinator: self)
+        let chooseProductViewController = ChooseProductViewController()
+        chooseProductViewController.coordinator = self
         navigationController.pushViewController(chooseProductViewController, animated: true)
     }
     
@@ -45,7 +47,8 @@ extension HomeCoordinator: HomeNavigation, ProductListNavigation, ChooseProductN
     }
     
     func productListButtonTapped() {
-        let productListViewController = ProductListViewController(coordinator: self)
+        let productListViewController = ProductListViewController()
+        productListViewController.coordinator = self
         navigationController.pushViewController(productListViewController, animated: true)
     }
 }

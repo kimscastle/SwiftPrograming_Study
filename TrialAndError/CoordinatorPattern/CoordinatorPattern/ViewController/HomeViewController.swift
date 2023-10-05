@@ -10,16 +10,7 @@ import SnapKit
 
 class HomeViewController: UIViewController {
     
-    weak var coordinator: HomeNavigation!
-    
-    init(coordinator: HomeNavigation) {
-        self.coordinator = coordinator
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    weak var coordinator: HomeNavigation?
     
     let homeLabel: UILabel = {
         let label = UILabel()
@@ -72,10 +63,10 @@ class HomeViewController: UIViewController {
     @objc func logoutButtonTapped() {
         UserDefaults.standard.set(false, forKey: "isLogined")
         print("유저가 로그아웃했습니다")
-        coordinator.logoutButtonTapped()
+        coordinator?.logoutButtonTapped()
     }
     
     @objc func productListButtonTapped() {
-        coordinator.productListButtonTapped()
+        coordinator?.productListButtonTapped()
     }
 }

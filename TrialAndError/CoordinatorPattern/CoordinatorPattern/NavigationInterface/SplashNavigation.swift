@@ -8,5 +8,5 @@
 import Foundation
 
 protocol SplashNavigation: AnyObject {
-    func loginButtonTapped(isLogined: Bool)
+    func check(isLogined: Bool)
 }

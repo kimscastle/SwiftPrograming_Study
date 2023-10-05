@@ -24,13 +24,13 @@ final class IntroCoordinator: Coordinator {
     }
     
     func showSplashView() {
-        let splashViewController = SplashViewController(coordinator: self)
+        let splashViewController = SplashViewController()
+        splashViewController.coordinator = self
         navigationController.pushViewController(splashViewController, animated: false)
     }
     
     func showLoginView() {
         let appCoordinator = parentCoordinator as! AppCoordinator
-        navigationController.viewControllers.removeAll()
         appCoordinator.startAuthCoordinator()
     }
     
@@ -42,7 +42,7 @@ final class IntroCoordinator: Coordinator {
 }
 
 extension IntroCoordinator: SplashNavigation {
-    func loginButtonTapped(isLogined: Bool) {
+    func check(isLogined: Bool) {
         if isLogined {
             showHomeTabView()
         } else {

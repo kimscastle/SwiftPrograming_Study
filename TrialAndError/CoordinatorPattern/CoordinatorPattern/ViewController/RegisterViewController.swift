@@ -10,26 +10,17 @@ import SnapKit
 
 class RegisterViewController: UIViewController {
     
-    weak var coordinator: RegisterNaviation!
-    
-    init(coordinator: RegisterNaviation) {
-        self.coordinator = coordinator
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    weak var coordinator: RegisterNaviation?
 
     let registerLabel: UILabel = {
         let label = UILabel()
-        label.text = "회원가입을 완료했습니다 로그인뷰로 돌아가세요"
+        label.text = "회원가입을 완료했습니다"
         return label
     }()
     
     lazy var goLoginButton: UIButton = {
         let button = UIButton()
-        button.setTitle("로그인으로 돌아가기", for: .normal)
+        button.setTitle("로그인 완료하기", for: .normal)
         button.setTitleColor(.blue, for: .normal)
         button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
@@ -58,6 +49,6 @@ class RegisterViewController: UIViewController {
     @objc func loginButtonTapped() {
         UserDefaults.standard.set(true, forKey: "isLogined")
         print("유저가 로그인했습니다")
-        coordinator.loginButtonTapped()
+        coordinator?.loginButtonTapped()
     }
 }

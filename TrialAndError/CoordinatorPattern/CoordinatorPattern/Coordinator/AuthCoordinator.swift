@@ -8,6 +8,7 @@
 import UIKit
 
 final class AuthCoordinator: Coordinator {
+    
     weak var parentCoordinator: Coordinator?
     
     var children: [Coordinator] = []
@@ -23,8 +24,10 @@ final class AuthCoordinator: Coordinator {
     }
     
     func showLoginView() {
-        let loginViewController = LoginViewController(coordinator: self)
-        self.navigationController.pushViewController(loginViewController, animated: false)
+        let loginViewController = LoginViewController()
+        loginViewController.coordinator = self
+        navigationController.viewControllers.removeAll()
+        navigationController.pushViewController(loginViewController, animated: false)
     }
 }
 
@@ -35,7 +38,8 @@ extension AuthCoordinator: LoginNavigation, RegisterNaviation {
     }
     
     func registerButtonTapped() {
-        let registerViewController = RegisterViewController(coordinator: self)
+        let registerViewController = RegisterViewController()
+        registerViewController.coordinator = self
         navigationController.pushViewController(registerViewController, animated: true)
     }
 }

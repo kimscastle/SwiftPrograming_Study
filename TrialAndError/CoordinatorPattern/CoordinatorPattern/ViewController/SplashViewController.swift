@@ -10,16 +10,7 @@ import SnapKit
 
 class SplashViewController: UIViewController {
     
-    weak var coordinator: SplashNavigation!
-    
-    init(coordinator: SplashNavigation) {
-        self.coordinator = coordinator
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    weak var coordinator: SplashNavigation?
     
     private let splashLabel: UILabel = {
         let label = UILabel()
@@ -35,7 +26,7 @@ class SplashViewController: UIViewController {
             self.view.backgroundColor = .white
         } completion: { _ in
             let isLogined = UserDefaults.standard.bool(forKey: "isLogined")
-            self.coordinator.loginButtonTapped(isLogined: isLogined)
+            self.coordinator?.check(isLogined: isLogined)
         }
     }
 }
