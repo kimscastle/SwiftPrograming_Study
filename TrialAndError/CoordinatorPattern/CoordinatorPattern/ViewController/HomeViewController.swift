@@ -6,11 +6,7 @@
 //
 
 import UIKit
-
-protocol HomeNavigation: AnyObject {
-    func logoutButtonTapped()
-    func productListButtonTapped()
-}
+import SnapKit
 
 class HomeViewController: UIViewController {
     

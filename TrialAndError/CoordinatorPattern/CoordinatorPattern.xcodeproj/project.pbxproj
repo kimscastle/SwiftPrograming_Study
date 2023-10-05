@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C04455FF2ACBDC5200983189 /* ViewControllerUtill.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04455FE2ACBDC5100983189 /* ViewControllerUtill.swift */; };
 		C04456012ACBE78A00983189 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04456002ACBE78A00983189 /* SplashViewController.swift */; };
 		C0DAD30B2ACE327B006ECCAD /* IntroCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DAD30A2ACE327B006ECCAD /* IntroCoordinator.swift */; };
+		C0DAD30F2ACE96E9006ECCAD /* LoginNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DAD30E2ACE96E9006ECCAD /* LoginNavigation.swift */; };
+		C0DAD3122ACE9709006ECCAD /* RegisterNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DAD3112ACE9709006ECCAD /* RegisterNavigation.swift */; };
+		C0DAD3142ACE9719006ECCAD /* HomeNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DAD3132ACE9719006ECCAD /* HomeNavigation.swift */; };
+		C0DAD3162ACE9736006ECCAD /* ProductListNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DAD3152ACE9736006ECCAD /* ProductListNavigation.swift */; };
+		C0DAD3182ACE974A006ECCAD /* ChooseProductNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DAD3172ACE974A006ECCAD /* ChooseProductNavigation.swift */; };
+		C0DAD31A2ACE975D006ECCAD /* ProfileNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DAD3192ACE975D006ECCAD /* ProfileNavigation.swift */; };
+		C0DAD31C2ACE976C006ECCAD /* SplashNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DAD31B2ACE976C006ECCAD /* SplashNavigation.swift */; };
 		C0DFC9412AC2B98C0010DF95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DFC9402AC2B98C0010DF95 /* AppDelegate.swift */; };
 		C0DFC9432AC2B98C0010DF95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DFC9422AC2B98C0010DF95 /* SceneDelegate.swift */; };
 		C0DFC9482AC2B98C0010DF95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0DFC9462AC2B98C0010DF95 /* Main.storyboard */; };
@@ -31,9 +37,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C04455FE2ACBDC5100983189 /* ViewControllerUtill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerUtill.swift; sourceTree = "<group>"; };
 		C04456002ACBE78A00983189 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		C0DAD30A2ACE327B006ECCAD /* IntroCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCoordinator.swift; sourceTree = "<group>"; };
+		C0DAD30E2ACE96E9006ECCAD /* LoginNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigation.swift; sourceTree = "<group>"; };
+		C0DAD3112ACE9709006ECCAD /* RegisterNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNavigation.swift; sourceTree = "<group>"; };
+		C0DAD3132ACE9719006ECCAD /* HomeNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigation.swift; sourceTree = "<group>"; };
+		C0DAD3152ACE9736006ECCAD /* ProductListNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListNavigation.swift; sourceTree = "<group>"; };
+		C0DAD3172ACE974A006ECCAD /* ChooseProductNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseProductNavigation.swift; sourceTree = "<group>"; };
+		C0DAD3192ACE975D006ECCAD /* ProfileNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigation.swift; sourceTree = "<group>"; };
+		C0DAD31B2ACE976C006ECCAD /* SplashNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashNavigation.swift; sourceTree = "<group>"; };
 		C0DFC93D2AC2B98C0010DF95 /* CoordinatorPattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoordinatorPattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0DFC9402AC2B98C0010DF95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0DFC9422AC2B98C0010DF95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +79,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C0DAD30C2ACE96C7006ECCAD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C0DFC99B2ACAAACA0010DF95 /* LoginViewController.swift */,
+				C0DFC99D2ACAAAD50010DF95 /* RegisterViewController.swift */,
+				C0DFC99F2ACAAAF80010DF95 /* HomeViewController.swift */,
+				C0DFC9A12ACAAB120010DF95 /* ProductListViewController.swift */,
+				C0DFC9A32ACAAB1E0010DF95 /* ChooseProductViewController.swift */,
+				C0DFC9A72ACAAB350010DF95 /* ProfileViewController.swift */,
+				C04456002ACBE78A00983189 /* SplashViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C0DAD30D2ACE96D9006ECCAD /* NavigationInterface */ = {
+			isa = PBXGroup;
+			children = (
+				C0DAD30E2ACE96E9006ECCAD /* LoginNavigation.swift */,
+				C0DAD3112ACE9709006ECCAD /* RegisterNavigation.swift */,
+				C0DAD3132ACE9719006ECCAD /* HomeNavigation.swift */,
+				C0DAD3152ACE9736006ECCAD /* ProductListNavigation.swift */,
+				C0DAD3172ACE974A006ECCAD /* ChooseProductNavigation.swift */,
+				C0DAD3192ACE975D006ECCAD /* ProfileNavigation.swift */,
+				C0DAD31B2ACE976C006ECCAD /* SplashNavigation.swift */,
+			);
+			path = NavigationInterface;
+			sourceTree = "<group>";
+		};
+		C0DAD31E2ACE9786006ECCAD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C0DFC9402AC2B98C0010DF95 /* AppDelegate.swift */,
+				C0DFC9422AC2B98C0010DF95 /* SceneDelegate.swift */,
+				C0DFC9462AC2B98C0010DF95 /* Main.storyboard */,
+				C0DFC94B2AC2B98E0010DF95 /* LaunchScreen.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		C0DFC9342AC2B98C0010DF95 = {
 			isa = PBXGroup;
 			children = (
@@ -86,21 +137,12 @@
 		C0DFC93F2AC2B98C0010DF95 /* CoordinatorPattern */ = {
 			isa = PBXGroup;
 			children = (
+				C0DAD31E2ACE9786006ECCAD /* App */,
+				C0DAD30D2ACE96D9006ECCAD /* NavigationInterface */,
+				C0DAD30C2ACE96C7006ECCAD /* ViewController */,
 				C0DFC9A92ACABBE20010DF95 /* Coordinator */,
-				C0DFC9402AC2B98C0010DF95 /* AppDelegate.swift */,
-				C0DFC9422AC2B98C0010DF95 /* SceneDelegate.swift */,
-				C0DFC9462AC2B98C0010DF95 /* Main.storyboard */,
 				C0DFC9492AC2B98E0010DF95 /* Assets.xcassets */,
-				C0DFC94B2AC2B98E0010DF95 /* LaunchScreen.storyboard */,
 				C0DFC94E2AC2B98E0010DF95 /* Info.plist */,
-				C0DFC99B2ACAAACA0010DF95 /* LoginViewController.swift */,
-				C0DFC99D2ACAAAD50010DF95 /* RegisterViewController.swift */,
-				C0DFC99F2ACAAAF80010DF95 /* HomeViewController.swift */,
-				C0DFC9A12ACAAB120010DF95 /* ProductListViewController.swift */,
-				C0DFC9A32ACAAB1E0010DF95 /* ChooseProductViewController.swift */,
-				C0DFC9A72ACAAB350010DF95 /* ProfileViewController.swift */,
-				C04455FE2ACBDC5100983189 /* ViewControllerUtill.swift */,
-				C04456002ACBE78A00983189 /* SplashViewController.swift */,
 			);
 			path = CoordinatorPattern;
 			sourceTree = "<group>";
@@ -197,8 +239,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0DFC9AD2ACABD680010DF95 /* AppCoordinator.swift in Sources */,
+				C0DAD3162ACE9736006ECCAD /* ProductListNavigation.swift in Sources */,
 				C0DFC9B12ACABE8E0010DF95 /* AuthCoordinator.swift in Sources */,
 				C0DFC9412AC2B98C0010DF95 /* AppDelegate.swift in Sources */,
+				C0DAD31C2ACE976C006ECCAD /* SplashNavigation.swift in Sources */,
+				C0DAD3182ACE974A006ECCAD /* ChooseProductNavigation.swift in Sources */,
+				C0DAD30F2ACE96E9006ECCAD /* LoginNavigation.swift in Sources */,
+				C0DAD3142ACE9719006ECCAD /* HomeNavigation.swift in Sources */,
 				C04456012ACBE78A00983189 /* SplashViewController.swift in Sources */,
 				C0DFC9432AC2B98C0010DF95 /* SceneDelegate.swift in Sources */,
 				C0DFC9AB2ACABC3E0010DF95 /* Coordinator.swift in Sources */,
@@ -210,7 +257,8 @@
 				C0DFC9A82ACAAB350010DF95 /* ProfileViewController.swift in Sources */,
 				C0DFC9A02ACAAAF80010DF95 /* HomeViewController.swift in Sources */,
 				C0DFC9A22ACAAB120010DF95 /* ProductListViewController.swift in Sources */,
-				C04455FF2ACBDC5200983189 /* ViewControllerUtill.swift in Sources */,
+				C0DAD3122ACE9709006ECCAD /* RegisterNavigation.swift in Sources */,
+				C0DAD31A2ACE975D006ECCAD /* ProfileNavigation.swift in Sources */,
 				C0DFC9B52ACBA6440010DF95 /* ProfileCoordinator.swift in Sources */,
 				C0DFC9A42ACAAB1E0010DF95 /* ChooseProductViewController.swift in Sources */,
 			);

@@ -6,10 +6,7 @@
 //
 
 import UIKit
-
-protocol ProfileNavigation: AnyObject {
-    func resignButtonTapped()
-}
+import SnapKit
 
 class ProfileViewController: UIViewController {
     

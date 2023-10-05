@@ -6,10 +6,7 @@
 //
 
 import UIKit
-
-protocol SplashNavigation: AnyObject {
-    func loginButtonTapped(isLogined: Bool)
-}
+import SnapKit
 
 class SplashViewController: UIViewController {
     

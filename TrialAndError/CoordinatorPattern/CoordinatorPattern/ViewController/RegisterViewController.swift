@@ -6,10 +6,7 @@
 //
 
 import UIKit
-
-protocol RegisterNaviation: AnyObject {
-    func loginButtonTapped()
-}
+import SnapKit
 
 class RegisterViewController: UIViewController {
     
