@@ -9,9 +9,9 @@ import UIKit
 
 class ChooseProductViewController: UIViewController {
     
-    weak var coordinator: HomeNavigation!
+    weak var coordinator: HomeCoordinator!
     
-    init(coordinator: HomeNavigation!) {
+    init(coordinator: HomeCoordinator!) {
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }

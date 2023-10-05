@@ -7,16 +7,9 @@
 
 import UIKit
 
-protocol LoginNavigation: AnyObject {
-    func goToRegisterViewController()
-    func goToHomeViewController()
-    func goToLogin()
-    
-}
-
 class SplashViewController: UIViewController {
     
-    weak var coordinator: LoginNavigation!
+    weak var coordinator: IntroCoordinator!
     
     private let splashLabel: UILabel = {
         let label = UILabel()
@@ -24,7 +17,7 @@ class SplashViewController: UIViewController {
         return label
     }()
     
-    init(coordinator: LoginNavigation) {
+    init(coordinator: IntroCoordinator) {
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
@@ -44,10 +37,10 @@ class SplashViewController: UIViewController {
                 let isLogined = UserDefaults.standard.bool(forKey: "isLogined")
                 if isLogined {
                     print("유저가 이전에 로그인했었기 때문에 홈뷰로 이동합니다")
-                    self?.coordinator.goToHomeViewController()
+                    self?.coordinator.showHomeTabView()
                 } else {
                     print("유저가 이전에 로그인하지 않았기 때문에 홈뷰로 이동합니다")
-                    self?.coordinator.goToLogin()
+                    self?.coordinator.showLoginView()
                 }
             }
         }

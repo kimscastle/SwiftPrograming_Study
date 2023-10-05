@@ -8,15 +8,19 @@
 import UIKit
 
 final class AppCoordinator: Coordinator {
-    var parentCoordinator: Coordinator?
+    weak var parentCoordinator: Coordinator?
     
-    var children: [Coordinator] = []
+    var children: [Coordinator] = [] {
+        didSet {
+            print("appCoordinator의 Child \(children)")
+        }
+    }
     
     var navigationController: UINavigationController
     
     func start() {
         print("앱코디네이터시작")
-        startAuthCoordinator()
+        startIntroCoordinator()
     }
     
     init(navigationController: UINavigationController) {
@@ -36,6 +40,14 @@ final class AppCoordinator: Coordinator {
         children.removeAll()
         homeTabbarCoordinator.parentCoordinator = self
         homeTabbarCoordinator.start()
+    }
+    
+    func startIntroCoordinator() {
+        let introCoordinator = IntroCoordinator(navigationController: navigationController)
+        children.removeAll()
+        introCoordinator.parentCoordinator = self
+        children.append(introCoordinator)
+        introCoordinator.start()
     }
     
     deinit {

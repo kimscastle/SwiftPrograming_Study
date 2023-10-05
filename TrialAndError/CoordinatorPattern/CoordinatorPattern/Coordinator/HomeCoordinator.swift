@@ -8,7 +8,8 @@
 import UIKit
 
 final class HomeCoordinator: Coordinator {
-    var parentCoordinator: Coordinator?
+    
+    weak var parentCoordinator: Coordinator?
     
     var children: [Coordinator] = []
     
@@ -16,7 +17,7 @@ final class HomeCoordinator: Coordinator {
     
     func start() {
         print("홈코디네이터시작")
-        goToHome()
+        showHomeView()
     }
     
     init(navigationController: UINavigationController) {
@@ -30,26 +31,26 @@ final class HomeCoordinator: Coordinator {
 
 }
 
-extension HomeCoordinator: HomeNavigation {
-    func goToHome() {
+extension HomeCoordinator {
+    func showHomeView() {
         let homeViewController = HomeViewController(coordinator: self)
         navigationController.pushViewController(homeViewController, animated: true)
     }
     
-    func goToChooseProductViewController() {
+    func showChooseProductViewController() {
         let chooseProductViewController = ChooseProductViewController(coordinator: self)
         navigationController.pushViewController(chooseProductViewController, animated: true)
         
     }
     
-    func goToProductListViewController() {
+    func showProductListViewController() {
         let productListViewController = ProductListViewController(coordinator: self)
         navigationController.pushViewController(productListViewController, animated: true)
     }
     
-    func goToLogin() {
+    func logout() {
         let appCoordinator = parentCoordinator as! AppCoordinator
-        appCoordinator.startAuthCoordinator()
+        appCoordinator.startIntroCoordinator()
         appCoordinator.childDidFinish(self)
     }
     

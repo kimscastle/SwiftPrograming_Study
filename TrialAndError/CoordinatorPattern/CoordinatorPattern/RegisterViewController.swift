@@ -9,9 +9,9 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
-    weak var coordinator: LoginNavigation!
+    weak var coordinator: AuthCoordinator!
     
-    init(coordinator: LoginNavigation) {
+    init(coordinator: AuthCoordinator) {
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
@@ -37,6 +37,8 @@ class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("auth코디네이터")
+        print(coordinator.navigationController.viewControllers)
         view.backgroundColor = .white
         view.addSubview(registerLabel)
         view.addSubview(goLoginButton)
@@ -57,8 +59,6 @@ class RegisterViewController: UIViewController {
     @objc func loginButtonTapped() {
         UserDefaults.standard.set(true, forKey: "isLogined")
         print("유저가 로그인했습니다")
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) { [weak self] in
-            self?.coordinator.goToHomeViewController()
-        }
+        self.coordinator.goToHomeViewController()
     }
 }

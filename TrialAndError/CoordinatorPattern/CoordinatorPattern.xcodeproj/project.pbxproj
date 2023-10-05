@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C04455FF2ACBDC5200983189 /* ViewControllerUtill.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04455FE2ACBDC5100983189 /* ViewControllerUtill.swift */; };
 		C04456012ACBE78A00983189 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04456002ACBE78A00983189 /* SplashViewController.swift */; };
+		C0DAD30B2ACE327B006ECCAD /* IntroCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DAD30A2ACE327B006ECCAD /* IntroCoordinator.swift */; };
 		C0DFC9412AC2B98C0010DF95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DFC9402AC2B98C0010DF95 /* AppDelegate.swift */; };
 		C0DFC9432AC2B98C0010DF95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DFC9422AC2B98C0010DF95 /* SceneDelegate.swift */; };
 		C0DFC9482AC2B98C0010DF95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0DFC9462AC2B98C0010DF95 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		C04455FE2ACBDC5100983189 /* ViewControllerUtill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerUtill.swift; sourceTree = "<group>"; };
 		C04456002ACBE78A00983189 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		C0DAD30A2ACE327B006ECCAD /* IntroCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCoordinator.swift; sourceTree = "<group>"; };
 		C0DFC93D2AC2B98C0010DF95 /* CoordinatorPattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoordinatorPattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0DFC9402AC2B98C0010DF95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0DFC9422AC2B98C0010DF95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				C0DFC9B02ACABE8E0010DF95 /* AuthCoordinator.swift */,
 				C0DFC9B22ACB8D9B0010DF95 /* HomeCoordinator.swift */,
 				C0DFC9B42ACBA6440010DF95 /* ProfileCoordinator.swift */,
+				C0DAD30A2ACE327B006ECCAD /* IntroCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				C0DFC99E2ACAAAD50010DF95 /* RegisterViewController.swift in Sources */,
 				C0DFC99C2ACAAACA0010DF95 /* LoginViewController.swift in Sources */,
 				C0DFC9AF2ACABE870010DF95 /* HomeTabCoordinator.swift in Sources */,
+				C0DAD30B2ACE327B006ECCAD /* IntroCoordinator.swift in Sources */,
 				C0DFC9A82ACAAB350010DF95 /* ProfileViewController.swift in Sources */,
 				C0DFC9A02ACAAAF80010DF95 /* HomeViewController.swift in Sources */,
 				C0DFC9A22ACAAB120010DF95 /* ProductListViewController.swift in Sources */,

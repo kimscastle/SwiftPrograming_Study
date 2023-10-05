@@ -11,9 +11,9 @@ import SnapKit
 
 final class LoginViewController: UIViewController {
     
-    weak var coordinator: LoginNavigation!
+    var coordinator: AuthCoordinator!
     
-    init(coordinator: LoginNavigation) {
+    init(coordinator: AuthCoordinator) {
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
@@ -51,6 +51,8 @@ final class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("auth코디네이터")
+        print(coordinator.navigationController.viewControllers)
         view.backgroundColor = .white
         view.addSubview(LoginLabel)
         view.addSubview(loginButton)
@@ -72,6 +74,11 @@ final class LoginViewController: UIViewController {
             make.top.equalTo(loginButton.snp.bottom).offset(40)
             make.centerX.equalToSuperview()
         }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("사라진뒤auth코디네이터")
+        print(coordinator.navigationController.viewControllers)
     }
     
     @objc func loginButtonTapped() {

@@ -8,7 +8,7 @@
 import UIKit
 
 final class HomeTabCoordinator: Coordinator {
-    var parentCoordinator: Coordinator?
+    weak var parentCoordinator: Coordinator?
     
     var children: [Coordinator] = []
     

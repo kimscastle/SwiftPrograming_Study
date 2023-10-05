@@ -9,9 +9,9 @@ import UIKit
 
 class ProductListViewController: UIViewController {
 
-    weak var coordinator: HomeNavigation!
+    weak var coordinator: HomeCoordinator!
     
-    init(coordinator: HomeNavigation!) {
+    init(coordinator: HomeCoordinator!) {
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
@@ -53,6 +53,6 @@ class ProductListViewController: UIViewController {
     }
     
     @objc func buttonTapped() {
-        coordinator.goToChooseProductViewController()
+        coordinator.showChooseProductViewController()
     }
 }
